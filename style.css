@@ -142,9 +142,7 @@ header {
   }
   
   /* Hover effekti */
-  .nav-menu a:hover {
-    color: #007BFF; /* Mavi effekt */
-  }
+  
   
   /* Drop-down menyu */
   .dropdown-menu {
