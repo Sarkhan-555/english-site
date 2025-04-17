@@ -114,6 +114,69 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    /* Nav menyu ümumi */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    position: relative;
+  }
+  
+  .nav-link, .nav-menu a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link span {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  
+  /* Hover effekti */
+  .nav-menu a:hover {
+    color: #007BFF; /* Mavi effekt */
+  }
+  
+  /* Drop-down menyu */
+  .dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    min-width: 220px;
+    z-index: 1000;
+    padding: 8px 0;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f2f2f2;
+    color: #007BFF;
+  }
+  
+  /* Hoverlə menyunu göstər */
+  .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+  
 }
 
 header .container {
