@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="az">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AzeriEnglish - İngilis dili testləri</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>ModernEnglish - Test Your Skills</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <h1>AzeriEnglish</h1>
+                <h1>Modern<span>English</span></h1>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
             <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Ana səhifə</a></li>
-                    <li><a href="pages/level-test.html">Səviyyə testi</a></li>
-                    <li><a href="pages/grammar-tests.html">Qrammatika</a></li>
-                    <li><a href="pages/vocabulary-tests.html">Lüğət</a></li>
-                    <li><a href="pages/reading-tests.html">Oxuma</a></li>
-                    <li><a href="pages/listening-tests.html">Dinləmə</a></li>
-                    <li><a href="#" class="login-btn">Daxil ol</a></li>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Tests</a></li>
+                    <li><a href="#">Grammar</a></li>
+                    <li><a href="#">Vocabulary</a></li>
+                    <li><a href="#">IELTS/TOEFL</a></li>
+                    <li><a href="#" class="nav-btn">Sign Up</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,161 +33,278 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>İngilis dilini onlayn öyrənin və test edin</h2>
-                <p>Pulsuz ingilis dili testləri və təlim materialları ilə dil bacarıqlarınızı inkişaf etdirin</p>
-                <a href="pages/level-test.html" class="btn primary-btn">Səviyyəni yoxla</a>
-                <a href="#features" class="btn secondary-btn">Daha ətraflı</a>
+                <div class="hero-text">
+                    <h1>Improve Your English With <span>Professional Tests</span></h1>
+                    <p>Prepare for international exams, check your language level, and practice your skills with our comprehensive English test platform.</p>
+                    <div class="hero-btns">
+                        <a href="#tests" class="btn btn-primary">Start Testing</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://source.unsplash.com/random/600x400/?english,education" alt="English Learning">
+                </div>
             </div>
+        </div>
+        <div class="shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <section class="features">
         <div class="container">
-            <h2 class="section-title">Saytımızda nələr var?</h2>
-            
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <p>Our platform offers comprehensive tools for English language learners</p>
+            </div>
             <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Tests</h3>
+                    <p>Tests designed by experienced ESL teachers and linguists</p>
+                </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Səviyyə testləri</h3>
-                    <p>Hal-hazırki ingilis dili səviyyənizi müəyyən edin və uyğun materiallarla davam edin.</p>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvement with detailed analytics</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-laptop"></i>
                     </div>
-                    <h3>Qrammatika testləri</h3>
-                    <p>İngilis dilinin qrammatika qaydalarını yoxlayın və biliklərinizi möhkəmləndirin.</p>
+                    <h3>Accessible Anywhere</h3>
+                    <p>Practice on any device, anytime, anywhere</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-language"></i>
+                        <i class="fas fa-comments"></i>
                     </div>
-                    <h3>Lüğət testləri</h3>
-                    <p>Söz ehtiyatınızı artırın və yeni sözləri test edin.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Oxuma testləri</h3>
-                    <p>Müxtəlif mövzularda mətnləri oxuyun və anlama qabiliyyətinizi yoxlayın.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <h3>Dinləmə testləri</h3>
-                    <p>Audio materiallarla dinləmə bacarıqlarınızı inkişaf etdirin.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-graduate"></i>
-                    </div>
-                    <h3>Şəxsi hesab</h3>
-                    <p>İrəliləyişinizi izləyin və nəticələrinizi saxlayın.</p>
+                    <h3>All Language Skills</h3>
+                    <p>Tests for reading, writing, listening and grammar</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="levels">
+    <section id="tests" class="test-section">
         <div class="container">
-            <h2 class="section-title">İngilis dili səviyyələri</h2>
-            
-            <div class="levels-grid">
-                <div class="level-card beginner">
-                    <h3>Beginner (A1)</h3>
-                    <p>İngilis dilinə yeni başlayanlar üçün əsas söz və ifadələr.</p>
-                    <a href="pages/level-test.html?level=a1" class="btn small-btn">Testlərə keç</a>
+            <div class="section-header">
+                <h2>Popular Tests</h2>
+                <p>Start with our most popular English assessments</p>
+            </div>
+            <div class="test-cards">
+                <div class="test-card">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/300x200/?level,test" alt="Level Test">
+                        <div class="card-badge">Most Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Level Assessment</h3>
+                        <p>Find out your English level from A1 to C2 on the CEFR scale.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 30 min</span>
+                            <span><i class="fas fa-question-circle"></i> 60 questions</span>
+                        </div>
+                        <a href="#" class="btn btn-block">Start Test</a>
+                    </div>
                 </div>
-                
-                <div class="level-card elementary">
-                    <h3>Elementary (A2)</h3>
-                    <p>Gündəlik danışıq üçün lazım olan əsas anlayışlar.</p>
-                    <a href="pages/level-test.html?level=a2" class="btn small-btn">Testlərə keç</a>
+                <div class="test-card">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/300x200/?grammar" alt="Grammar Test">
+                    </div>
+                    <div class="card-content">
+                        <h3>Grammar Master</h3>
+                        <p>Test your knowledge of English grammar structures and rules.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 25 min</span>
+                            <span><i class="fas fa-question-circle"></i> 50 questions</span>
+                        </div>
+                        <a href="#" class="btn btn-block">Start Test</a>
+                    </div>
                 </div>
-                
-                <div class="level-card intermediate">
-                    <h3>Intermediate (B1)</h3>
-                    <p>Daha mürəkkəb qrammatika və daha geniş lüğət.</p>
-                    <a href="pages/level-test.html?level=b1" class="btn small-btn">Testlərə keç</a>
+                <div class="test-card">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/300x200/?vocabulary" alt="Vocabulary Test">
+                    </div>
+                    <div class="card-content">
+                        <h3>Vocabulary Builder</h3>
+                        <p>Expand your English vocabulary with our comprehensive tests.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 20 min</span>
+                            <span><i class="fas fa-question-circle"></i> 40 questions</span>
+                        </div>
+                        <a href="#" class="btn btn-block">Start Test</a>
+                    </div>
                 </div>
-                
-                <div class="level-card upper">
-                    <h3>Upper-Intermediate (B2)</h3>
-                    <p>Daha zəngin ifadələr və müxtəlif kontekstlərdə ünsiyyət.</p>
-                    <a href="pages/level-test.html?level=b2" class="btn small-btn">Testlərə keç</a>
-                </div>
-                
-                <div class="level-card advanced">
-                    <h3>Advanced (C1)</h3>
-                    <p>Təbii və sərbəst danışıq üçün inkişaf etmiş bilik.</p>
-                    <a href="pages/level-test.html?level=c1" class="btn small-btn">Testlərə keç</a>
-                </div>
-                
-                <div class="level-card proficiency">
-                    <h3>Proficiency (C2)</h3>
-                    <p>Ana dili səviyyəsinə yaxın akаdemik və peşəkar ingilis dili.</p>
-                    <a href="pages/level-test.html?level=c2" class="btn small-btn">Testlərə keç</a>
+                <div class="test-card">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/random/300x200/?ielts" alt="IELTS Prep">
+                        <div class="card-badge">New</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>IELTS Preparation</h3>
+                        <p>Practice with mock tests designed to prepare you for IELTS.</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-question-circle"></i> 80 questions</span>
+                        </div>
+                        <a href="#" class="btn btn-block">Start Test</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta">
+    <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>İndi qeydiyyatdan keçin</h2>
-                <p>İrəliləyişinizi izləmək, nəticələrinizi saxlamaq və fərdi tövsiyələr almaq üçün pulsuz hesab yaradın.</p>
-                <a href="#" class="btn primary-btn">Qeydiyyatdan keç</a>
+                <h2>Ready to improve your English?</h2>
+                <p>Sign up now and get access to all our premium tests for free!</p>
+                <a href="#" class="btn btn-light">Join Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/random/500x400/?study,english" alt="About Us">
+                </div>
+                <div class="about-text">
+                    <div class="section-header text-left">
+                        <h2>About Our Platform</h2>
+                        <p>The most effective way to improve your English</p>
+                    </div>
+                    <p>Our team of language experts has created a comprehensive platform to help learners at all levels improve their English skills. Whether you're a beginner or an advanced speaker, our tests and resources are designed to help you progress.</p>
+                    <p>With regular practice on our platform, you'll see measurable improvement in your grammar, vocabulary, reading comprehension, and overall language proficiency.</p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Tests Available</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2M+</span>
+                            <span class="stat-label">Users Worldwide</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Success stories from around the world</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The tests on this platform helped me prepare for my IELTS exam. I scored a 7.5 overall, which was higher than I expected!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://source.unsplash.com/random/100x100/?person" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>IELTS Student, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a non-native English teacher, I use these tests with my students regularly. The variety of topics and difficulty levels is perfect for classroom use."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://source.unsplash.com/random/100x100/?man" alt="Marco Rossi">
+                        <div class="author-info">
+                            <h4>Marco Rossi</h4>
+                            <p>English Teacher, Italy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I practice English every day using this website. In just 3 months, I've improved from B1 to B2 level. The progress tracking feature is amazing!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://source.unsplash.com/random/100x100/?woman" alt="Yuki Tanaka">
+                        <div class="author-info">
+                            <h4>Yuki Tanaka</h4>
+                            <p>Business Professional, Japan</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>AzeriEnglish</h2>
-                    <p>İngilis dilini öyrənmək üçün ən yaxşı onlayn platforma</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Faydalı linklər</h3>
-                    <ul>
-                        <li><a href="index.html">Ana səhifə</a></li>
-                        <li><a href="pages/about.html">Haqqımızda</a></li>
-                        <li><a href="pages/contact.html">Əlaqə</a></li>
-                        <li><a href="pages/faq.html">Tez-tez soruşulan suallar</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Bizimlə əlaqə</h3>
-                    <p><i class="fas fa-envelope"></i> info@azerienglish.az</p>
-                    <p><i class="fas fa-phone"></i> +994 50 123 45 67</p>
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <h2>Modern<span>English</span></h2>
+                    </div>
+                    <p>Your trusted platform for English language assessment and improvement.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Tests</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Test Categories</h3>
+                    <ul>
+                        <li><a href="#">Level Tests</a></li>
+                        <li><a href="#">Grammar Tests</a></li>
+                        <li><a href="#">Vocabulary Tests</a></li>
+                        <li><a href="#">Reading Tests</a></li>
+                        <li><a href="#">IELTS/TOEFL Prep</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest updates and news</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2025 AzeriEnglish. Bütün hüquqlar qorunur.</p>
+                <p>&copy; 2025 ModernEnglish. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
