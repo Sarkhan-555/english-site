@@ -135,7 +135,10 @@ header {
     padding: 10px 15px;
     transition: all 0.3s ease;
   }
-  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+}
   .nav-link span {
     font-size: 12px;
     margin-left: 4px;
