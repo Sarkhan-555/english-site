@@ -152,8 +152,8 @@ header {
     padding: 5px 0;
 }
   
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu a:hover
+{
     color: var(--primary-color);
 }
   /* Drop-down menyu */
