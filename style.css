@@ -156,22 +156,6 @@ header {
 {
     color: var(--primary-color);
 }
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-menu.show {
-        display: flex;
-    }
-}
-
   /* Drop-down menyu */
   .dropdown-menu {
     position: absolute;
