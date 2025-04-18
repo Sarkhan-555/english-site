@@ -142,8 +142,17 @@ header {
   }
   
   /* Hover effekti */
+  .nav-menu a {
+    color: var(--dark-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
   
-  
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
   /* Drop-down menyu */
   .dropdown-menu {
     position: absolute;
