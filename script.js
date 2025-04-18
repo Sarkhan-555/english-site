@@ -43,6 +43,7 @@ function initMobileMenu() {
         });
     }
     
+    
     // Close menu when clicking menu items
     const menuItems = document.querySelectorAll('.nav-menu a');
     menuItems.forEach(item => {
