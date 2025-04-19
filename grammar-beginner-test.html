@@ -8,12 +8,16 @@
     <style>
         :root {
             --primary: #4361ee;
+            --primary-light: #e0e7ff;
             --secondary: #3f37c9;
             --accent: #4895ef;
             --light: #f8f9fa;
             --dark: #212529;
-            --success: #4cc9f0;
+            --success: #4cf085;
+            --success-light: #cef3db;
             --danger: #f72585;
+            --danger-light: #fee7f0;
+            --warning: #ff9e00;
             --border-radius: 12px;
             --box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -30,6 +34,7 @@
             background-color: #f5f7ff;
             color: var(--dark);
             line-height: 1.6;
+            padding: 20px;
         }
         
         .test-container {
@@ -236,7 +241,172 @@
             color: white;
             margin-top: 1.5rem;
         }
-        
+
+        /* Yeni animasiyalar */
+        @keyframes slideInRight {
+            from { transform: translateX(20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes pulseSuccess {
+            0% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(76, 201, 240, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0); }
+        }
+
+        @keyframes pulseDanger {
+            0% { box-shadow: 0 0 0 0 rgba(247, 37, 133, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(247, 37, 133, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(247, 37, 133, 0); }
+        }
+
+        /* Ətraflı cavablar üçün yeni stillər */
+        .answers-container {
+            margin: 2rem auto 0;
+            text-align: left;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 0;
+            background: transparent;
+            border-radius: var(--border-radius);
+            animation: fadeIn 0.6s both;
+            animation-delay: 0.3s;
+        }
+
+        .answers-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .answers-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        .answer-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.5s forwards;
+            border-left: 4px solid transparent;
+        }
+
+        .answer-item.correct {
+            border-left-color: var(--success);
+            background-color: var(--success-light);
+        }
+
+        .answer-item.incorrect {
+            border-left-color: var(--danger);
+            background-color: var(--danger-light);
+        }
+
+        .answer-question {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .question-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .answer-details {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .answer-row {
+            display: flex;
+            margin-bottom: 0.6rem;
+            align-items: center;
+        }
+
+        .answer-label {
+            font-weight: 600;
+            min-width: 100px;
+            color: #666;
+        }
+
+        .user-answer {
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            font-size: 0.95rem;
+            animation: pulse 0.6s;
+        }
+
+        .answer-item.correct .user-answer {
+            background-color: var(--success);
+            color: white;
+            animation: pulseSuccess 1s;
+        }
+
+        .answer-item.incorrect .user-answer {
+            background-color: var(--danger);
+            color: white;
+            animation: pulseDanger 1s;
+        }
+
+        .correct-answer {
+            font-weight: 600;
+            color: var(--success);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background-color: rgba(76, 240, 194, 0.1);
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        .answer-icon {
+            margin-left: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .correct .answer-icon {
+            color: var(--success);
+        }
+
+        .incorrect .answer-icon {
+            color: var(--danger);
+        }
+
+        /* Animasiya gecikmələri */
+        .answer-item:nth-child(1) { animation-delay: 0.1s; }
+        .answer-item:nth-child(2) { animation-delay: 0.2s; }
+        .answer-item:nth-child(3) { animation-delay: 0.3s; }
+        .answer-item:nth-child(4) { animation-delay: 0.4s; }
+        .answer-item:nth-child(5) { animation-delay: 0.5s; }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -273,6 +443,14 @@
             .option label {
                 padding: 0.8rem 1rem;
             }
+
+            .answer-item {
+                padding: 1rem;
+            }
+
+            .answer-label {
+                min-width: 80px;
+            }
         }
     </style>
 </head>
@@ -305,15 +483,7 @@
     </div>
     
     <div class="result-container" id="resultContainer">
-        <div class="result-icon">
-            <i class="fas fa-trophy" id="resultIcon"></i>
-        </div>
-        <h2 id="resultTitle">Test Completed!</h2>
-        <div class="score-display" id="scoreDisplay"></div>
-        <p class="feedback" id="feedback"></p>
-        <button class="btn-retry" id="retryBtn">
-            <i class="fas fa-redo"></i> Try Again
-        </button>
+        <!-- Results will be inserted here by JavaScript -->
     </div>
 
     <!-- Font Awesome for icons -->
@@ -357,10 +527,6 @@
             const nextBtn = document.getElementById('nextBtn');
             const submitBtn = document.getElementById('submitBtn');
             const resultContainer = document.getElementById('resultContainer');
-            const scoreDisplay = document.getElementById('scoreDisplay');
-            const feedback = document.getElementById('feedback');
-            const resultIcon = document.getElementById('resultIcon');
-            const resultTitle = document.getElementById('resultTitle');
             const retryBtn = document.getElementById('retryBtn');
             
             // Quiz state
@@ -453,6 +619,48 @@
                 }
             }
             
+            // Generate HTML for detailed answers
+            function generateAnswersHtml() {
+                let html = `
+                    <div class="answers-container animate__animated animate__fadeIn">
+                        <h3 class="answers-title">Detailed Results</h3>
+                `;
+                
+                questions.forEach((question, index) => {
+                    const userAnswerIndex = userAnswers[index];
+                    const isCorrect = userAnswerIndex === question.answer;
+                    const userAnswerText = userAnswerIndex !== null ? 
+                        question.options[userAnswerIndex] : 'No answer';
+                    const correctAnswerText = question.options[question.answer];
+                    const iconClass = isCorrect ? 'fas fa-check-circle' : 'fas fa-times-circle';
+                    
+                    html += `
+                        <div class="answer-item ${isCorrect ? 'correct' : 'incorrect'} animate__animated">
+                            <div class="answer-question">
+                                <span class="question-number">${index + 1}</span>
+                                ${question.question}
+                            </div>
+                            <div class="answer-details">
+                                <div class="answer-row">
+                                    <span class="answer-label">Your answer:</span>
+                                    <span class="user-answer">${userAnswerText}</span>
+                                    <i class="answer-icon ${iconClass}"></i>
+                                </div>
+                                ${!isCorrect ? `
+                                    <div class="answer-row">
+                                        <span class="answer-label">Correct answer:</span>
+                                        <span class="correct-answer">${correctAnswerText}</span>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `</div>`;
+                return html;
+            }
+            
             // Calculate and show results
             function showResults() {
                 score = 0;
@@ -465,8 +673,21 @@
                 const percentage = (score / questions.length) * 100;
                 
                 // Display results
-                scoreDisplay.textContent = `${score}/${questions.length}`;
+                resultContainer.innerHTML = `
+                    <div class="result-icon">
+                        <i class="fas fa-trophy" id="resultIcon"></i>
+                    </div>
+                    <h2 id="resultTitle">Test Completed!</h2>
+                    <div class="score-display">${score}/${questions.length}</div>
+                    <p class="feedback" id="feedback"></p>
+                    ${generateAnswersHtml()}
+                    <button class="btn-retry" id="retryBtn">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                `;
                 
+                // Set feedback based on score
+                const feedback = document.getElementById('feedback');
                 if (percentage >= 70) {
                     resultContainer.className = 'result-container success';
                     resultIcon.className = 'fas fa-trophy';
@@ -487,6 +708,9 @@
                 // Show result container with animation
                 resultContainer.style.display = 'block';
                 document.querySelector('.test-container').style.display = 'none';
+                
+                // Add event listener to retry button
+                document.getElementById('retryBtn').addEventListener('click', resetQuiz);
                 
                 // Scroll to results
                 resultContainer.scrollIntoView({ behavior: 'smooth' });
@@ -510,7 +734,6 @@
             nextBtn.addEventListener('click', nextQuestion);
             prevBtn.addEventListener('click', prevQuestion);
             submitBtn.addEventListener('click', showResults);
-            retryBtn.addEventListener('click', resetQuiz);
             
             // Initialize the quiz
             initQuiz();
