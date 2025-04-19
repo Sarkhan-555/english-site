@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Grammar Test | English Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --danger: #f72585;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .test-header h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #4361ee, #3a0ca3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .test-header p {
+            color: #6c757d;
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            width: 0%;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: scale(0.98);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .question:hover {
+            transform: scale(1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+        
+        .question p {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+        }
+        
+        .option {
+            position: relative;
+        }
+        
+        .option input {
+            position: absolute;
+            opacity: 0;
+        }
+        
+        .option label {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: var(--light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid #dee2e6;
+            font-size: 1rem;
+        }
+        
+        .option label:hover {
+            background: #e9ecef;
+        }
+        
+        .option input:checked + label {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+        }
+        
+        .option input:focus + label {
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        button {
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .btn-prev {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .btn-prev:hover:not(:disabled) {
+            background: #f0f4ff;
+        }
+        
+        .btn-next, .btn-submit {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            color: white;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn-next:hover:not(:disabled), .btn-submit:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-submit {
+            display: none;
+        }
+        
+        .result-container {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 2rem;
+            animation: fadeIn 0.6s;
+        }
+        
+        .result-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success .result-icon {
+            color: var(--success);
+        }
+        
+        .failure .result-icon {
+            color: var(--danger);
+        }
+        
+        .score-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feedback {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .btn-retry {
+            background: var(--primary);
+            color: white;
+            margin-top: 1.5rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .test-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .question {
+                padding: 1rem;
+            }
+            
+            .option label {
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
+            <p>Test your basic English grammar knowledge</p>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div class="quiz" id="quiz">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="navigation">
+            <button class="btn-prev" id="prevBtn" disabled>
+                <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <button class="btn-next" id="nextBtn">
+                Next <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn-submit" id="submitBtn">
+                Submit Test <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="result-container" id="resultContainer">
+        <div class="result-icon">
+            <i class="fas fa-trophy" id="resultIcon"></i>
+        </div>
+        <h2 id="resultTitle">Test Completed!</h2>
+        <div class="score-display" id="scoreDisplay"></div>
+        <p class="feedback" id="feedback"></p>
+        <button class="btn-retry" id="retryBtn">
+            <i class="fas fa-redo"></i> Try Again
+        </button>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Questions data
+            const questions = [
+                {
+                    question: "She ___ to school every day.",
+                    options: ["go", "goes", "going", "is go"],
+                    answer: 1
+                },
+                {
+                    question: "___ you like ice cream?",
+                    options: ["Do", "Does", "Are", "Is"],
+                    answer: 0
+                },
+                {
+                    question: "They ___ watching TV now.",
+                    options: ["is", "am", "are", "be"],
+                    answer: 2
+                },
+                {
+                    question: "My brother ___ a new car last week.",
+                    options: ["buy", "buys", "bought", "buying"],
+                    answer: 2
+                },
+                {
+                    question: "This is ___ book.",
+                    options: ["I", "me", "my", "mine"],
+                    answer: 2
+                }
+            ];
+            
+            // DOM elements
+            const quizContainer = document.getElementById('quiz');
+            const progressBar = document.getElementById('progressBar');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const resultContainer = document.getElementById('resultContainer');
+            const scoreDisplay = document.getElementById('scoreDisplay');
+            const feedback = document.getElementById('feedback');
+            const resultIcon = document.getElementById('resultIcon');
+            const resultTitle = document.getElementById('resultTitle');
+            const retryBtn = document.getElementById('retryBtn');
+            
+            // Quiz state
+            let currentQuestion = 0;
+            let userAnswers = new Array(questions.length).fill(null);
+            let score = 0;
+            
+            // Initialize quiz
+            function initQuiz() {
+                renderQuestion();
+                updateProgressBar();
+                updateNavigation();
+            }
+            
+            // Render current question
+            function renderQuestion() {
+                const question = questions[currentQuestion];
+                
+                let optionsHtml = '';
+                question.options.forEach((option, index) => {
+                    const isChecked = userAnswers[currentQuestion] === index;
+                    optionsHtml += `
+                        <div class="option">
+                            <input type="radio" name="question" id="q${currentQuestion}-opt${index}" 
+                                   value="${index}" ${isChecked ? 'checked' : ''}>
+                            <label for="q${currentQuestion}-opt${index}">${String.fromCharCode(97 + index)}) ${option}</label>
+                        </div>
+                    `;
+                });
+                
+                quizContainer.innerHTML = `
+                    <div class="question animate__animated animate__fadeIn">
+                        <p>${currentQuestion + 1}. ${question.question}</p>
+                        <div class="options">
+                            ${optionsHtml}
+                        </div>
+                    </div>
+                `;
+                
+                // Add event listeners to options
+                document.querySelectorAll('input[name="question"]').forEach(input => {
+                    input.addEventListener('change', function() {
+                        userAnswers[currentQuestion] = parseInt(this.value);
+                        updateNavigation();
+                    });
+                });
+            }
+            
+            // Update progress bar
+            function updateProgressBar() {
+                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Update navigation buttons
+            function updateNavigation() {
+                prevBtn.disabled = currentQuestion === 0;
+                
+                // Check if current question is answered
+                const isAnswered = userAnswers[currentQuestion] !== null;
+                nextBtn.disabled = !isAnswered;
+                
+                // Show submit button on last question if answered
+                if (currentQuestion === questions.length - 1 && isAnswered) {
+                    nextBtn.style.display = 'none';
+                    submitBtn.style.display = 'inline-flex';
+                } else {
+                    nextBtn.style.display = 'inline-flex';
+                    submitBtn.style.display = 'none';
+                }
+            }
+            
+            // Go to next question
+            function nextQuestion() {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    renderQuestion();
+                    updateProgressBar();
+                    updateNavigation();
+                }
+            }
+            
+            // Go to previous question
+            function prevQuestion() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    renderQuestion();
+                    updateProgressBar();
+                    updateNavigation();
+                }
+            }
+            
+            // Calculate and show results
+            function showResults() {
+                score = 0;
+                questions.forEach((question, index) => {
+                    if (userAnswers[index] === question.answer) {
+                        score++;
+                    }
+                });
+                
+                const percentage = (score / questions.length) * 100;
+                
+                // Display results
+                scoreDisplay.textContent = `${score}/${questions.length}`;
+                
+                if (percentage >= 70) {
+                    resultContainer.className = 'result-container success';
+                    resultIcon.className = 'fas fa-trophy';
+                    resultTitle.textContent = 'Excellent Work!';
+                    feedback.textContent = 'You have a strong understanding of beginner grammar concepts. Keep up the good work!';
+                } else if (percentage >= 40) {
+                    resultContainer.className = 'result-container';
+                    resultIcon.className = 'fas fa-award';
+                    resultTitle.textContent = 'Good Effort!';
+                    feedback.textContent = 'You know some basics but need more practice. Review the material and try again!';
+                } else {
+                    resultContainer.className = 'result-container failure';
+                    resultIcon.className = 'fas fa-book';
+                    resultTitle.textContent = 'Keep Learning!';
+                    feedback.textContent = 'Take some time to study beginner grammar concepts before trying again. You can do it!';
+                }
+                
+                // Show result container with animation
+                resultContainer.style.display = 'block';
+                document.querySelector('.test-container').style.display = 'none';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Reset quiz
+            function resetQuiz() {
+                currentQuestion = 0;
+                userAnswers = new Array(questions.length).fill(null);
+                score = 0;
+                
+                document.querySelector('.test-container').style.display = 'block';
+                resultContainer.style.display = 'none';
+                
+                renderQuestion();
+                updateProgressBar();
+                updateNavigation();
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', nextQuestion);
+            prevBtn.addEventListener('click', prevQuestion);
+            submitBtn.addEventListener('click', showResults);
+            retryBtn.addEventListener('click', resetQuiz);
+            
+            // Initialize the quiz
+            initQuiz();
+        });
+    </script>
+</body>
+</html>
