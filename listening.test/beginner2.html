@@ -431,7 +431,8 @@
         </div>
         
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM" 
+            <!-- YouTube iframe üçün id əlavə edin -->
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -454,7 +455,26 @@
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
     <script>
+        // YouTube player dəyişəni
+        let youtubePlayer;
+        
+        // YouTube API hazır olduqda bu funksiya çağrılır
+        function onYouTubeIframeAPIReady() {
+            youtubePlayer = new YT.Player('youtube-video', {
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+        
+        function onPlayerReady(event) {
+            // Player hazırdır, lakin heç nə etməyə ehtiyac yoxdur
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
@@ -497,6 +517,17 @@
             // Initialize quiz
             function initQuiz() {
                 renderAllQuestions();
+                
+                submitBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // YouTube videonunu dayandır
+                    if(youtubePlayer && youtubePlayer.pauseVideo) {
+                        youtubePlayer.pauseVideo();
+                    }
+                    
+                    showResults();
+                });
             }
             
             // Render all questions at once
@@ -652,13 +683,17 @@
                 resultContainer.style.display = 'none';
                 
                 renderAllQuestions();
+                
+                // Videonu əvvələ sarıyırıq (yenidən başlatmaq istəsəniz playVideo() istifadə edin)
+                if(youtubePlayer && youtubePlayer.seekTo) {
+                    youtubePlayer.seekTo(0);
+                }
             }
             
-            // Event listeners
-            submitBtn.addEventListener('click', showResults);
-            
-            // Initialize the quiz
             initQuiz();
+       
+            
+            // Köhnə submit event listener-i silinmişdir (artıq initQuiz içindədir)**
         });
     </script>
 </body>
