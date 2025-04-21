@@ -951,3 +951,21 @@ function getIELTSTestQuestions() {
         }
     ];
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Menü toggle düyməsi 
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        // Toggle düyməsinə klik etdikdə menünü açıb bağlamaq
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Naviqasiya elementlərinə klik etdikdə menünü bağlamaq
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+    });
