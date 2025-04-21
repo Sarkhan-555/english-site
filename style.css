@@ -742,7 +742,26 @@ footer {
     .menu-toggle {
         display: block;
     }
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+    }
     
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
    
     
     
