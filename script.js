@@ -23,7 +23,7 @@ function initSite() {
 
 // Mobile menu toggle function
 function initMobileMenu() {
-    const mobileMenuToggle = document.getElementById('mobile-menu');
+    const mobileMenuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
     if(mobileMenuToggle) {
@@ -33,16 +33,15 @@ function initMobileMenu() {
             
             // Toggle icon
             const icon = this.querySelector('i');
-            if(icon.classList.contains('fa-bars')) {
+            if(icon && icon.classList.contains('fa-bars')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-            } else {
+            } else if(icon) {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
         });
     }
-    
     
     // Close menu when clicking menu items
     const menuItems = document.querySelectorAll('.nav-menu a');
@@ -53,8 +52,10 @@ function initMobileMenu() {
                 mobileMenuToggle.classList.remove('active');
                 
                 const icon = mobileMenuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if(icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
     });
@@ -951,21 +952,4 @@ function getIELTSTestQuestions() {
         }
     ];
     }
-    document.addEventListener('DOMContentLoaded', function() {
-        // Menü toggle düyməsi 
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        // Toggle düyməsinə klik etdikdə menünü açıb bağlamaq
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Naviqasiya elementlərinə klik etdikdə menünü bağlamaq
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-            });
-        });
-    });
+    
