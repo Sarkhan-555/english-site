@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Advanced Grammar Test</h1>
+            <p>High-Level Grammar Practice for Advanced Learners</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,67 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                },
-            ];
+    {
+        question: "By the time the delegation arrives, we ___ the preparations for three straight days.",
+        options: ["will be making", "will have been making", "have been making", "are making", "will make"],
+        answer: 1
+    },
+    {
+        question: "___ the board members been more receptive to innovation, the company ___ at the forefront of the industry now.",
+        options: ["Had...would be", "Were...would have been", "Should...were", "Would...had been", "Have...would be"],
+        answer: 0
+    },
+    {
+        question: "They ___ have misunderstood the instructions - their approach is completely contrary to what we outlined.",
+        options: ["must", "could", "should", "might", "shall"],
+        answer: 0
+    },
+    {
+        question: "The legislation ___ before the opposition raised their objections.",
+        options: ["had been being drafted", "had been drafted", "was being drafted", "has been drafted", "was drafted"],
+        answer: 1
+    },
+    {
+        question: "Only after ___ the terms of the agreement ___ the potential loopholes.",
+        options: ["scrutinizing...they spotted", "having scrutinized...did they spot", "scrutinize...they did spot", "scrutinized...had they spotted", "being scrutinized...they were spotting"],
+        answer: 1
+    },
+    {
+        question: "You ___ have gone to such trouble - the system was designed to be self-explanatory.",
+        options: ["mustn't", "couldn't", "needn't", "wouldn't", "mightn't"],
+        answer: 2
+    },
+    {
+        question: "I'd as soon you ___ me about the incident before the media got wind of it.",
+        options: ["informed", "had informed", "would inform", "inform", "have informed"],
+        answer: 1
+    },
+    {
+        question: "Hardly ___ the merger announcement ___ the stock prices began to fluctuate wildly.",
+        options: ["had...been made when", "was...made than", "had...made when", "was...being made than", "has...been made when"],
+        answer: 0
+    },
+    {
+        question: "It's high time such practices ___ more rigorously regulated.",
+        options: ["are", "were", "have been", "had been", "being"],
+        answer: 1
+    },
+    {
+        question: "___ the CEO to step down, the company would face unprecedented challenges.",
+        options: ["Would", "Should", "Were", "Did", "Had"],
+        answer: 2
+    },
+    {
+        question: "On no account ___ to disclose confidential information to unauthorized personnel.",
+        options: ["employees are", "are employees", "employees have", "do employees", "have employees"],
+        answer: 1
+    },
+    {
+        question: "The implications were ___ far-reaching ___ they necessitated a complete overhaul of our strategy.",
+        options: ["so...that", "such...as to", "too...that", "as...as to", "very...for"],
+        answer: 0
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

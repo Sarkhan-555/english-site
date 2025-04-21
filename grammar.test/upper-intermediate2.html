@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Upper-Intermediate Grammar Test</h1>
+            <p>Challenge Your English Grammar – Upper-Intermediate Level</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "By next June, I will have been studying English for five years.",
+            "By next June, I will study English for five years.",
+            "By next June, I will be studying English for five years.",
+            "By next June, I have studied English for five years.",
+            "By next June, I will had been studying English for five years."
+        ],
+        answer: 0 // Future perfect continuous
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had the company invested more in research, they would be leading the market now.",
+            "If the company had invested more in research, they would lead the market now.",
+            "If the company invested more in research, they would have led the market now.",
+            "Had the company invest more in research, they would be leading the market now.",
+            "If the company would have invested more in research, they would lead the market now."
+        ],
+        answer: 0 // Mixed conditional
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "They can't have received our email yet - it was only sent five minutes ago.",
+            "They mustn't have received our email yet - it was only sent five minutes ago.",
+            "They wouldn't have received our email yet - it was only sent five minutes ago.",
+            "They mightn't have received our email yet - it was only sent five minutes ago.",
+            "They shouldn't have received our email yet - it was only sent five minutes ago."
+        ],
+        answer: 0 // Modal perfect for deduction
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The contract had been being negotiated for months before an agreement was reached.",
+            "The contract had been negotiated for months before an agreement was reached.",
+            "The contract was being negotiated for months before an agreement was reached.",
+            "The contract has been negotiated for months before an agreement was reached.",
+            "The contract was negotiated for months before an agreement had been reached."
+        ],
+        answer: 1 // Past perfect passive (more natural than past perfect continuous passive)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Only when all the evidence was examined did the full picture become clear.",
+            "Only when all the evidence was examined the full picture became clear.",
+            "Only when was all the evidence examined the full picture became clear.",
+            "Only when all the evidence had been examined the full picture became clear.",
+            "Only when all the evidence examined did the full picture become clear."
+        ],
+        answer: 0 // Inversion after "only when"
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "You needn't have brought your laptop - there are computers available here.",
+            "You mustn't have brought your laptop - there are computers available here.",
+            "You couldn't have brought your laptop - there are computers available here.",
+            "You wouldn't have brought your laptop - there are computers available here.",
+            "You mightn't have brought your laptop - there are computers available here."
+        ],
+        answer: 0 // Needn't have + past participle
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I'd sooner we had discussed this matter privately.",
+            "I'd sooner we discussed this matter privately.",
+            "I'd sooner we discuss this matter privately.",
+            "I'd sooner we would discuss this matter privately.",
+            "I'd sooner we have discussed this matter privately."
+        ],
+        answer: 0 // 'd sooner with past perfect
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "No sooner had the meeting begun than the fire alarm sounded.",
+            "No sooner the meeting had begun than the fire alarm sounded.",
+            "No sooner did the meeting begin than the fire alarm sounded.",
+            "No sooner the meeting began than the fire alarm sounded.",
+            "No sooner had the meeting began than the fire alarm sounded."
+        ],
+        answer: 0 // No sooner...than inversion
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "It's high time the government took climate change more seriously.",
+            "It's high time the government takes climate change more seriously.",
+            "It's high time the government has taken climate change more seriously.",
+            "It's high time the government taking climate change more seriously.",
+            "It's high time the government will take climate change more seriously."
+        ],
+        answer: 0 // It's high time + past simple
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were the company to relocate, many employees would resign.",
+            "Was the company to relocate, many employees would resign.",
+            "If the company was to relocate, many employees would resign.",
+            "If the company would relocate, many employees would resign.",
+            "If the company were to relocate, many employees would have resigned."
+        ],
+        answer: 0 // Were + subject + to (formal conditional)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Under no circumstances should confidential documents be left unattended.",
+            "Under no circumstances confidential documents should be left unattended.",
+            "Under no circumstances should be confidential documents left unattended.",
+            "Under no circumstances confidential documents be should left unattended.",
+            "Under no circumstances should leave confidential documents unattended."
+        ],
+        answer: 0 // Inversion after negative adverbial
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The proposal was so complex as to be nearly incomprehensible.",
+            "The proposal was such complex as to be nearly incomprehensible.",
+            "The proposal was too complex as to be nearly incomprehensible.",
+            "The proposal was very complex as to be nearly incomprehensible.",
+            "The proposal was as complex as to be nearly incomprehensible."
+        ],
+        answer: 0 // So + adjective + as to
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

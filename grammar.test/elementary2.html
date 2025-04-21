@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Elementary Grammar Test</h1>
+            <p>Check your English grammar skills</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She don't like vegetables.",
+            "She doesn't likes vegetables.",
+            "She doesn't like vegetables.",
+            "She not like vegetables.",
+            "She isn't like vegetables."
+        ],
+        answer: 2 // "She doesn't like vegetables."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "What time you usually wake up?",
+            "What time do you usually wake up?",
+            "What time does you usually wake up?",
+            "What time are you usually wake up?",
+            "What time you do usually wake up?"
+        ],
+        answer: 1 // "What time do you usually wake up?"
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "They was at the cinema last night.",
+            "They were at the cinema last night.",
+            "They did be at the cinema last night.",
+            "They are at the cinema last night.",
+            "They been at the cinema last night."
+        ],
+        answer: 1 // "They were at the cinema last night."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I'm more tall than my sister.",
+            "I'm taller than my sister.",
+            "I'm more taller than my sister.",
+            "I'm the taller than my sister.",
+            "I'm tallest than my sister."
+        ],
+        answer: 1 // "I'm taller than my sister."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "This is the most interesting book of the three.",
+            "This is the interestingest book of the three.",
+            "This is the more interesting book of the three.",
+            "This is the most interest book of the three.",
+            "This is the much interesting book of the three."
+        ],
+        answer: 0 // "This is the most interesting book of the three."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "We have lived here since five years.",
+            "We have lived here for five years.",
+            "We live here since five years.",
+            "We are living here for five years.",
+            "We lived here for five years."
+        ],
+        answer: 1 // "We have lived here for five years."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She can to play the piano very well.",
+            "She can plays the piano very well.",
+            "She can playing the piano very well.",
+            "She can play the piano very well.",
+            "She cans play the piano very well."
+        ],
+        answer: 3 // "She can play the piano very well."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "You should to see a doctor.",
+            "You should see a doctor.",
+            "You should seeing a doctor.",
+            "You should sees a doctor.",
+            "You should will see a doctor."
+        ],
+        answer: 1 // "You should see a doctor."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "There isn't some milk in the fridge.",
+            "There aren't some milk in the fridge.",
+            "There isn't any milk in the fridge.",
+            "There aren't any milk in the fridge.",
+            "There isn't no milk in the fridge."
+        ],
+        answer: 2 // "There isn't any milk in the fridge."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The children are playing happy in the garden.",
+            "The children are playing happily in the garden.",
+            "The children are playing happiness in the garden.",
+            "The children are playing happier in the garden.",
+            "The children are playing more happy in the garden."
+        ],
+        answer: 1 // "The children are playing happily in the garden."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I'll call you when I will arrive.",
+            "I'll call you when I arrive.",
+            "I'll call you when I arriving.",
+            "I'll call you when I arrived.",
+            "I'll call you when I'm arrive."
+        ],
+        answer: 1 // "I'll call you when I arrive."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She told me that she is tired.",
+            "She told me that she was tired.",
+            "She told me that she were tired.",
+            "She told me that she be tired.",
+            "She told me that she tired."
+        ],
+        answer: 1 // "She told me that she was tired."
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Intermediate Grammar Test</h1>
+            <p>Assess your English grammar knowledge</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "If I had known about the traffic, I would leave earlier.",
+            "If I knew about the traffic, I would have left earlier.",
+            "If I had known about the traffic, I would have left earlier.",
+            "If I would have known about the traffic, I had left earlier.",
+            "If I know about the traffic, I would left earlier."
+        ],
+        answer: 2 // Third conditional
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She must has been working late last night.",
+            "She must have been working late last night.",
+            "She must had been working late last night.",
+            "She must be working late last night.",
+            "She must been working late last night."
+        ],
+        answer: 1 // Modal perfect continuous
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The project was more challenging than I expected it to be.",
+            "The project was more challenge than I expected it to be.",
+            "The project was challenginger than I expected it to be.",
+            "The project was most challenging than I expected it to be.",
+            "The project was much challenging than I expected it to be."
+        ],
+        answer: 0 // Comparatives
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I'd rather you don't mention this to anyone.",
+            "I'd rather you didn't mention this to anyone.",
+            "I'd rather you not mention this to anyone.",
+            "I'd rather you wouldn't mention this to anyone.",
+            "I'd rather you hadn't mention this to anyone."
+        ],
+        answer: 1 // Would rather + past
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had I known the truth, I would act differently.",
+            "Had I known the truth, I would have acted differently.",
+            "Have I known the truth, I would have acted differently.",
+            "If I had knew the truth, I would have acted differently.",
+            "If I would have known the truth, I had acted differently."
+        ],
+        answer: 1 // Inverted third conditional
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Not only he speaks Spanish, but he also writes poetry.",
+            "Not only does he speak Spanish, but he also writes poetry.",
+            "Not only he speak Spanish, but he also writes poetry.",
+            "Not only speaks he Spanish, but he also writes poetry.",
+            "Not only do he speak Spanish, but he also writes poetry."
+        ],
+        answer: 1 // Inversion with "not only"
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I wish I didn't say that during the meeting.",
+            "I wish I wouldn't say that during the meeting.",
+            "I wish I hadn't said that during the meeting.",
+            "I wish I haven't said that during the meeting.",
+            "I wish I wasn't saying that during the meeting."
+        ],
+        answer: 2 // Wishes about the past
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "He denied to have stolen the documents.",
+            "He denied having stolen the documents.",
+            "He denied to steal the documents.",
+            "He denied steal the documents.",
+            "He denied that he has stolen the documents."
+        ],
+        answer: 1 // Verb patterns with gerund
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Scarcely I had arrived when the trouble started.",
+            "Scarcely had I arrived when the trouble started.",
+            "Scarcely I arrived when the trouble started.",
+            "Scarcely did I arrive when the trouble started.",
+            "Scarcely I was arriving when the trouble started."
+        ],
+        answer: 1 // Inversion with negative adverbials
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "It's time we leave for the airport.",
+            "It's time we left for the airport.",
+            "It's time we have left for the airport.",
+            "It's time we are leaving for the airport.",
+            "It's time we will leave for the airport."
+        ],
+        answer: 1 // "It's time" + past simple
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The report is being prepared when the power went out.",
+            "The report was being prepared when the power went out.",
+            "The report was prepared when the power went out.",
+            "The report had been prepared when the power went out.",
+            "The report has been prepared when the power went out."
+        ],
+        answer: 1 // Past continuous passive
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were she to accept the offer, she would regret it.",
+            "Was she to accept the offer, she would regret it.",
+            "If she was to accept the offer, she would regret it.",
+            "If she would accept the offer, she would regret it.",
+            "If she had accepted the offer, she would regret it."
+        ],
+        answer: 0 // Inverted conditional (formal)
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

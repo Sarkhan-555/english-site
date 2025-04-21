@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Elementary Grammar Test</h1>
+            <p>Check your English grammar skills</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,67 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "She ___ her homework every evening.",
+        options: ["do", "does", "doing", "is do", "done"],
+        answer: 1
+    },
+    {
+        question: "How often ___ you play tennis?",
+        options: ["do", "does", "are", "is", "have"],
+        answer: 0
+    },
+    {
+        question: "They ___ to the beach last weekend.",
+        options: ["go", "goes", "went", "going", "gone"],
+        answer: 2
+    },
+    {
+        question: "This isn't my bag. Is it ___?",
+        options: ["your", "yours", "you", "your's", "you're"],
+        answer: 1
+    },
+    {
+        question: "There ___ any milk in the fridge.",
+        options: ["isn't", "aren't", "don't", "doesn't", "haven't"],
+        answer: 0
+    },
+    {
+        question: "While I ___ dinner, the phone rang.",
+        options: ["cook", "cooked", "was cooking", "am cooking", "have cooked"],
+        answer: 2
+    },
+    {
+        question: "___ I borrow your pencil, please?",
+        options: ["Do", "Does", "Am", "Can", "Have"],
+        answer: 3
+    },
+    {
+        question: "She wants to be ___ architect when she grows up.",
+        options: ["a", "an", "the", "-", "some"],
+        answer: 1
+    },
+    {
+        question: "We ___ each other since we were children.",
+        options: ["know", "knew", "have known", "are knowing", "knowing"],
+        answer: 2
+    },
+    {
+        question: "The book is ___ the shelf ___ the desk.",
+        options: ["on-in", "in-on", "at-under", "on-between", "on-above"],
+        answer: 0
+    },
+    {
+        question: "If you study hard, you ___ the exam.",
+        options: ["pass", "passed", "will pass", "would pass", "are passing"],
+        answer: 2
+    },
+    {
+        question: "He's ___ than his brother.",
+        options: ["tall", "taller", "tallest", "more tall", "most tall"],
+        answer: 1
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

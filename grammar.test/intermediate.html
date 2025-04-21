@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Intermediate Grammar Test</h1>
+            <p>Assess your English grammar knowledge</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,67 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "By the time you arrive, we ___ dinner.",
+        options: ["will have", "will be having", "will have had", "have had", "are having"],
+        answer: 2
+    },
+    {
+        question: "If you ___ harder, you would have passed the exam.",
+        options: ["studied", "had studied", "would study", "have studied", "study"],
+        answer: 1
+    },
+    {
+        question: "She ___ have taken the last train - it's the only explanation.",
+        options: ["must", "should", "could", "might", "would"],
+        answer: 0
+    },
+    {
+        question: "The project ___ before the deadline despite the difficulties.",
+        options: ["was completed", "had been completed", "has been completed", "completed", "was being completed"],
+        answer: 0
+    },
+    {
+        question: "Little ___ how important this decision would be.",
+        options: ["he knew", "did he know", "he knows", "does he know", "he had known"],
+        answer: 1
+    },
+    {
+        question: "You ___ have brought your umbrella - I told you it would rain!",
+        options: ["must", "should", "could", "might", "would"],
+        answer: 1
+    },
+    {
+        question: "I'd rather you ___ that to me right now.",
+        options: ["don't say", "didn't say", "won't say", "haven't said", "not say"],
+        answer: 1
+    },
+    {
+        question: "No sooner ___ than the phone rang.",
+        options: ["I had sat down", "had I sat down", "I sat down", "did I sit down", "I was sitting down"],
+        answer: 1
+    },
+    {
+        question: "It's high time you ___ responsible for your actions.",
+        options: ["take", "took", "have taken", "will take", "are taking"],
+        answer: 1
+    },
+    {
+        question: "Were I in your position, I ___ differently.",
+        options: ["will act", "would act", "would have acted", "act", "am acting"],
+        answer: 1
+    },
+    {
+        question: "Not until yesterday ___ the truth about what happened.",
+        options: ["I learned", "did I learn", "I have learned", "I was learning", "had I learned"],
+        answer: 1
+    },
+    {
+        question: "The proposal was ___ complex that few people understood it.",
+        options: ["such", "so", "very", "too", "extremely"],
+        answer: 1
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She go to school every day.",
+            "She goes to school every day.",
+            "She going to school every day.",
+            "She is go to school every day.",
+            "She to go school every day."
+        ],
+        answer: 1 // "She goes to school every day."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Does you like coffee?",
+            "Do you like coffee?",
+            "Are you like coffee?",
+            "Is you like coffee?",
+            "You like coffee?"
+        ],
+        answer: 1 // "Do you like coffee?"
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "They is playing football now.",
+            "They am playing football now.",
+            "They are playing football now.",
+            "They be playing football now.",
+            "They playing football now."
+        ],
+        answer: 2 // "They are playing football now."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "He buy a new car yesterday.",
+            "He buys a new car yesterday.",
+            "He bought a new car yesterday.",
+            "He buying a new car yesterday.",
+            "He is buy a new car yesterday."
+        ],
+        answer: 2 // "He bought a new car yesterday."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "This is me book.",
+            "This is I book.",
+            "This is mine book.",
+            "This is my book.",
+            "This is the my book."
+        ],
+        answer: 3 // "This is my book."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "There is many books on the table.",
+            "There are many books on the table.",
+            "There be many books on the table.",
+            "There am many books on the table.",
+            "There many books on the table."
+        ],
+        answer: 1 // "There are many books on the table."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "We was watching TV when he arrived.",
+            "We were watching TV when he arrived.",
+            "We are watching TV when he arrived.",
+            "We watching TV when he arrived.",
+            "We is watching TV when he arrived."
+        ],
+        answer: 1 // "We were watching TV when he arrived."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Can she to swim?",
+            "Can she swim?",
+            "She can swim?",
+            "Does she can swim?",
+            "Is she can swim?"
+        ],
+        answer: 1 // "Can she swim?"
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I have a apple.",
+            "I have an apple.",
+            "I have the apple.",
+            "I have apple.",
+            "I have some apple."
+        ],
+        answer: 1 // "I have an apple."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "They never have been to London.",
+            "They has never been to London.",
+            "They have never been to London.",
+            "They had never been to London.",
+            "They are never been to London."
+        ],
+        answer: 2 // "They have never been to London."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The cat is on the table.",
+            "The cat is at the table.",
+            "The cat is in the table.",
+            "The cat is under the table.",
+            "The cat is over the table."
+        ],
+        answer: 0 // "The cat is on the table."
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "If it will rain, we will stay home.",
+            "If it rains, we will stay home.",
+            "If it rain, we will stay home.",
+            "If it raining, we will stay home.",
+            "If it to rain, we will stay home."
+        ],
+        answer: 1 // "If it rains, we will stay home."
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

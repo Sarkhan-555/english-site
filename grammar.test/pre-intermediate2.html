@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Pre-Intermediate Grammar Test</h1>
+            <p>Improve Your English Grammar – Pre-Intermediate Practice</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "If I would know the answer, I would tell you.",
+            "If I knew the answer, I would tell you.",
+            "If I know the answer, I would tell you.",
+            "If I had known the answer, I would tell you.",
+            "If I know the answer, I will tell you."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She must have forgot her keys at home.",
+            "She must have forgotten her keys at home.",
+            "She must forgot her keys at home.",
+            "She must has forgotten her keys at home.",
+            "She must to have forgotten her keys at home."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The movie was so bored that we left early.",
+            "The movie was so boring that we left early.",
+            "The movie was such bored that we left early.",
+            "The movie was such boring that we left early.",
+            "The movie was too bored that we left early."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I wish I can speak French fluently.",
+            "I wish I could speak French fluently.",
+            "I wish I speak French fluently.",
+            "I wish I will speak French fluently.",
+            "I wish I speaking French fluently."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "He suggested to go to the new restaurant.",
+            "He suggested go to the new restaurant.",
+            "He suggested going to the new restaurant.",
+            "He suggested that we going to the new restaurant.",
+            "He suggested us to go to the new restaurant."
+        ],
+        answer: 2
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Despite of the rain, we went for a walk.",
+            "Despite the rain, we went for a walk.",
+            "Despite to the rain, we went for a walk.",
+            "Despite that the rain, we went for a walk.",
+            "Despite raining, we went for a walk."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "This is the most fastest car I've ever driven.",
+            "This is the faster car I've ever driven.",
+            "This is the most fast car I've ever driven.",
+            "This is the fastest car I've ever driven.",
+            "This is the more fast car I've ever driven."
+        ],
+        answer: 3
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "I used to smoking when I was younger.",
+            "I used to smoke when I was younger.",
+            "I was used to smoke when I was younger.",
+            "I use to smoke when I was younger.",
+            "I using to smoke when I was younger."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "She asked me where did I live.",
+            "She asked me where I lived.",
+            "She asked me where do I live.",
+            "She asked me where I live.",
+            "She asked me where I was live."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The more you study, the better results you get.",
+            "The more you study, the better results you got.",
+            "The more you study, the best results you get.",
+            "The more you study, the good results you get.",
+            "The most you study, the better results you get."
+        ],
+        answer: 0
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Hardly I had arrived when the meeting started.",
+            "Hardly had I arrived when the meeting started.",
+            "Hardly I arrived when the meeting started.",
+            "Hardly did I arrive when the meeting started.",
+            "Hardly I was arriving when the meeting started."
+        ],
+        answer: 1
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Not only she speaks French but also German.",
+            "Not only does she speak French but also German.",
+            "Not only she speak French but also German.",
+            "Not only do she speak French but also German.",
+            "Not only speaks she French but also German."
+        ],
+        answer: 1
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

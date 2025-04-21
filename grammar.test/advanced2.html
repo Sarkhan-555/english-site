@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Advanced Grammar Test</h1>
+            <p>High-Level Grammar Practice for Advanced Learners</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were the negotiations to break down, contingency plans would immediately be implemented.",
+            "Was the negotiations to break down, contingency plans would immediately be implemented.",
+            "If the negotiations was to break down, contingency plans would immediately be implemented.",
+            "If the negotiations would break down, contingency plans would immediately be implemented.",
+            "If the negotiations were to have broken down, contingency plans would immediately be implemented."
+        ],
+        answer: 0 // Formal conditional with inversion
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Not until all safety protocols had been thoroughly reviewed was the experiment permitted to proceed.",
+            "Not until all safety protocols had been thoroughly reviewed the experiment was permitted to proceed.",
+            "Not until had all safety protocols been thoroughly reviewed the experiment was permitted to proceed.",
+            "Not until all safety protocols were thoroughly reviewed the experiment had been permitted to proceed.",
+            "Not until all safety protocols being thoroughly reviewed was the experiment permitted to proceed."
+        ],
+        answer: 0 // Negative adverbial inversion with perfect passive
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The research findings were such as to fundamentally challenge existing theories in the field.",
+            "The research findings were so as to fundamentally challenge existing theories in the field.",
+            "The research findings were too as to fundamentally challenge existing theories in the field.",
+            "The research findings were very as to fundamentally challenge existing theories in the field.",
+            "The research findings were as such to fundamentally challenge existing theories in the field."
+        ],
+        answer: 0 // Such as to construction
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had the board been apprised of the financial irregularities sooner, drastic measures might have been averted.",
+            "If the board had been apprised of the financial irregularities sooner, drastic measures might be averted.",
+            "Were the board apprised of the financial irregularities sooner, drastic measures might have averted.",
+            "Should the board be apprised of the financial irregularities sooner, drastic measures might have been averted.",
+            "Would the board have been apprised of the financial irregularities sooner, drastic measures might be averted."
+        ],
+        answer: 0 // Inverted past perfect conditional
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Seldom has a technological breakthrough had such profound implications across multiple disciplines.",
+            "Seldom a technological breakthrough has had such profound implications across multiple disciplines.",
+            "Seldom does a technological breakthrough have such profound implications across multiple disciplines.",
+            "Seldom is a technological breakthrough having such profound implications across multiple disciplines.",
+            "Seldom a technological breakthrough did have such profound implications across multiple disciplines."
+        ],
+        answer: 0 // Inversion with 'seldom'
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The delegation is understood to have been considering the proposal for several weeks before announcing their decision.",
+            "The delegation is understood to be considering the proposal for several weeks before announcing their decision.",
+            "The delegation is understood to consider the proposal for several weeks before announcing their decision.",
+            "The delegation is understood to have considered the proposal for several weeks before announcing their decision.",
+            "The delegation is understood to had been considering the proposal for several weeks before announcing their decision."
+        ],
+        answer: 0 // Passive reporting with perfect continuous infinitive
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "So compelling was the evidence that the jury reached its verdict within hours.",
+            "So compelling the evidence was that the jury reached its verdict within hours.",
+            "Such compelling was the evidence that the jury reached its verdict within hours.",
+            "So compelling had the evidence been that the jury reached its verdict within hours.",
+            "So compelling the evidence that the jury reached its verdict within hours."
+        ],
+        answer: 0 // Inversion with 'so + adjective'
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were it not for the last-minute intervention, the deal would have fallen through altogether.",
+            "Was it not for the last-minute intervention, the deal would have fallen through altogether.",
+            "If it was not for the last-minute intervention, the deal would have fallen through altogether.",
+            "If it would not be for the last-minute intervention, the deal would have fallen through altogether.",
+            "If it had not been for the last-minute intervention, the deal would fall through altogether."
+        ],
+        answer: 0 // Formal conditional with inversion
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "At no time during the proceedings were the defendants permitted to consult with their legal team.",
+            "At no time during the proceedings the defendants were permitted to consult with their legal team.",
+            "At no time during the proceedings did the defendants permitted to consult with their legal team.",
+            "At no time during the proceedings had the defendants been permitted to consult with their legal team.",
+            "At no time during the proceedings the defendants had been permitted to consult with their legal team."
+        ],
+        answer: 0 // Negative adverbial inversion
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The implications of the discovery being such that the research team immediately sought peer review.",
+            "The implications of the discovery were such that the research team immediately sought peer review.",
+            "The implications of the discovery such that the research team immediately sought peer review.",
+            "The implications of the discovery being so that the research team immediately sought peer review.",
+            "The implications of the discovery as such that the research team immediately sought peer review."
+        ],
+        answer: 1 // Such that construction
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had the investigators not persisted as they did, the truth might never have come to light.",
+            "If the investigators had not persisted as they did, the truth might never come to light.",
+            "Were the investigators not to persist as they did, the truth might never have come to light.",
+            "Should the investigators not persist as they did, the truth might never have come to light.",
+            "Would the investigators not have persisted as they did, the truth might never come to light."
+        ],
+        answer: 0 // Inverted past perfect conditional
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Rarely does one encounter a solution that addresses all aspects of such a complex problem so elegantly.",
+            "Rarely one encounters a solution that addresses all aspects of such a complex problem so elegantly.",
+            "Rarely is one encountering a solution that addresses all aspects of such a complex problem so elegantly.",
+            "Rarely has one encountered a solution that addresses all aspects of such a complex problem so elegantly.",
+            "Rarely one does encounter a solution that addresses all aspects of such a complex problem so elegantly."
+        ],
+        answer: 0 // Inversion with 'rarely'
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

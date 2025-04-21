@@ -457,8 +457,8 @@
 <body>
     <div class="test-container">
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
-            <p>Test your basic English grammar knowledge</p>
+            <h1 class="animate__animated animate__fadeIn">Proficiency Grammar Test</h1>
+            <p>Ultimate English Grammar Test – Proficiency Level</p>
         </div>
         
         <div class="progress-container">
@@ -493,32 +493,139 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data
             const questions = [
-                {
-                    question: "She ___ to school every day.",
-                    options: ["go", "goes", "going", "is go"],
-                    answer: 1
-                },
-                {
-                    question: "___ you like ice cream?",
-                    options: ["Do", "Does", "Are", "Is"],
-                    answer: 0
-                },
-                {
-                    question: "They ___ watching TV now.",
-                    options: ["is", "am", "are", "be"],
-                    answer: 2
-                },
-                {
-                    question: "My brother ___ a new car last week.",
-                    options: ["buy", "buys", "bought", "buying"],
-                    answer: 2
-                },
-                {
-                    question: "This is ___ book.",
-                    options: ["I", "me", "my", "mine"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were the economic sanctions to be lifted prematurely, the underlying issues would remain unresolved.",
+            "Was the economic sanctions to be lifted prematurely, the underlying issues would remain unresolved.",
+            "If the economic sanctions was to be lifted prematurely, the underlying issues would remain unresolved.",
+            "If the economic sanctions would be lifted prematurely, the underlying issues would remain unresolved.",
+            "If the economic sanctions were to have been lifted prematurely, the underlying issues would remain unresolved."
+        ],
+        answer: 0 // Formal conditional with inversion (complex subject)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Not until every conceivable alternative had been exhausted was military intervention seriously contemplated.",
+            "Not until every conceivable alternative had been exhausted military intervention was seriously contemplated.",
+            "Not until had every conceivable alternative been exhausted military intervention was seriously contemplated.",
+            "Not until every conceivable alternative was exhausted had military intervention been seriously contemplated.",
+            "Not until every conceivable alternative being exhausted was military intervention seriously contemplated."
+        ],
+        answer: 0 // Negative adverbial inversion with perfect passive (complex context)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The archaeological discovery was of such significance as to necessitate a complete revision of historical timelines.",
+            "The archaeological discovery was so significance as to necessitate a complete revision of historical timelines.",
+            "The archaeological discovery was too significance as to necessitate a complete revision of historical timelines.",
+            "The archaeological discovery was very significance as to necessitate a complete revision of historical timelines.",
+            "The archaeological discovery was as significance as to necessitate a complete revision of historical timelines."
+        ],
+        answer: 0 // Such as to construction (academic context)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had the preliminary findings been given due consideration, this costly error might well have been avoided.",
+            "If the preliminary findings had been given due consideration, this costly error might well be avoided.",
+            "Were the preliminary findings given due consideration, this costly error might well have avoided.",
+            "Should the preliminary findings be given due consideration, this costly error might well have been avoided.",
+            "Would the preliminary findings have been given due consideration, this costly error might well be avoided."
+        ],
+        answer: 0 // Inverted past perfect conditional (nuanced modality)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Only rarely does a philosophical work transcend its historical context to speak so directly to contemporary concerns.",
+            "Only rarely a philosophical work does transcend its historical context to speak so directly to contemporary concerns.",
+            "Only rarely a philosophical work transcends its historical context to speak so directly to contemporary concerns.",
+            "Only rarely is a philosophical work transcending its historical context to speak so directly to contemporary concerns.",
+            "Only rarely has a philosophical work transcended its historical context to speak so directly to contemporary concerns."
+        ],
+        answer: 0 // Inversion with 'only rarely' (complex adverbial)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The defendant is alleged to have been withholding crucial evidence since the trial's commencement.",
+            "The defendant is alleged to be withholding crucial evidence since the trial's commencement.",
+            "The defendant is alleged to withhold crucial evidence since the trial's commencement.",
+            "The defendant is alleged to had been withholding crucial evidence since the trial's commencement.",
+            "The defendant is alleged having withheld crucial evidence since the trial's commencement."
+        ],
+        answer: 0 // Passive reporting with perfect continuous infinitive (legal context)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "So intricate were the treaty's provisions that teams of lawyers spent months analyzing their implications.",
+            "So intricate the treaty's provisions were that teams of lawyers spent months analyzing their implications.",
+            "Such intricate were the treaty's provisions that teams of lawyers spent months analyzing their implications.",
+            "So intricate had the treaty's provisions been that teams of lawyers spent months analyzing their implications.",
+            "So intricate the treaty's provisions that teams of lawyers spent months analyzing their implications."
+        ],
+        answer: 0 // Inversion with 'so + adjective' (complex subject)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Were it not for the whistleblower's courageous intervention, the malpractice might never have come to light.",
+            "Was it not for the whistleblower's courageous intervention, the malpractice might never have come to light.",
+            "If it was not for the whistleblower's courageous intervention, the malpractice might never have come to light.",
+            "If it would not be for the whistleblower's courageous intervention, the malpractice might never have come to light.",
+            "If it had not been for the whistleblower's courageous intervention, the malpractice might never come to light."
+        ],
+        answer: 0 // Formal conditional with inversion (complex noun phrase)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "On no account are unauthorized personnel to access these highly sensitive documents.",
+            "On no account unauthorized personnel are to access these highly sensitive documents.",
+            "On no account do unauthorized personnel to access these highly sensitive documents.",
+            "On no account unauthorized personnel to access these highly sensitive documents.",
+            "On no account are to unauthorized personnel access these highly sensitive documents."
+        ],
+        answer: 0 // Negative adverbial inversion (formal prohibition)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "The consequences of the policy shift were such that entire departments had to be restructured.",
+            "The consequences of the policy shift were so that entire departments had to be restructured.",
+            "The consequences of the policy shift were too that entire departments had to be restructured.",
+            "The consequences of the policy shift were as that entire departments had to be restructured.",
+            "The consequences of the policy shift were very that entire departments had to be restructured."
+        ],
+        answer: 0 // Such that construction (complex consequence)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Had the oversight committee not maintained its rigorous standards, the research integrity would have been compromised.",
+            "If the oversight committee had not maintained its rigorous standards, the research integrity would be compromised.",
+            "Were the oversight committee not maintaining its rigorous standards, the research integrity would have been compromised.",
+            "Should the oversight committee not maintain its rigorous standards, the research integrity would have been compromised.",
+            "Would the oversight committee not have maintained its rigorous standards, the research integrity would be compromised."
+        ],
+        answer: 0 // Inverted past perfect conditional (academic integrity context)
+    },
+    {
+        question: "Which sentence is correct?",
+        options: [
+            "Little did the researchers suspect that their findings would spark such intense international debate.",
+            "Little the researchers did suspect that their findings would spark such intense international debate.",
+            "Little the researchers suspected that their findings would spark such intense international debate.",
+            "Little were the researchers suspecting that their findings would spark such intense international debate.",
+            "Little had the researchers suspected that their findings would spark such intense international debate."
+        ],
+        answer: 0 // Inversion with 'little' (unexpected outcome)
+    }
+];
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');
