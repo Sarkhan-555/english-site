@@ -852,4 +852,38 @@ footer {
 .test-card:nth-child(3) { animation-delay: 0.6s; }
 .test-card:nth-child(4) { animation-delay: 0.8s; }
 
-  
+  /* Mobile Menu Fix */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+}
