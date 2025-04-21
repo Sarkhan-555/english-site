@@ -953,3 +953,31 @@ function getIELTSTestQuestions() {
     ];
     }
     
+    // Fix mobile menu issues
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Add click event to toggle button
+    if(mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Add click events to all menu links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking anywhere outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = navMenu.contains(event.target) || mobileMenuToggle.contains(event.target);
+        if (!isClickInside && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
