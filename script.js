@@ -964,35 +964,3 @@ function getIELTSTestQuestions() {
         }
     ];
     }
-    // Fix mobile menu issue
-document.addEventListener('DOMContentLoaded', function() {
-    // Get elements
-    const mobileMenuToggle = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Toggle menu on hamburger click
-    if(mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
-    
-    // Add event listeners to all menu links, including dropdown links
-    const allMenuLinks = document.querySelectorAll('.nav-menu a');
-    allMenuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Only close menu for non-dropdown toggle links
-            if(!this.classList.contains('nav-link') || this.parentElement.querySelector('.dropdown-menu') === null) {
-                navMenu.classList.remove('active');
-            }
-        });
-    });
-    
-    // Specifically handle dropdown submenu links
-    const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-        });
-    });
-});
