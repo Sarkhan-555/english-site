@@ -22,26 +22,39 @@ function initSite() {
 }
 
 // Mobile menu toggle function
+// Mobile menu toggle function - COMPLETELY REPLACED
 function initMobileMenu() {
+    console.log("Mobile menu initialized"); // Debug log
+    
     const mobileMenuToggle = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
     if(mobileMenuToggle) {
+        console.log("Mobile menu toggle found"); // Debug log
+        
         mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
+            console.log("Menu toggle clicked"); // Debug log
             navMenu.classList.toggle('active');
-            
-            // Toggle icon
-            const icon = this.querySelector('i');
-            if(icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
         });
     }
+    
+    // All menu links including dropdown toggles and submenu links
+    const allLinks = document.querySelectorAll('.nav-menu a');
+    allLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Do not close menu if clicking dropdown toggle links
+            if(this.classList.contains('nav-link') && this.nextElementSibling) {
+                // This is a dropdown toggle, don't close menu
+                e.stopPropagation();
+                return;
+            }
+            
+            console.log("Menu link clicked, closing menu"); // Debug log
+            // Otherwise close the menu
+            navMenu.classList.remove('active');
+        });
+    });
+}
     
     
     // Close menu when clicking menu items
@@ -58,7 +71,7 @@ function initMobileMenu() {
             }
         });
     });
-}
+
 
 // Smooth scroll to anchor links
 function initSmoothScroll() {
