@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/A3xhnCMh7UI?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Who is the person introducing themselves in the video?",
+        options: ["Mrs. White", "Jake", "A student", "A teacher assistant"],
+        answer: 1
+    },
+    {
+        question: "What grade is Jake in?",
+        options: ["Sixth grade", "Fifth grade", "Eighth grade", "Seventh grade"],
+        answer: 3
+    },
+    {
+        question: "What does Jake have in his bag?",
+        options: ["A pencil", "Notebooks", "A book", "A calculator"],
+        answer: 1
+    },
+    {
+        question: "Does Jake have a dictionary?",
+        options: ["Yes", "No", "Not mentioned", "He forgot it"],
+        answer: 1
+    },
+    {
+        question: "What does Jake like to study?",
+        options: ["Math", "Science", "Language arts", "History"],
+        answer: 2
+    },
+    {
+        question: "Where is Jake asked to sit?",
+        options: ["At the door", "At the teacher's desk", "At his desk", "On the floor"],
+        answer: 2
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

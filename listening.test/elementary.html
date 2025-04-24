@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/hr_jwnwr8FA?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Who is organizing the birthday party?",
+        options: [
+            "The recipient of the message",
+            "The sender's friend",
+            "The sender themselves",
+            "A family member"
+        ],
+        answer: 0
+    },
+    {
+        question: "Where is the birthday party being held?",
+        options: [
+            "At the sender's house in the city",
+            "At the cousin's house in the countryside",
+            "At a restaurant",
+            "In a park"
+        ],
+        answer: 1
+    },
+    {
+        question: "What transportation options are mentioned for reaching the party?",
+        options: [
+            "Car only",
+            "Bus only",
+            "Car or bus",
+            "Train or bicycle"
+        ],
+        answer: 2
+    },
+    {
+        question: "What are the driving instructions to get to the cousin's house?",
+        options: [
+            "Drive straight on Forest Road, pass Brownsville, take Exit 13A, turn left, and the house is the first big house on the right",
+            "Take the motorway directly to the house",
+            "Turn left at Brownsville and drive straight",
+            "Drive to the city center and then follow signs"
+        ],
+        answer: 0
+    },
+    {
+        question: "When did the recipient receive the message about the birthday party?",
+        options: [
+            "At 3:45 p.m.",
+            "At 5:15 p.m.",
+            "In the morning",
+            "At noon"
+        ],
+        answer: 0
+    },
+    {
+        question: "How does the sender describe the size of the party?",
+        options: [
+            "A large celebration with many people",
+            "A surprise party for many guests",
+            "An outdoor festival",
+            "A small gathering with close friends"
+        ],
+        answer: 3
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

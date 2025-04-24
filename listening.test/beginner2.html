@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/88DYoevloa8?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Where does Jake want to play?",
+        options: ["Outside", "In the kitchen", "In the garden", "In the garage"],
+        answer: 1
+    },
+    {
+        question: "Why can't Jake play in the kitchen?",
+        options: ["Because his mom is cooking", "Because his sister is studying", "Because his dad is sleeping", "Because the door is closed"],
+        answer: 0
+    },
+    {
+        question: "Where is Jake's sister's notebook?",
+        options: ["On the bed", "On the table", "On the desk", "On the chair"],
+        answer: 1
+    },
+    {
+        question: "What is Jake's dad doing?",
+        options: ["Sleeping", "Cooking", "Reading", "Watching TV"],
+        answer: 0
+    },
+    {
+        question: "What is in Jake's bedroom?",
+        options: ["A bathtub", "A bookshelf", "A stove", "A computer on the desk"],
+        answer: 3
+    },
+    {
+        question: "Is Jake's bedroom upstairs?",
+        options: ["Yes", "No", "The video does not specify", "It is downstairs"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

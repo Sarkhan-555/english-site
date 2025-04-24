@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/58gGEZxHLDo?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What subject did the student fail despite studying?",
+        options: [
+            "Mathematics",
+            "Economics",
+            "History",
+            "Biology"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the student considering doing after failing the exam?",
+        options: [
+            "Dropping the course",
+            "Retaking the course",
+            "Changing majors",
+            "Ignoring the failure"
+        ],
+        answer: 1
+    },
+    {
+        question: "What happened to Bonzo, the dog?",
+        options: [
+            "He ran away",
+            "He was hit by a car",
+            "He got lost in the park",
+            "He was adopted by someone else"
+        ],
+        answer: 1
+    },
+    {
+        question: "How is the person feeling about the loss of Bonzo?",
+        options: [
+            "Happy",
+            "Indifferent",
+            "Grieving",
+            "Excited"
+        ],
+        answer: 2
+    },
+    {
+        question: "What incident occurred at school involving a phone?",
+        options: [
+            "It was given as a gift",
+            "It was found",
+            "It was broken",
+            "It was stolen"
+        ],
+        answer: 3
+    },
+    {
+        question: "What are the plans regarding the stolen phone?",
+        options: [
+            "To ignore it",
+            "To report the theft and check insurance coverage",
+            "To buy a new phone",
+            "To confront the thief directly"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

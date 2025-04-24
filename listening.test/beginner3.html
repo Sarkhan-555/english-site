@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/1tTP80GmuKc?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What time is it in the video?",
+        options: ["5:00 p.m.", "6:00 p.m.", "7:00 p.m.", "8:00 p.m."],
+        answer: 1
+    },
+    {
+        question: "What does the person say is the time to go to soccer practice?",
+        options: ["4:00 p.m.", "5:00 p.m.", "6:00 p.m.", "7:00 p.m."],
+        answer: 2
+    },
+    {
+        question: "How does the person usually get to work?",
+        options: ["By subway", "By bike", "By train", "By car"],
+        answer: 2
+    },
+    {
+        question: "What time does the person wake up?",
+        options: ["5:00 a.m.", "8:00 a.m.", "7:00 a.m.", "6:00 a.m."],
+        answer: 3
+    },
+    {
+        question: "When does the person go to bed?",
+        options: ["8:00 p.m.", "9:00 p.m.", "10:00 p.m.", "11:00 p.m."],
+        answer: 1
+    },
+    {
+        question: "What does the person say they do after practice?",
+        options: ["Go to bed at 9 p.m.", "Watch TV", "Eat dinner", "Read a book"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

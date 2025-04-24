@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/xiyYm6DtKCs?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is the main purpose of the 'homeworks' app?",
+        options: [
+            "To connect teenagers with online tutors",
+            "To provide online gaming",
+            "To help parents find local tutors",
+            "To offer homework assignments"
+        ],
+        answer: 0
+    },
+    {
+        question: "What challenges does the app aim to address?",
+        options: [
+            "Lack of internet access",
+            "Parents' lack of time or subject knowledge and limited availability of local tutors",
+            "Students' lack of motivation",
+            "High school dropout rates"
+        ],
+        answer: 1
+    },
+    {
+        question: "How does the app deliver its tutoring services?",
+        options: [
+            "In-person sessions",
+            "Through phone calls only",
+            "Via printed materials",
+            "Through an online database for remote tutoring"
+        ],
+        answer: 3
+    },
+    {
+        question: "What inspired Anna Oliveira to create the 'homeworks' app?",
+        options: [
+            "Her own struggles as a busy parent",
+            "A school project",
+            "A desire to start a tech company",
+            "A need to improve internet access"
+        ],
+        answer: 0
+    },
+    {
+        question: "What are Anna Oliveira's future plans for the app?",
+        options: [
+            "To expand its services",
+            "To shut down the platform",
+            "To focus only on local tutoring",
+            "To change the app into a social media platform"
+        ],
+        answer: 0
+    },
+    {
+        question: "How does the app make tutoring more accessible and affordable?",
+        options: [
+            "By offering in-person discounts",
+            "By providing remote tutoring via an online database",
+            "By limiting the number of users",
+            "By partnering with schools for free services"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

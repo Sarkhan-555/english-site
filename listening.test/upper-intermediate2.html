@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/9CbhOefKrf0?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Who started the pitch drop experiment?",
+        options: [
+            "Professor Thomas Parnell",
+            "Professor John Smith",
+            "Dr. Emily Clark",
+            "Professor Richard Johnson"
+        ],
+        answer: 0
+    },
+    {
+        question: "In what year did the pitch drop experiment begin?",
+        options: [
+            "1927",
+            "1937",
+            "1947",
+            "1957"
+        ],
+        answer: 0
+    },
+    {
+        question: "What does the experiment demonstrate about pitch?",
+        options: [
+            "It is a solid material",
+            "It is a very slow-moving fluid",
+            "It is a gas",
+            "It dries quickly"
+        ],
+        answer: 1
+    },
+    {
+        question: "How many drops have fallen in the nearly 90 years of the experiment?",
+        options: [
+            "5",
+            "7",
+            "9",
+            "11"
+        ],
+        answer: 2
+    },
+    {
+        question: "When is the next pitch drop expected?",
+        options: [
+            "In the 2020s",
+            "In the 2030s",
+            "In the 2040s",
+            "In the 2050s"
+        ],
+        answer: 0
+    },
+    {
+        question: "What modern feature allows people to watch the experiment live?",
+        options: [
+            "An online radio stream",
+            "A televised broadcast",
+            "A mobile app",
+            "A live webcam"
+        ],
+        answer: 3
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

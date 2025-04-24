@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/0O0RBM9fD80?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Why does Charles dislike celebrating his 40th birthday?",
+        options: [
+            "He doesn't like parties.",
+            "He finds organizing parties stressful.",
+            "He prefers to stay home alone.",
+            "He doesn't like getting older."
+        ],
+        answer: 1
+    },
+    {
+        question: "How do others generally view birthdays?",
+        options: [
+            "As a stressful event.",
+            "As a day to avoid social gatherings.",
+            "As an unnecessary tradition.",
+            "As a reason to celebrate aging."
+        ],
+        answer: 3
+    },
+    {
+        question: "What is one idea discussed to make birthdays more enjoyable?",
+        options: [
+            "Hosting a surprise party.",
+            "Having a fancy dinner.",
+            "Hosting a simple, fun, kid-style party.",
+            "Going on a vacation."
+        ],
+        answer: 2
+    },
+    {
+        question: "What childhood memory-related aspect is mentioned in the conversation?",
+        options: [
+            "Childhood birthday parties.",
+            "Favorite childhood toys.",
+            "Childhood vacations.",
+            "School experiences."
+        ],
+        answer: 0
+    },
+    {
+        question: "What is one reason someone considers a simple, kid-style birthday party?",
+        options: [
+            "To revive the joy of birthdays.",
+            "To impress friends.",
+            "To save money.",
+            "To avoid adult responsibilities."
+        ],
+        answer: 0
+    },
+    {
+        question: "How does the idea of a kid-style party influence the conversation?",
+        options: [
+            "It is rejected as childish.",
+            "It begins to grow on the participants.",
+            "It is considered too expensive.",
+            "It is dismissed as impractical."
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

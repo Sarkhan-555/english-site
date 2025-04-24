@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/0I8rSd7lQ8Q?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "How old is Paul, the sibling in the video?",
+        options: [
+            "18 years old",
+            "21 years old",
+            "25 years old",
+            "30 years old"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is Paul's occupation?",
+        options: [
+            "Apprentice engineer on ships",
+            "Ship captain",
+            "Marine biologist",
+            "Yacht designer"
+        ],
+        answer: 0
+    },
+    {
+        question: "How does the narrator feel when Paul is away?",
+        options: [
+            "Indifferent",
+            "Happy",
+            "Misses him",
+            "Annoyed"
+        ],
+        answer: 2
+    },
+    {
+        question: "How do others perceive the narrator's arguing style?",
+        options: [
+            "Friendly and kind",
+            "Unkind and aggressive",
+            "Unkind and argumentative",
+            "Quiet and reserved"
+        ],
+        answer: 2
+    },
+    {
+        question: "What is the father’s current project?",
+        options: [
+            "Building a house",
+            "Restoring an old car",
+            "Building a boat to sail around the Mediterranean",
+            "Designing a new engine"
+        ],
+        answer: 2
+    },
+    {
+        question: "How long has the mother been at home?",
+        options: [
+            "10 years",
+            "She works outside the home",
+            "5 years",
+            "Over 20 years"
+        ],
+        answer: 3
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/T0tDSDDpBFk?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What event is planned to take place in the school hall after exams?",
+        options: [
+            "A sports day",
+            "A music concert",
+            "A science fair",
+            "A school hall decoration and party"
+        ],
+        answer: 3
+    },
+    {
+        question: "Which carnival is mentioned as an upcoming event in London?",
+        options: [
+            "Notting Hill Carnival",
+            "Mardi Gras",
+            "Rio Carnival",
+            "Carnival of Venice"
+        ],
+        answer: 0
+    },
+    {
+        question: "What type of music will be played during the family boat trip for the golden wedding anniversary?",
+        options: [
+            "Jazz from the 20s",
+            "Music from the 60s",
+            "Classical music from the 1800s",
+            "Modern pop music"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the theme of the surprise birthday party for two friends?",
+        options: [
+            "Christmas",
+            "Halloween",
+            "New Year’s Eve",
+            "Valentine's Day"
+        ],
+        answer: 1
+    },
+    {
+        question: "What kind of celebration is described as a street party for a royal wedding?",
+        options: [
+            "A formal dinner",
+            "A community gathering with diverse foods",
+            "A quiet family picnic",
+            "A parade with floats"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which of the following best describes the overall tone of the upcoming events?",
+        options: [
+            "Solemn and formal",
+            "Festive and celebratory",
+            "Educational and serious",
+            "Relaxed and casual"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

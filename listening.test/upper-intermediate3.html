@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/arX_vPbtqTg?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What was the quarterly revenue of the company mentioned in the report?",
+        options: [
+            "$10.5 billion",
+            "$19.8 billion",
+            "$20 billion",
+            "$14.8 billion"
+        ],
+        answer: 3
+    },
+    {
+        question: "What percentage of voters participated in the recent elections?",
+        options: [
+            "45.5%",
+            "54.5%",
+            "60%",
+            "54.5%"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which age group showed an increase in voter turnout?",
+        options: [
+            "30-40 years",
+            "50-60 years",
+            "18-24 years",
+            "18-24 years"
+        ],
+        answer: 2
+    },
+    {
+        question: "What is a key reason for the shift towards cashless payments?",
+        options: [
+            "To increase cash circulation",
+            "To reduce the number of items needed to leave home",
+            "To promote physical currency use",
+            "To reduce the use of smartphones"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the projected gross margin for the company?",
+        options: [
+            "20-25%",
+            "34-35%",
+            "40-45%",
+            "34-35%"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which of the following is true about the company's product recall?",
+        options: [
+            "It caused the company to post losses",
+            "It was related to the 40D device",
+            "It increased the company's revenue",
+            "It had no impact on the company's profits"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

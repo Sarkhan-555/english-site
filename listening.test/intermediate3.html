@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/pwT4DOZSsAo?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is one of the narrator's favorite gadgets?",
+        options: [
+            "A gaming console",
+            "A lightweight, versatile tablet",
+            "A desktop computer",
+            "A smart speaker"
+        ],
+        answer: 1
+    },
+    {
+        question: "What pet does the narrator mention?",
+        options: [
+            "A dog",
+            "A rabbit",
+            "A bird",
+            "A cat"
+        ],
+        answer: 3
+    },
+    {
+        question: "What mode of transportation does the narrator enjoy for city travel?",
+        options: [
+            "Bicycle",
+            "Small scooter",
+            "Skateboard",
+            "Car"
+        ],
+        answer: 1
+    },
+    {
+        question: "What craft tool does the narrator use for fashion design and alterations?",
+        options: [
+            "A knitting machine",
+            "A sewing machine",
+            "An embroidery hoop",
+            "A hot glue gun"
+        ],
+        answer: 1
+    },
+    {
+        question: "What type of knives does the narrator collect and use for cooking?",
+        options: [
+            "Swiss Army knives",
+            "Japanese chef's knives",
+            "Paring knives",
+            "Steak knives"
+        ],
+        answer: 1
+    },
+    {
+        question: "What inspired the narrator's hobby of cooking with Japanese knives?",
+        options: [
+            "A family tradition",
+            "TV shows and cooking classes",
+            "A trip to Japan",
+            "A cooking competition"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

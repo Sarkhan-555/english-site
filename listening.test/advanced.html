@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/kHaDzd9JSUw?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Who is responsible for designing the customer survey questionnaire in the project?",
+        options: [
+            "John",
+            "Kiko",
+            "Mateo",
+            "Barbara"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the main reason Mateo cannot finalize the designs within the original timeframe?",
+        options: [
+            "He is managing multiple projects",
+            "He is overloaded and has other targets to meet",
+            "He is waiting for approval from his line manager",
+            "He is on leave"
+        ],
+        answer: 1
+    },
+    {
+        question: "How does Barbara plan to support Mateo with his workload?",
+        options: [
+            "By taking over his entire project",
+            "By reducing Mateo's targets temporarily",
+            "By hiring additional staff",
+            "By supporting him with his regular work for a few weeks"
+        ],
+        answer: 3
+    },
+    {
+        question: "What is the deadline for completing the design work?",
+        options: [
+            "End of the week",
+            "End of the month",
+            "End of the quarter",
+            "No specific deadline mentioned"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the main purpose of the project discussed in the meeting?",
+        options: [
+            "To improve internal communication",
+            "To benefit the company's overall value proposition",
+            "To develop a new marketing strategy",
+            "To train new employees"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which of the following statements is true based on the meeting?",
+        options: [
+            "John is managing the timelines and financials",
+            "Kiko is leading the questionnaire design",
+            "Mateo is responsible for finalizing the designs",
+            "Barbara is managing the customer survey"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

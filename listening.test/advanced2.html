@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/VxFPccQXDjI?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is the main perspective used in Alice Fitzgerald's 'Her Mother's Daughter'?",
+        options: [
+            "An adult's perspective",
+            "A child's and mother's perspective",
+            "A teacher's perspective",
+            "A police officer's perspective"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which theme is prominently explored in 'We Need to Talk About Kevin'?",
+        options: [
+            "Friendship and loyalty",
+            "Evil, empathy, and parental influence",
+            "Adventure and exploration",
+            "Romantic relationships"
+        ],
+        answer: 1
+    },
+    {
+        question: "How is 'Her Mother's Daughter' primarily compelling despite its challenging content?",
+        options: [
+            "It offers a happy ending",
+            "It immerses readers in a flawed family’s reality",
+            "It is a light-hearted comedy",
+            "It focuses on a detective story"
+        ],
+        answer: 1
+    },
+    {
+        question: "What narrative structure is used in 'We Need to Talk About Kevin'?",
+        options: [
+            "A chronological third-person narrative",
+            "A series of letters from a mother to her husband",
+            "A diary of the teenage son",
+            "A courtroom drama"
+        ],
+        answer: 1
+    },
+    {
+        question: "Both books highlight the impact of what on children?",
+        options: [
+            "Parental mistakes and hidden secrets",
+            "School education",
+            "Peer pressure",
+            "Media influence"
+        ],
+        answer: 0
+    },
+    {
+        question: "What universal family concern do both books resonate with?",
+        options: [
+            "Financial stability",
+            "The role of technology in family life",
+            "The importance of education",
+            "The influence of family secrets and mistakes on children"
+        ],
+        answer: 3
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');
