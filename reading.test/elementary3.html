@@ -431,11 +431,10 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>Anna’s Trip to Paris</h3>
+<p>Last summer, Anna went to Paris with her best friend. They stayed there for five days. The weather was sunny and warm. They visited many famous places like the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral.</p>
+<p>Every morning, they ate breakfast at a small café near their hotel. Then they walked around the city, took pictures, and bought souvenirs. In the evenings, they tried different French food and enjoyed the beautiful lights of the city. Anna loved the trip and wants to go again next year.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +459,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Where did Anna go last summer?",
+        options: ["London", "Rome", "Paris", "Berlin"],
+        answer: 2
+    },
+    {
+        question: "How many days did Anna stay in Paris?",
+        options: ["Three days", "Four days", "Five days", "Six days"],
+        answer: 2
+    },
+    {
+        question: "Which famous place did Anna visit?",
+        options: ["Statue of Liberty", "Eiffel Tower", "Big Ben", "Colosseum"],
+        answer: 1
+    },
+    {
+        question: "Where did Anna eat breakfast?",
+        options: ["In a hotel", "In a restaurant", "At home", "At a small café"],
+        answer: 3
+    },
+    {
+        question: "What did Anna and her friend do in the evenings?",
+        options: ["Went to the beach", "Watched TV", "Tried French food and saw city lights", "Stayed in the hotel"],
+        answer: 2
+    },
+    {
+        question: "Does Anna want to go to Paris again?",
+        options: ["No, she doesn’t", "Yes, next year", "She doesn't know", "Only if it's free"],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -431,11 +431,21 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Impact of Social Media on Mental Health: Benefits and Challenges</h3>
+<p>In the 21st century, social media has become an integral part of our daily lives. Platforms such as Facebook, Instagram, Twitter, and TikTok allow individuals to connect with others, share experiences, and express themselves in ways that were previously unimaginable. However, as social media use has proliferated, concerns about its impact on mental health have emerged. While social media offers various benefits, it also poses significant challenges to psychological well-being.</p>
+
+<p>One of the primary benefits of social media is its ability to connect people from different corners of the world. For many, it provides a platform to maintain relationships with friends and family members, even if they are geographically distant. Social media can also serve as a source of emotional support, especially for individuals who feel isolated or marginalized. Online communities provide spaces for people to share experiences, discuss challenges, and offer advice, which can be especially beneficial for those struggling with mental health issues such as anxiety or depression.</p>
+
+<p>Additionally, social media can be an important tool for raising awareness about mental health. Various campaigns and movements on social platforms have helped to break the stigma surrounding mental illnesses and encourage open discussions. Many organizations use social media to provide information, support resources, and promote mental health initiatives. These platforms also allow people to share their personal stories, which can inspire others to seek help and take care of their mental well-being.</p>
+
+<p>However, the constant exposure to curated content on social media can also have negative effects on mental health. One of the most significant concerns is the pressure to maintain a perfect image. Platforms like Instagram, where users often post photos showcasing their best moments, can lead to feelings of inadequacy and low self-esteem among viewers. Research has shown that individuals, particularly teenagers, can develop unrealistic expectations of themselves and others, leading to anxiety and depression.</p>
+
+<p>Another major challenge is the addictive nature of social media. Many people spend hours scrolling through feeds, checking notifications, and comparing their lives to those of others. This constant engagement can disrupt daily routines, negatively affect sleep patterns, and contribute to feelings of loneliness. Studies have found that excessive social media use is linked to increased levels of anxiety and depression, particularly among young adults.</p>
+
+<p>Furthermore, the anonymity provided by social media can foster toxic behaviors such as cyberbullying and online harassment. Individuals can be subjected to negative comments, ridicule, and even threats, which can have a serious impact on their mental health. The emotional toll of cyberbullying can lead to depression, anxiety, and, in some extreme cases, suicide.</p>
+
+<p>In conclusion, while social media has the potential to foster connections and support mental health awareness, its impact on psychological well-being is complex. The benefits of social media, such as maintaining relationships and raising awareness, are undeniable. However, the challenges it presents—such as unrealistic self-image, addiction, and online harassment—cannot be ignored. It is essential for users to approach social media with mindfulness and for society to continue researching its effects on mental health to ensure that its positive aspects outweigh the negative.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +470,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is one of the main benefits of social media?",
+        options: ["Connecting people across the world", "Encouraging unhealthy behaviors", "Promoting unrealistic body images", "Causing social isolation"],
+        answer: 0
+    },
+    {
+        question: "How can social media help raise awareness about mental health?",
+        options: ["By spreading misinformation", "By promoting mental health campaigns and initiatives", "By encouraging toxic behaviors", "By keeping mental health issues a secret"],
+        answer: 1
+    },
+    {
+        question: "What is a significant negative effect of social media on mental health?",
+        options: ["Pressure to maintain a perfect image", "Helping individuals connect with family", "Providing emotional support", "Encouraging open discussions about mental health"],
+        answer: 0
+    },
+    {
+        question: "What is one of the challenges of excessive social media use?",
+        options: ["Disruption of sleep patterns", "Improvement in mental health", "Increased social interaction", "Better time management"],
+        answer: 0
+    },
+    {
+        question: "What toxic behavior can arise due to social media anonymity?",
+        options: ["Cyberbullying and online harassment", "Increased physical activity", "Personal growth", "Creating positive relationships"],
+        answer: 0
+    },
+    {
+        question: "How can excessive social media use affect young adults?",
+        options: ["Increased levels of anxiety and depression", "Improved emotional well-being", "Better sleep patterns", "Enhanced social skills"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -431,11 +431,19 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Role of Artificial Intelligence in the Future of Work</h3>
+<p>The rapid advancement of artificial intelligence (AI) technologies is transforming many aspects of our lives, and one of the most significant areas of impact is the workplace. As AI continues to evolve, its influence on job markets, industries, and the way we work will become increasingly profound. In this article, we will explore the various ways AI is shaping the future of work, from automating routine tasks to creating new opportunities and challenges for workers.</p>
+
+<p>One of the primary ways AI is changing the workplace is by automating repetitive and time-consuming tasks. In industries like manufacturing, logistics, and customer service, AI-driven systems and robots are already replacing manual labor and enhancing productivity. This has led to increased efficiency, reduced operational costs, and improved accuracy in many fields. For example, AI-powered chatbots can handle customer inquiries 24/7, while robotic process automation (RPA) can streamline administrative tasks like data entry and invoicing.</p>
+
+<p>While automation is undoubtedly improving efficiency, it also raises concerns about job displacement. As machines take over more routine tasks, there is a growing fear that many jobs may become obsolete, particularly for low-skill workers. However, experts argue that AI will not necessarily eliminate jobs, but rather change the nature of work. For instance, AI is likely to create new roles in fields such as AI programming, data science, and robotics. Additionally, human workers will still be needed to oversee and manage AI systems, particularly in industries that require creativity, critical thinking, and emotional intelligence.</p>
+
+<p>Another area where AI is having a profound impact is in decision-making processes. In sectors such as finance, healthcare, and marketing, AI algorithms are being used to analyze vast amounts of data and generate insights that can help businesses make better decisions. AI systems can detect patterns and trends that humans may overlook, leading to more informed and accurate predictions. For example, AI is being used in healthcare to analyze medical images and diagnose diseases, while in marketing, AI tools are helping companies personalize advertisements based on customer behavior.</p>
+
+<p>However, the rise of AI also brings with it ethical considerations and challenges. One major concern is the potential for bias in AI algorithms. Since AI systems are often trained on historical data, they may inadvertently reinforce existing biases, such as racial or gender discrimination. Ensuring that AI is developed and deployed ethically is a critical issue that will need to be addressed in the coming years. Furthermore, there are concerns about the security of AI systems, as malicious actors could exploit vulnerabilities in these systems to cause harm.</p>
+
+<p>In conclusion, AI is reshaping the future of work in both positive and challenging ways. While it offers opportunities for increased efficiency, new job creation, and improved decision-making, it also presents challenges related to job displacement, ethical concerns, and security risks. As AI continues to advance, it will be crucial for workers, businesses, and policymakers to work together to navigate the changing landscape and ensure that the benefits of AI are distributed fairly and responsibly across society.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +468,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "How is AI changing the workplace?",
+        options: ["By automating repetitive tasks", "By making workers more creative", "By reducing the need for data", "By eliminating all jobs"],
+        answer: 0
+    },
+    {
+        question: "What is one concern associated with AI in the workplace?",
+        options: ["Job displacement for low-skill workers", "Increased efficiency", "More job creation in high-skill roles", "Improved work-life balance"],
+        answer: 0
+    },
+    {
+        question: "What new roles are likely to emerge due to AI?",
+        options: ["AI programming, data science, and robotics", "Clerical positions", "Factory work", "Customer service without AI assistance"],
+        answer: 0
+    },
+    {
+        question: "How does AI impact decision-making processes?",
+        options: ["By analyzing vast amounts of data and generating insights", "By replacing human workers", "By reducing the need for human decision-makers", "By automating all decisions without human input"],
+        answer: 0
+    },
+    {
+        question: "What is one ethical concern regarding AI?",
+        options: ["Bias in AI algorithms", "AI systems' ability to think creatively", "AI's ability to form relationships", "AI systems' privacy protection"],
+        answer: 0
+    },
+    {
+        question: "What security concern is associated with AI systems?",
+        options: ["Malicious actors exploiting vulnerabilities", "AI systems being too slow", "AI systems being unregulated", "AI systems being too complex to understand"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

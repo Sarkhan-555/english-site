@@ -431,11 +431,11 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>Elchin and His Achievements</h3>
+<p>Elchin is a well-known scientist from Azerbaijan. He was born in Baku and studied at the University of Baku. After finishing his studies, Elchin decided to pursue a career in physics. He traveled to many countries to participate in international research projects and collaborate with other scientists.</p>
+<p>Elchin is famous for his work in the field of renewable energy. He has developed several new technologies that help reduce pollution and improve energy efficiency. His research has been published in many scientific journals, and he has received several awards for his contributions to science.</p>
+<p>In addition to his work in science, Elchin is also involved in charity work. He supports various organizations that help children in need and promotes education in rural areas. Despite his busy schedule, Elchin always finds time to help others and make the world a better place.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +460,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Where was Elchin born?",
+        options: ["Baku", "Ganja", "Shusha", "Sumgait"],
+        answer: 0
+    },
+    {
+        question: "What is Elchin famous for?",
+        options: ["His work in medicine", "His research in renewable energy", "His sports achievements", "His acting career"],
+        answer: 1
+    },
+    {
+        question: "Where did Elchin study?",
+        options: ["University of Baku", "Harvard University", "Oxford University", "Stanford University"],
+        answer: 0
+    },
+    {
+        question: "What has Elchin developed?",
+        options: ["New technologies for renewable energy", "A new type of medicine", "A famous TV show", "A book about science"],
+        answer: 0
+    },
+    {
+        question: "What does Elchin do besides science?",
+        options: ["He works in a bank", "He is involved in charity work", "He is a politician", "He travels the world"],
+        answer: 1
+    },
+    {
+        question: "What kind of organizations does Elchin support?",
+        options: ["Organizations that help children and promote education", "Organizations that promote sports", "Organizations that build houses", "Organizations that protect animals"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

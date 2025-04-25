@@ -431,11 +431,10 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>David’s New Job</h3>
+<p>David is 25 years old and he lives in London. Last month, he got a new job at a bank. He works as a customer service assistant. He starts work at 9 o’clock in the morning and finishes at 5 o’clock in the evening. He takes the train to work every day.</p>
+<p>David likes his job because he meets many people and helps them with their problems. His manager is friendly and his colleagues are nice. After work, David sometimes goes to the gym or meets his friends for coffee. He is happy with his new life.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +459,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Where does David live?",
+        options: ["Paris", "Manchester", "London", "Berlin"],
+        answer: 2
+    },
+    {
+        question: "Where does David work?",
+        options: ["In a school", "In a bank", "In a hospital", "In a shop"],
+        answer: 1
+    },
+    {
+        question: "What time does David start work?",
+        options: ["8 o’clock", "9 o’clock", "10 o’clock", "11 o’clock"],
+        answer: 1
+    },
+    {
+        question: "How does David go to work?",
+        options: ["By car", "By bus", "On foot", "By train"],
+        answer: 3
+    },
+    {
+        question: "Why does David like his job?",
+        options: ["Because it is easy", "Because he earns a lot of money", "Because he meets people and helps them", "Because he works from home"],
+        answer: 2
+    },
+    {
+        question: "What does David do after work?",
+        options: ["He always sleeps", "He watches TV all night", "He goes to the library", "He goes to the gym or meets friends"],
+        answer: 3
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

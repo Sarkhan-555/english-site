@@ -431,11 +431,11 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>Lucy’s Amazing Summer Vacation</h3>
+<p>Last summer, Lucy had an amazing vacation. She traveled to Italy with her family for two weeks. They visited Rome, Venice, and Florence. The weather was perfect, and they enjoyed the sunshine every day.</p>
+<p>In Rome, Lucy and her family saw many historical places. They visited the Colosseum, the Roman Forum, and the Trevi Fountain. Lucy took many pictures at these famous places. Then, they traveled to Venice, where they rode in a gondola through the canals. It was a beautiful experience.</p>
+<p>In Florence, Lucy and her family visited art museums and saw famous paintings. She learned a lot about the history of Italy. In the evenings, they enjoyed delicious Italian food like pizza, pasta, and gelato. Lucy loved the vacation and can’t wait to go back to Italy someday.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +460,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "Where did Lucy travel last summer?",
+        options: ["Spain", "Italy", "France", "Greece"],
+        answer: 1
+    },
+    {
+        question: "How long did Lucy stay in Italy?",
+        options: ["One week", "Two weeks", "Three weeks", "Four weeks"],
+        answer: 1
+    },
+    {
+        question: "Which famous places did Lucy visit in Rome?",
+        options: ["The Eiffel Tower and the Louvre", "The Colosseum, the Roman Forum, and the Trevi Fountain", "The Statue of Liberty and Central Park", "The Great Wall of China and the Forbidden City"],
+        answer: 1
+    },
+    {
+        question: "What did Lucy do in Venice?",
+        options: ["Visited art museums", "Rode in a gondola through the canals", "Went shopping", "Climbed mountains"],
+        answer: 1
+    },
+    {
+        question: "What kind of food did Lucy eat in Italy?",
+        options: ["Sushi and rice", "Pizza, pasta, and gelato", "Burgers and fries", "Salads and sandwiches"],
+        answer: 1
+    },
+    {
+        question: "What did Lucy learn during her trip to Italy?",
+        options: ["How to cook Italian food", "A lot about the history of Italy", "How to ride a gondola", "How to speak Italian"],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

@@ -431,11 +431,13 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Role of Technology in Education</h3>
+<p>In recent years, technology has transformed almost every aspect of our lives, and education is no exception. From online learning platforms to interactive whiteboards, technology has significantly changed the way we teach and learn. While some argue that technology might replace traditional teaching methods, others believe that it enhances the educational experience and provides students with new opportunities for learning.</p>
+<p>One of the major benefits of technology in education is the accessibility of information. With the internet, students can access a wealth of knowledge on any subject, anytime and anywhere. Online libraries, educational websites, and video tutorials provide a vast range of resources that were once only available in textbooks or through in-person classes. This has made learning more flexible and personalized, allowing students to learn at their own pace and according to their individual needs.</p>
+<p>Moreover, technology has made education more interactive and engaging. Tools such as virtual reality (VR), augmented reality (AR), and interactive software allow students to explore subjects in a more hands-on way. For example, VR can immerse students in historical events or allow them to explore the human body in 3D, making learning more enjoyable and memorable.</p>
+<p>Despite these advantages, there are some challenges associated with the integration of technology in education. One major concern is the digital divide. Not all students have equal access to the necessary devices or high-speed internet, which can create inequalities in learning opportunities. Additionally, excessive screen time can lead to distractions and negatively impact students’ attention and focus. As a result, many educators emphasize the importance of balancing technology use with traditional methods of teaching.</p>
+<p>In conclusion, technology has the potential to greatly enhance education by providing students with new tools and opportunities for learning. However, it is important to use it wisely and ensure that all students have equal access to the resources they need. By finding the right balance, technology can be a valuable addition to the classroom, enriching the learning experience and preparing students for the future.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +462,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is one major benefit of technology in education?",
+        options: ["Accessibility of information", "Increased homework assignments", "Fewer opportunities for students", "More classroom distractions"],
+        answer: 0
+    },
+    {
+        question: "How has technology made education more flexible?",
+        options: ["By providing students with a fixed curriculum", "By allowing students to learn at their own pace and according to their needs", "By reducing the number of subjects taught", "By eliminating textbooks"],
+        answer: 1
+    },
+    {
+        question: "What interactive tools can enhance students' learning experiences?",
+        options: ["Virtual reality (VR) and augmented reality (AR)", "Books and notebooks", "Laptops and phones", "Chalkboards and pens"],
+        answer: 0
+    },
+    {
+        question: "What is a major concern regarding technology in education?",
+        options: ["Digital divide and unequal access to devices and internet", "Lack of smartphones in classrooms", "Too many tests", "Lack of physical activities in schools"],
+        answer: 0
+    },
+    {
+        question: "How can excessive screen time affect students?",
+        options: ["It can lead to distractions and negatively impact attention and focus", "It can help them learn faster", "It makes them more creative", "It increases social interaction"],
+        answer: 0
+    },
+    {
+        question: "What is the key to successfully integrating technology in education?",
+        options: ["Finding the right balance between technology use and traditional teaching methods", "Using technology all the time", "Limiting students' use of devices", "Only using online classes"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

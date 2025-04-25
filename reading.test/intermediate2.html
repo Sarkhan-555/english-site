@@ -431,11 +431,13 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Benefits of Learning a Second Language</h3>
+<p>Learning a second language is one of the most rewarding experiences a person can have. Not only does it open doors to new cultures and ways of thinking, but it also has numerous cognitive, social, and professional benefits. Studies show that bilingual people tend to have better memory, problem-solving skills, and are better at multitasking.</p>
+<p>One of the most significant advantages of speaking more than one language is the ability to communicate with people from different backgrounds. In today’s globalized world, the ability to speak multiple languages can improve your job prospects and career opportunities. Many companies seek employees who can speak foreign languages, especially those who deal with international clients or markets.</p>
+<p>In addition to the career advantages, learning a second language can also enhance travel experiences. Knowing the local language allows travelers to connect with the people and culture on a deeper level. It also makes navigating through a foreign country easier and more enjoyable, as travelers can understand signs, menus, and local customs.</p>
+<p>Moreover, research shows that bilingualism has cognitive benefits as well. Studies suggest that bilingual individuals tend to have better cognitive flexibility, which means they can switch between tasks more easily and are more adaptable to new situations. Furthermore, bilingualism may delay the onset of age-related cognitive decline, such as dementia, later in life.</p>
+<p>In conclusion, learning a second language is not only an enriching personal experience but also provides various social, professional, and cognitive benefits. It opens up a world of opportunities and helps individuals become more connected to the global community.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +462,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What are the cognitive benefits of learning a second language?",
+        options: ["Improved memory, problem-solving skills, and multitasking", "Better physical health", "Better eyesight", "Better handwriting"],
+        answer: 0
+    },
+    {
+        question: "How can knowing a second language improve your career prospects?",
+        options: ["It helps you travel more", "It can improve job opportunities, especially in international markets", "It makes you smarter", "It helps you cook better"],
+        answer: 1
+    },
+    {
+        question: "What is one of the most significant advantages of speaking multiple languages?",
+        options: ["The ability to speak faster", "The ability to communicate with people from different backgrounds", "The ability to speak more clearly", "The ability to read faster"],
+        answer: 1
+    },
+    {
+        question: "How does learning a second language affect travel experiences?",
+        options: ["It makes traveling more expensive", "It helps travelers connect with the local people and culture", "It prevents travelers from getting lost", "It makes travelers more popular"],
+        answer: 1
+    },
+    {
+        question: "What is the impact of bilingualism on cognitive function?",
+        options: ["Bilingual people tend to be more adaptable and can switch between tasks more easily", "Bilingual people tend to have worse memory", "Bilingual people are better at playing sports", "Bilingual people are better at singing"],
+        answer: 0
+    },
+    {
+        question: "What can bilingualism delay in later life?",
+        options: ["The onset of cognitive decline, such as dementia", "The ability to walk", "The ability to eat", "The ability to write"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

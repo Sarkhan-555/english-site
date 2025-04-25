@@ -431,11 +431,13 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Impact of Social Media on Society</h3>
+<p>In the past two decades, social media has become a significant part of everyday life. Platforms like Facebook, Instagram, Twitter, and TikTok allow people to connect with others, share content, and stay updated on news and trends. While social media has many positive aspects, it also has its downsides. It has the power to influence people's opinions, behaviors, and even politics.</p>
+<p>One of the positive effects of social media is its ability to connect people from all around the world. It allows individuals to maintain long-distance relationships, meet new friends, and communicate with people who share similar interests. Social media also serves as a tool for raising awareness about important social issues, such as climate change, human rights, and health campaigns.</p>
+<p>On the other hand, social media can have negative effects on mental health. Many studies have shown that excessive use of social media can lead to feelings of loneliness, anxiety, and depression. The constant comparison to others, online bullying, and the pressure to maintain a perfect image online can affect individuals' self-esteem and overall well-being.</p>
+<p>Another concern is the spread of misinformation. With the rise of fake news and misleading content, social media platforms have become a breeding ground for rumors and false information. This can have serious consequences, particularly when it comes to politics, health, and public safety.</p>
+<p>Despite these challenges, social media continues to evolve, and its impact on society is still a subject of debate. While it has the potential to bring people together and spread positive messages, it is important to use social media responsibly. Users should be aware of its effects on their mental health and be cautious about the information they consume and share online.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +462,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What is one of the positive effects of social media?",
+        options: ["It allows people to connect with others around the world", "It makes people more isolated", "It makes people sleep less", "It increases physical activity"],
+        answer: 0
+    },
+    {
+        question: "What can excessive use of social media lead to?",
+        options: ["Improved self-esteem", "Loneliness, anxiety, and depression", "Better health", "Increased energy levels"],
+        answer: 1
+    },
+    {
+        question: "What can social media help raise awareness about?",
+        options: ["Important social issues like climate change, human rights, and health", "Sports", "Fashion trends", "Food recipes"],
+        answer: 0
+    },
+    {
+        question: "What is a negative effect of social media on mental health?",
+        options: ["Improved mood", "Feelings of loneliness and anxiety", "Better sleep quality", "Increased happiness"],
+        answer: 1
+    },
+    {
+        question: "What is a concern about social media platforms?",
+        options: ["The spread of misinformation and fake news", "More people exercising", "People eating healthier", "Less social interaction"],
+        answer: 0
+    },
+    {
+        question: "What should users be cautious about on social media?",
+        options: ["The information they consume and share", "The amount of time they spend playing games", "The number of followers they have", "The type of food they eat"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

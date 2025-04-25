@@ -431,11 +431,13 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>The Importance of Physical Exercise for Mental Health</h3>
+<p>Physical exercise is often associated with improving physical health, but its benefits go far beyond just the body. In fact, regular exercise is a powerful tool for improving mental health as well. Studies have shown that physical activity can reduce symptoms of depression and anxiety, enhance mood, and boost overall emotional well-being. This is because exercise stimulates the release of endorphins, chemicals in the brain that act as natural mood lifters.</p>
+<p>One of the most significant ways that exercise improves mental health is by reducing stress. When we engage in physical activity, our body produces fewer stress hormones, such as cortisol, and more feel-good hormones like endorphins. This helps to relax the mind and body, allowing individuals to better cope with stressful situations. Additionally, exercise provides a healthy outlet for releasing pent-up emotions and frustrations, which can help prevent emotional overload.</p>
+<p>Exercise also has long-term benefits for mental clarity and cognitive function. Regular physical activity increases blood flow to the brain, which helps improve focus, memory, and overall cognitive performance. Furthermore, research has shown that regular exercise can help reduce the risk of developing cognitive decline as we age, including conditions like Alzheimer's disease and dementia.</p>
+<p>In addition to these cognitive benefits, exercise is an important part of maintaining a balanced and healthy lifestyle. It promotes better sleep, increases energy levels, and improves overall physical health, which, in turn, supports better mental health. For example, getting regular exercise can help regulate sleep patterns, which is crucial for maintaining emotional balance and mental well-being.</p>
+<p>In conclusion, physical exercise is a critical component of maintaining good mental health. By incorporating regular physical activity into our daily lives, we can improve our mood, reduce stress, and boost cognitive function. It is a simple, yet powerful way to take care of both our body and mind, leading to a happier, healthier life.</p>
+
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +462,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "How does physical exercise improve mental health?",
+        options: ["By reducing physical strength", "By increasing mood-lifting chemicals like endorphins", "By increasing stress hormones", "By making people tired all the time"],
+        answer: 1
+    },
+    {
+        question: "What is one of the significant ways that exercise reduces stress?",
+        options: ["It produces fewer stress hormones and more feel-good hormones", "It causes more stress", "It makes people feel angry", "It increases cortisol levels"],
+        answer: 0
+    },
+    {
+        question: "How does exercise improve cognitive function?",
+        options: ["By increasing blood flow to the brain", "By making the brain more tired", "By reducing brain activity", "By making the brain work harder"],
+        answer: 0
+    },
+    {
+        question: "What does exercise help to reduce the risk of?",
+        options: ["Cognitive decline and diseases like Alzheimer's", "Mental clarity", "Physical strength", "Social interaction"],
+        answer: 0
+    },
+    {
+        question: "How does exercise help with sleep?",
+        options: ["It promotes better sleep patterns", "It makes people sleep less", "It causes nightmares", "It prevents sleep"],
+        answer: 0
+    },
+    {
+        question: "What is a long-term benefit of regular exercise for mental health?",
+        options: ["Improved cognitive function", "Increased stress", "Reduced social interactions", "Decreased energy levels"],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

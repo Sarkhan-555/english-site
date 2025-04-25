@@ -431,11 +431,9 @@
         </div>
         
         <div class="reading-passage">
-            <h3>My Daily Routine</h3>
-            <p>Hello! My name is Anna. I wake up at 7 o'clock every morning. First, I brush my teeth and wash my face. Then I have breakfast with my family. I usually eat bread with cheese and drink tea.</p>
-            <p>After breakfast, I go to school. My school starts at 8:30. I have many friends at school. We study English, math, and science. My favorite subject is English because I like reading stories.</p>
-            <p>I come home at 3 o'clock in the afternoon. I do my homework first, then I play with my little brother. Sometimes we watch cartoons on TV. In the evening, we have dinner together. After dinner, I read a book or listen to music. I go to bed at 9:30.</p>
-            <p>On weekends, I don't go to school. I sleep until 8 o'clock. My family and I often visit my grandparents on Saturdays. On Sundays, I play with my friends in the park.</p>
+            <h3>A Day in the Park</h3>
+            <p>It is Saturday morning. The weather is sunny and warm. Emma and her family go to the park. Emma is 13 years old. She has a little brother named Max. He is 7 years old. They take a ball and some sandwiches with them.</p>    
+            <p>In the park, children are playing, people are walking their dogs, and some are sitting on the grass. Emma and Max play with the ball. Then they sit under a tree and eat their sandwiches. Emma’s parents drink tea and talk. After lunch, they all take a walk around the lake. There are ducks in the water. Max feeds the ducks with bread. They stay in the park for three hours and then go home. It is a happy day.</p>
         </div>
         
         <div class="quiz" id="quiz">
@@ -460,32 +458,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for reading test
             const questions = [
-                {
-                    question: "What time does Anna wake up?",
-                    options: ["6 o'clock", "7 o'clock", "8 o'clock", "9 o'clock"],
-                    answer: 1
-                },
-                {
-                    question: "What does Anna usually have for breakfast?",
-                    options: ["Cereal and milk", "Bread with cheese and tea", "Eggs and juice", "Pancakes and coffee"],
-                    answer: 1
-                },
-                {
-                    question: "What is Anna's favorite subject at school?",
-                    options: ["Math", "Science", "English", "History"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna do after school?",
-                    options: ["Watches TV immediately", "Plays with her brother", "Does homework first", "Visits her grandparents"],
-                    answer: 2
-                },
-                {
-                    question: "What does Anna usually do on Sundays?",
-                    options: ["Visits her grandparents", "Sleeps all day", "Plays with friends in the park", "Does extra homework"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What day is it in the story?",
+        options: ["Sunday", "Friday", "Saturday", "Monday"],
+        answer: 2
+    },
+    {
+        question: "How old is Emma?",
+        options: ["10", "13", "7", "15"],
+        answer: 1
+    },
+    {
+        question: "What do they take to the park?",
+        options: ["Books and a kite", "Sandwiches and a ball", "Water and cake", "Flowers and juice"],
+        answer: 1
+    },
+    {
+        question: "What do Emma and Max do in the park?",
+        options: ["Read books", "Ride bicycles", "Play with a ball and eat", "Sleep"],
+        answer: 2
+    },
+    {
+        question: "What animals do they see in the lake?",
+        options: ["Fish", "Swans", "Ducks", "Frogs"],
+        answer: 2
+    },
+    {
+        question: "How long do they stay in the park?",
+        options: ["One hour", "Two hours", "Three hours", "Four hours"],
+        answer: 2
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');
