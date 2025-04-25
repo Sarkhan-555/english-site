@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/cvOsSvmcP7Q?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "What genre of movies does the speaker enjoy the most?",
+        options: [
+            "Horror",
+            "Sci-fi",
+            "Documentaries",
+            "Musicals"
+        ],
+        answer: 1
+    },
+    {
+        question: "Why does the speaker like horror films?",
+        options: [
+            "They are unpredictable",
+            "They are predictable and social",
+            "They are visually stunning",
+            "They are funny"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which type of animated films does the speaker particularly enjoy?",
+        options: [
+            "Western cartoons",
+            "Japanese anime and children's cartoons",
+            "Stop-motion films",
+            "American superhero cartoons"
+        ],
+        answer: 1
+    },
+    {
+        question: "Why does the speaker find modern action films less exciting?",
+        options: [
+            "They are too long",
+            "They have lower budgets and rely on computer graphics",
+            "They lack good actors",
+            "They are too predictable"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the speaker's reason for rarely watching documentaries?",
+        options: [
+            "They are too long",
+            "They prefer relaxing and find them depressing",
+            "They are too educational",
+            "They are too expensive to watch"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is the speaker's opinion about musicals?",
+        options: [
+            "They dislike them and prefer their girlfriend watch them with friends",
+            "They love them and watch them often",
+            "They think they are the best genre",
+            "They find them very popular now"
+        ],
+        answer: 0
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

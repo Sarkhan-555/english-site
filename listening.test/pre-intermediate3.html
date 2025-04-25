@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/etzy32CfOCg?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "How long has the freelance writer been working from home?",
+        options: [
+            "2 years",
+            "5 years",
+            "8 years",
+            "10 years"
+        ],
+        answer: 2
+    },
+    {
+        question: "What is one reason the freelance writer prefers working from home?",
+        options: [
+            "To avoid social activities",
+            "To travel more",
+            "To balance work and family",
+            "To work in a team environment"
+        ],
+        answer: 2
+    },
+    {
+        question: "What does the person who recently started working from home miss the most?",
+        options: [
+            "The commute to work",
+            "The flexibility of working from home",
+            "Socializing with colleagues",
+            "The quiet environment"
+        ],
+        answer: 3
+    },
+    {
+        question: "What activity is the recently remote worker encouraged to join?",
+        options: [
+            "Cooking classes",
+            "Art classes",
+            "Language courses",
+            "Sports clubs"
+        ],
+        answer: 0
+    },
+    {
+        question: "How does the freelance writer feel about social activities outside work?",
+        options: [
+            "They dislike them",
+            "They are indifferent",
+            "They enjoy them",
+            "They find them stressful"
+        ],
+        answer: 1
+    },
+    {
+        question: "What is a common challenge faced by the person who recently started working from home?",
+        options: [
+            "Managing time effectively",
+            "Meeting deadlines",
+            "Staying motivated",
+            "Missing social interactions"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');

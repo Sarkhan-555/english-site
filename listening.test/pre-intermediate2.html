@@ -432,7 +432,7 @@
         
         <div class="video-container">
             <!-- YouTube iframe üçün id əlavə edin -->
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?enablejsapi=1" 
+            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/rhqfvUASt2Y?enablejsapi=1" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -478,32 +478,68 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Questions data for listening test
             const questions = [
-                {
-                    question: "What is the main topic of the conversation?",
-                    options: ["Weather", "Shopping", "Travel plans", "School"],
-                    answer: 2
-                },
-                {
-                    question: "Where are they planning to go?",
-                    options: ["To the beach", "To the mountains", "To a big city", "To the countryside"],
-                    answer: 1
-                },
-                {
-                    question: "When are they planning to leave?",
-                    options: ["Next week", "Next month", "Tomorrow", "In two days"],
-                    answer: 3
-                },
-                {
-                    question: "How will they travel?",
-                    options: ["By car", "By train", "By plane", "By bus"],
-                    answer: 0
-                },
-                {
-                    question: "What does the woman want to bring?",
-                    options: ["Her camera", "Her laptop", "Her dog", "Her bicycle"],
-                    answer: 2
-                }
-            ];
+    {
+        question: "How long has the narrator known Kevin?",
+        options: [
+            "Since childhood",
+            "Since secondary school",
+            "Since university",
+            "Since moving to the city"
+        ],
+        answer: 0
+    },
+    {
+        question: "Why did Kevin become less close to the narrator?",
+        options: [
+            "He moved to Dubai to pursue work",
+            "He became interested in girls and moved to Dubai",
+            "They had a disagreement in secondary school",
+            "Kevin moved to a different city for university"
+        ],
+        answer: 1
+    },
+    {
+        question: "How did the narrator meet Charlie?",
+        options: [
+            "In secondary school",
+            "At a bar in the city",
+            "At university",
+            "Through mutual friends"
+        ],
+        answer: 2
+    },
+    {
+        question: "What activities do the narrator and Charlie usually do together?",
+        options: [
+            "Playing tennis and going to concerts",
+            "Playing computer games and going to bars",
+            "Going to the gym and watching movies",
+            "Traveling and hiking"
+        ],
+        answer: 1
+    },
+    {
+        question: "What sport did Charlie suggest the narrator try?",
+        options: [
+            "Tennis",
+            "Racquetball",
+            "Soccer",
+            "Basketball"
+        ],
+        answer: 1
+    },
+    {
+        question: "How does the narrator feel about trying racquetball?",
+        options: [
+            "Not interested",
+            "Excited to try it",
+            "Curious but hesitant",
+            "Already tried it before"
+        ],
+        answer: 1
+    }
+];
+
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');
