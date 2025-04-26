@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak to Win | English Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --success: #4cc9f0;
+            --danger: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .speak-game {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .game-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .game-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .game-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--success));
+        }
+
+        .stat-box {
+            flex: 1;
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .stat-box:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 50%;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-label i {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .current-score .stat-value {
+            color: var(--primary);
+        }
+
+        .streak-count .stat-value {
+            color: var(--success);
+        }
+
+        .accuracy-rate .stat-value {
+            color: var(--accent);
+        }
+
+        .game-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-container {
+            width: 100%;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .sentence-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 2px solid rgba(67, 97, 238, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sentence-box.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+        }
+
+        .sentence-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--dark);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .sentence-box.active .sentence-text {
+            transform: scale(1.02);
+        }
+
+        .sentence-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: 1;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: pulseBg 3s infinite alternate;
+        }
+
+        @keyframes pulseBg {
+            0% { transform: scale(1); opacity: 0.05; }
+            100% { transform: scale(1.2); opacity: 0.1; }
+        }
+
+        .feedback-container {
+            height: 60px;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .feedback {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .feedback.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .feedback i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feedback.correct {
+            background-color: rgba(76, 201, 240, 0.2);
+            color: var(--success);
+            border: 1px solid rgba(76, 201, 240, 0.3);
+        }
+
+        .feedback.incorrect {
+            background-color: rgba(247, 37, 133, 0.2);
+            color: var(--danger);
+            border: 1px solid rgba(247, 37, 133, 0.3);
+        }
+
+        .mic-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: var(--transition);
+            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .mic-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.5);
+        }
+
+        .mic-button:active {
+            transform: translateY(1px);
+        }
+
+        .mic-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .mic-button:hover::before {
+            opacity: 1;
+        }
+
+        .mic-icon {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .mic-button.listening .mic-icon {
+            animation: pulseIcon 1.5s infinite;
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .mic-button.listening::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--primary);
+            border-radius: 60px;
+            animation: ripple 1.5s infinite;
+            opacity: 0;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 0.7; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: var(--light);
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+            animation: progressShine 2s infinite;
+        }
+
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .leaderboard-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .leaderboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .leaderboard-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .leaderboard-title i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+        }
+
+        .leaderboard-refresh {
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .leaderboard-refresh:hover {
+            color: var(--primary);
+            transform: rotate(180deg);
+        }
+
+        .leaderboard-list {
+            list-style: none;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .leaderboard-item:last-child {
+            border-bottom: none;
+        }
+
+        .leaderboard-item:hover {
+            background: rgba(67, 97, 238, 0.03);
+            transform: translateX(5px);
+        }
+
+        .leaderboard-user {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .leaderboard-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaderboard-avatar::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .leaderboard-item:hover .leaderboard-avatar::before {
+            opacity: 0.3;
+        }
+
+        .leaderboard-you .leaderboard-avatar {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+        }
+
+        .leaderboard-info {
+            flex: 1;
+        }
+
+        .leaderboard-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .leaderboard-you .leaderboard-name {
+            color: var(--primary);
+        }
+
+        .leaderboard-level {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .leaderboard-score {
+            font-weight: 700;
+            color: var(--primary);
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .leaderboard-you .leaderboard-score {
+            color: var(--secondary);
+        }
+
+        .leaderboard-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            background: var(--light);
+            color: var(--gray);
+        }
+
+        .leaderboard-you .leaderboard-badge {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+        }
+
+        /* Confetti animation */
+        .confetti {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            opacity: 0;
+            z-index: 10;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Wave animation for correct answer */
+        .wave-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(76, 201, 240, 0.3) 0%, transparent 70%);
+            transform-origin: bottom center;
+            animation: waveExpand 1.5s ease-out forwards;
+        }
+
+        @keyframes waveExpand {
+            0% {
+                transform: scale(0.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .speak-game {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .game-title {
+                font-size: 2rem;
+            }
+
+            .game-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .stat-box:not(:last-child)::after {
+                display: none;
+            }
+
+            .stat-box {
+                padding: 0.5rem 0;
+            }
+
+            .sentence-text {
+                font-size: 1.5rem;
+            }
+
+            .mic-button {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="speak-game">
+        <div class="game-header">
+            <h1 class="game-title">Speak to Win</h1>
+            <p class="game-subtitle">Test your pronunciation skills and climb the leaderboard!</p>
+        </div>
+        
+        <div class="game-stats">
+            <div class="stat-box current-score">
+                <div class="stat-label">
+                    <i class="fas fa-star"></i> Current Score
+                </div>
+                <div class="stat-value" id="current-score">0</div>
+            </div>
+            <div class="stat-box streak-count">
+                <div class="stat-label">
+                    <i class="fas fa-fire"></i> Streak
+                </div>
+                <div class="stat-value" id="streak-count">0</div>
+            </div>
+            <div class="stat-box accuracy-rate">
+                <div class="stat-label">
+                    <i class="fas fa-bullseye"></i> Accuracy
+                </div>
+                <div class="stat-value" id="accuracy-rate">0%</div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        
+        <div class="game-content">
+            <div class="sentence-container">
+                <div class="sentence-box" id="sentence-box">
+                    <div class="sentence-bg"></div>
+                    <p class="sentence-text" id="sentence-text">Click the microphone to start</p>
+                </div>
+            </div>
+            
+            <div class="feedback-container">
+                <div class="feedback" id="feedback"></div>
+            </div>
+            
+            <button class="mic-button" id="mic-button">
+                <span class="mic-icon"><i class="fas fa-microphone"></i></span>
+                <span>Start Speaking</span>
+            </button>
+        </div>
+        
+        <div class="leaderboard-container">
+            <div class="leaderboard-header">
+                <h3 class="leaderboard-title">
+                    <i class="fas fa-trophy"></i> Leaderboard
+                </h3>
+                <button class="leaderboard-refresh" id="refresh-leaderboard">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            <ul class="leaderboard-list" id="leaderboard">
+                <!-- Leaderboard items will be added by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Game variables
+        let currentScore = 0;
+        let highScore = localStorage.getItem('speakToWinHighScore') || 0;
+        let streakCount = 0;
+        let totalAttempts = 0;
+        let correctAttempts = 0;
+        let isRecognizing = false;
+        
+        // Sentences database (could be fetched from API in production)
+        const sentences = [
+            "Heluuuu",
+            "nunnunu",
+            "ulili"
+        ];
+        
+        // Demo leaderboard data
+        const demoUsers = [
+            { name: "Alex Johnson", score: 450, level: "Expert" },
+            { name: "Sarah Miller", score: 380, level: "Advanced" },
+            { name: "David Wilson", score: 320, level: "Intermediate" },
+            { name: "Emily Davis", score: 290, level: "Intermediate" },
+            { name: "Michael Brown", score: 250, level: "Intermediate" },
+            { name: "Sophia Garcia", score: 10, level: "Beginner" },
+            
+
+            
+        ];
+        
+        // DOM elements
+        const elements = {
+            sentenceText: document.getElementById('sentence-text'),
+            micButton: document.getElementById('mic-button'),
+            feedback: document.getElementById('feedback'),
+            currentScoreDisplay: document.getElementById('current-score'),
+            streakCountDisplay: document.getElementById('streak-count'),
+            accuracyRateDisplay: document.getElementById('accuracy-rate'),
+            progressBar: document.getElementById('progress-bar'),
+            leaderboard: document.getElementById('leaderboard'),
+            sentenceBox: document.getElementById('sentence-box'),
+            refreshLeaderboard: document.getElementById('refresh-leaderboard'),
+            feedbackContainer: document.querySelector('.feedback-container')
+        };
+        
+        // Initialize game
+        function initGame() {
+            updateStats();
+            updateLeaderboard();
+            loadNewSentence();
+            setupEventListeners();
+        }
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            elements.micButton.addEventListener('click', toggleSpeechRecognition);
+            elements.refreshLeaderboard.addEventListener('click', updateLeaderboard);
+        }
+        
+        // Load a new random sentence
+        function loadNewSentence() {
+            const randomIndex = Math.floor(Math.random() * sentences.length);
+            elements.sentenceText.textContent = sentences[randomIndex];
+            elements.sentenceText.dataset.original = sentences[randomIndex];
+            hideFeedback();
+            elements.sentenceBox.classList.remove('active');
+        }
+        
+        // Toggle speech recognition
+        function toggleSpeechRecognition() {
+            if (isRecognizing) {
+                stopSpeechRecognition();
+            } else {
+                startSpeechRecognition();
+            }
+        }
+        
+        // Start speech recognition
+        function startSpeechRecognition() {
+            // Check if browser supports speech recognition
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                showFeedback("Speech recognition not supported in your browser", false);
+                return;
+            }
+            
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+            
+            // UI updates
+            isRecognizing = true;
+            elements.micButton.classList.add('listening');
+            elements.micButton.innerHTML = '<span class="mic-icon"><i class="fas fa-microphone"></i></span><span>Listening...</span>';
+            elements.sentenceText.textContent = "Listening...";
+            elements.sentenceBox.classList.add('active');
+            
+            recognition.start();
+            
+            recognition.onresult = (event) => {
+                const speechResult = event.results[0][0].transcript.trim();
+                const targetSentence = elements.sentenceText.dataset.original;
+                
+                processResult(speechResult, targetSentence);
+            };
+            
+            recognition.onerror = (event) => {
+                showFeedback(`Error: ${event.error}`, false);
+                resetRecognitionUI();
+            };
+            
+            recognition.onend = () => {
+                if (isRecognizing) {
+                    recognition.start(); // Continue listening
+                } else {
+                    resetRecognitionUI();
+                }
+            };
+        }
+        
+        // Stop speech recognition
+        function stopSpeechRecognition() {
+            isRecognizing = false;
+            // The onend handler will take care of UI reset
+        }
+        
+        // Reset recognition UI
+        function resetRecognitionUI() {
+            elements.micButton.classList.remove('listening');
+            elements.micButton.innerHTML = '<span class="mic-icon"><i class="fas fa-microphone"></i></span><span>Start Speaking</span>';
+            loadNewSentence();
+        }
+        
+        // Process recognition result
+        function processResult(speechResult, targetSentence) {
+            totalAttempts++;
+            
+            // Simple comparison (in a real app, use more sophisticated comparison)
+            const isCorrect = speechResult.toLowerCase() === targetSentence.toLowerCase();
+            
+            if (isCorrect) {
+                correctAttempts++;
+                streakCount++;
+                currentScore += 10 + Math.min(streakCount, 5) * 2; // Bonus for streaks
+                
+                showFeedback("Perfect! +" + (10 + Math.min(streakCount, 5) * 2) + " points", true);
+                animateSuccess();
+                createConfetti(20);
+            } else {
+                streakCount = 0;
+                showFeedback(`Almost! You said: "${speechResult}"`, false);
+            }
+            
+            updateStats();
+            updateLeaderboard();
+            
+            // Stop recognition after result
+            stopSpeechRecognition();
+        }
+        
+        // Update all stats displays
+        function updateStats() {
+            elements.currentScoreDisplay.textContent = currentScore;
+            elements.streakCountDisplay.textContent = streakCount;
+            
+            const accuracy = totalAttempts > 0 ? Math.round((correctAttempts / totalAttempts) * 100) : 0;
+            elements.accuracyRateDisplay.textContent = `${accuracy}%`;
+            
+            // Update progress bar (based on accuracy)
+            elements.progressBar.style.width = `${accuracy}%`;
+            
+            // Save high score
+            if (currentScore > highScore) {
+                highScore = currentScore;
+                localStorage.setItem('speakToWinHighScore', highScore);
+            }
+        }
+        
+        // Show feedback message
+        function showFeedback(message, isCorrect) {
+            elements.feedback.textContent = message;
+            elements.feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            elements.feedback.innerHTML = `
+                <i class="fas fa-${isCorrect ? 'check-circle' : 'times-circle'}"></i>
+                ${message}
+            `;
+            
+            // Trigger animation
+            setTimeout(() => {
+                elements.feedback.classList.add('show');
+            }, 10);
+        }
+        
+        // Hide feedback message
+        function hideFeedback() {
+            elements.feedback.classList.remove('show');
+        }
+        
+        // Animate success
+        function animateSuccess() {
+            // Wave effect
+            const waveEffect = document.createElement('div');
+            waveEffect.className = 'wave-effect';
+            const wave = document.createElement('div');
+            wave.className = 'wave';
+            waveEffect.appendChild(wave);
+            elements.sentenceBox.appendChild(waveEffect);
+            
+            // Remove after animation
+            setTimeout(() => {
+                waveEffect.remove();
+            }, 1500);
+            
+            // Pulse animation
+            elements.sentenceBox.classList.add('pulse');
+            setTimeout(() => {
+                elements.sentenceBox.classList.remove('pulse');
+            }, 500);
+        }
+        
+        // Create confetti effect
+        function createConfetti(count = 30) {
+            for (let i = 0; i < count; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Random position
+                confetti.style.left = `${Math.random() * 100}%`;
+                
+                // Random color
+                const hue = Math.floor(Math.random() * 360);
+                confetti.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                
+                // Random shape
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                // Random animation duration
+                confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                
+                elements.sentenceBox.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
+        // Update leaderboard
+        function updateLeaderboard() {
+            // Combine demo data with current user
+            const allUsers = [...demoUsers];
+            
+            // Add current user if they have a score
+            if (currentScore > 0) {
+                allUsers.push({
+                    name: "You",
+                    score: currentScore,
+                    level: getLevel(currentScore)
+                });
+            }
+            
+            // Sort by score descending
+            allUsers.sort((a, b) => b.score - a.score);
+            
+            // Clear and rebuild leaderboard
+            elements.leaderboard.innerHTML = '';
+            
+            allUsers.slice(0, 6).forEach((user, index) => {
+                const li = document.createElement('li');
+                li.className = `leaderboard-item ${user.name === "You" ? 'leaderboard-you' : ''}`;
+                
+                li.innerHTML = `
+                    <div class="leaderboard-user">
+                        <div class="leaderboard-avatar">
+                            ${user.name === "You" ? '<i class="fas fa-user"></i>' : user.name.charAt(0)}
+                        </div>
+                        <div class="leaderboard-info">
+                            <div class="leaderboard-name">${user.name}</div>
+                            <div class="leaderboard-level">${user.level}</div>
+                        </div>
+                    </div>
+                    <div class="leaderboard-score">
+                        ${user.score} pts
+                        ${user.name === "You" ? '<span class="leaderboard-badge">YOU</span>' : ''}
+                    </div>
+                `;
+                
+                // Add crown for top user
+                if (index === 0 && user.name !== "You") {
+                    const crown = document.createElement('i');
+                    crown.className = 'fas fa-crown';
+                    crown.style.color = '#FFD700';
+                    crown.style.marginLeft = '5px';
+                    li.querySelector('.leaderboard-score').appendChild(crown);
+                }
+                
+                elements.leaderboard.appendChild(li);
+            });
+            
+            // Add refresh animation
+            elements.refreshLeaderboard.classList.add('fa-spin');
+            setTimeout(() => {
+                elements.refreshLeaderboard.classList.remove('fa-spin');
+            }, 1000);
+        }
+        
+        // Get user level based on score
+        function getLevel(score) {
+            if (score >= 400) return "Expert";
+            if (score >= 300) return "Advanced";
+            if (score >= 200) return "Intermediate";
+            if (score >= 100) return "Beginner";
+            return "Newbie";
+        }
+        
+        // Initialize the game
+        initGame();
+    </script>
+</body>
+</html>
