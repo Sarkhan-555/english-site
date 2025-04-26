@@ -264,6 +264,75 @@
             border: 1px solid rgba(247, 37, 133, 0.3);
         }
 
+        /* Button container for both buttons */
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Pronunciation button */
+        .pronunciation-button {
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            color: var(--white);
+            border: none;
+            padding: 1rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(72, 149, 239, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .pronunciation-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(72, 149, 239, 0.5);
+        }
+
+        .pronunciation-button:active {
+            transform: translateY(1px);
+        }
+
+        .pronunciation-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--success), var(--accent));
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .pronunciation-button:hover::before {
+            opacity: 1;
+        }
+
+        .pronunciation-button .sound-icon {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .pronunciation-button.speaking .sound-icon {
+            animation: soundWave 1s infinite;
+        }
+
+        @keyframes soundWave {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
         .mic-button {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
@@ -276,7 +345,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
             transition: var(--transition);
             box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
             position: relative;
@@ -621,9 +689,16 @@
                 font-size: 1.5rem;
             }
 
+            .button-container {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .pronunciation-button,
             .mic-button {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -672,10 +747,19 @@
                 <div class="feedback" id="feedback"></div>
             </div>
             
-            <button class="mic-button" id="mic-button">
-                <span class="mic-icon"><i class="fas fa-microphone"></i></span>
-                <span>Start Speaking</span>
-            </button>
+            <div class="button-container">
+                <button class="mic-button" id="mic-button">
+                    <span class="mic-icon"><i class="fas fa-microphone"></i></span>
+                    <span>Start Speaking</span>
+                </button>
+
+                <button class="pronunciation-button" id="pronunciation-button">
+                    <span class="sound-icon"><i class="fas fa-volume-up"></i></span>
+                    <span>Hear Pronunciation</span>
+                </button>
+                
+                
+            </div>
         </div>
         
         <div class="leaderboard-container">
@@ -701,12 +785,31 @@
         let totalAttempts = 0;
         let correctAttempts = 0;
         let isRecognizing = false;
+        let isSpeaking = false;
         
         // Sentences database (could be fetched from API in production)
         const sentences = [
-            "Heluuuu",
-            "nunnunu",
-            "ulili"
+            "hello",
+            "The quick brown fox jumps over the lazy dog",
+            "She sells seashells by the seashore",
+            "How much wood would a woodchuck chuck",
+            "Peter Piper picked a peck of pickled peppers",
+            "Unique New York",
+            "Red leather, yellow leather",
+            "Six slippery snails slid slowly seaward",
+            "Which wristwatches are Swiss wristwatches",
+            "Eleven benevolent elephants",
+            "The thirty-three thieves thought that they thrilled the throne throughout Thursday",
+            "I scream, you scream, we all scream for ice cream",
+            "Fuzzy Wuzzy was a bear, Fuzzy Wuzzy had no hair",
+            "Betty Botter bought some butter",
+            "A proper copper coffee pot",
+            "Toy boat, toy boat, toy boat",
+            "Irish wristwatch, Swiss wristwatch",
+            "Lesser leather never weathered wetter weather better",
+            "Black background, brown background",
+            "Four fine fresh fish for you",
+            "Greek grapes, Greek grapes, Greek grapes"
         ];
         
         // Demo leaderboard data
@@ -716,9 +819,8 @@
             { name: "David Wilson", score: 320, level: "Intermediate" },
             { name: "Emily Davis", score: 290, level: "Intermediate" },
             { name: "Michael Brown", score: 250, level: "Intermediate" },
-            { name: "Sophia Garcia", score: 10, level: "Beginner" },
+            { name: "Sophia Garcia", score: 5, level: "Beginner" }
             
-
             
         ];
         
@@ -726,6 +828,7 @@
         const elements = {
             sentenceText: document.getElementById('sentence-text'),
             micButton: document.getElementById('mic-button'),
+            pronunciationButton: document.getElementById('pronunciation-button'),
             feedback: document.getElementById('feedback'),
             currentScoreDisplay: document.getElementById('current-score'),
             streakCountDisplay: document.getElementById('streak-count'),
@@ -748,6 +851,7 @@
         // Set up event listeners
         function setupEventListeners() {
             elements.micButton.addEventListener('click', toggleSpeechRecognition);
+            elements.pronunciationButton.addEventListener('click', speakCurrentSentence);
             elements.refreshLeaderboard.addEventListener('click', updateLeaderboard);
         }
         
@@ -758,6 +862,55 @@
             elements.sentenceText.dataset.original = sentences[randomIndex];
             hideFeedback();
             elements.sentenceBox.classList.remove('active');
+        }
+        
+        // Speak the current sentence
+        function speakCurrentSentence() {
+            // Check if speech synthesis is supported
+            if ('speechSynthesis' in window) {
+                // If already speaking, cancel
+                if (isSpeaking) {
+                    window.speechSynthesis.cancel();
+                    resetPronunciationUI();
+                    return;
+                }
+                
+                const sentence = elements.sentenceText.dataset.original || elements.sentenceText.textContent;
+                const utterance = new SpeechSynthesisUtterance(sentence);
+                
+                // Set properties
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9; // Slightly slower for clarity
+                utterance.pitch = 1;
+                
+                // UI updates
+                isSpeaking = true;
+                elements.pronunciationButton.classList.add('speaking');
+                elements.pronunciationButton.innerHTML = '<span class="sound-icon"><i class="fas fa-volume-up"></i></span><span>Listening...</span>';
+                
+                // Events
+                utterance.onend = function() {
+                    resetPronunciationUI();
+                };
+                
+                utterance.onerror = function() {
+                    showFeedback("Error playing pronunciation", false);
+                    resetPronunciationUI();
+                };
+                
+                // Speak
+                window.speechSynthesis.speak(utterance);
+                
+            } else {
+                showFeedback("Speech synthesis not supported in your browser", false);
+            }
+        }
+        
+        // Reset pronunciation button UI
+        function resetPronunciationUI() {
+            isSpeaking = false;
+            elements.pronunciationButton.classList.remove('speaking');
+            elements.pronunciationButton.innerHTML = '<span class="sound-icon"><i class="fas fa-volume-up"></i></span><span>Hear Pronunciation</span>';
         }
         
         // Toggle speech recognition
@@ -804,84 +957,118 @@
                 showFeedback(`Error: ${event.error}`, false);
                 resetRecognitionUI();
             };
-            
             recognition.onend = () => {
-                if (isRecognizing) {
-                    recognition.start(); // Continue listening
-                } else {
-                    resetRecognitionUI();
-                }
+                resetRecognitionUI();
             };
         }
         
         // Stop speech recognition
         function stopSpeechRecognition() {
-            isRecognizing = false;
-            // The onend handler will take care of UI reset
+            // In a real implementation, we would stop the recognition here
+            // For this demo, we'll just reset the UI
+            resetRecognitionUI();
         }
         
         // Reset recognition UI
         function resetRecognitionUI() {
+            isRecognizing = false;
             elements.micButton.classList.remove('listening');
             elements.micButton.innerHTML = '<span class="mic-icon"><i class="fas fa-microphone"></i></span><span>Start Speaking</span>';
-            loadNewSentence();
+            elements.sentenceText.textContent = elements.sentenceText.dataset.original || "Click the microphone to start";
+            elements.sentenceBox.classList.remove('active');
         }
         
-        // Process recognition result
+        // Process speech recognition result
         function processResult(speechResult, targetSentence) {
             totalAttempts++;
             
-            // Simple comparison (in a real app, use more sophisticated comparison)
+            // Simple comparison (in a real app, you'd want more sophisticated comparison)
             const isCorrect = speechResult.toLowerCase() === targetSentence.toLowerCase();
             
             if (isCorrect) {
                 correctAttempts++;
                 streakCount++;
-                currentScore += 10 + Math.min(streakCount, 5) * 2; // Bonus for streaks
+                currentScore += 10 * streakCount; // Bonus for streaks
                 
-                showFeedback("Perfect! +" + (10 + Math.min(streakCount, 5) * 2) + " points", true);
-                animateSuccess();
-                createConfetti(20);
+                // Create confetti effect
+                createConfetti();
+                
+                // Create wave effect
+                const waveEffect = document.createElement('div');
+                waveEffect.className = 'wave-effect';
+                const wave = document.createElement('div');
+                wave.className = 'wave';
+                waveEffect.appendChild(wave);
+                elements.sentenceBox.appendChild(waveEffect);
+                
+                // Remove wave effect after animation
+                setTimeout(() => {
+                    elements.sentenceBox.removeChild(waveEffect);
+                }, 1500);
+                
+                showFeedback("Correct! Well done!", true);
+                
+                // Load new sentence after delay
+                setTimeout(() => {
+                    loadNewSentence();
+                }, 1500);
             } else {
                 streakCount = 0;
-                showFeedback(`Almost! You said: "${speechResult}"`, false);
+                showFeedback(`Incorrect. Try again: "${targetSentence}"`, false);
             }
             
+            // Update stats and progress
             updateStats();
-            updateLeaderboard();
+            updateProgress();
             
-            // Stop recognition after result
-            stopSpeechRecognition();
-        }
-        
-        // Update all stats displays
-        function updateStats() {
-            elements.currentScoreDisplay.textContent = currentScore;
-            elements.streakCountDisplay.textContent = streakCount;
-            
-            const accuracy = totalAttempts > 0 ? Math.round((correctAttempts / totalAttempts) * 100) : 0;
-            elements.accuracyRateDisplay.textContent = `${accuracy}%`;
-            
-            // Update progress bar (based on accuracy)
-            elements.progressBar.style.width = `${accuracy}%`;
-            
-            // Save high score
+            // Save high score to localStorage
             if (currentScore > highScore) {
                 highScore = currentScore;
                 localStorage.setItem('speakToWinHighScore', highScore);
             }
         }
         
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#4361ee', '#3f37c9', '#4895ef', '#4cc9f0', '#f72585'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                
+                // Random shape
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                document.querySelector('.speak-game').appendChild(confetti);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+        
         // Show feedback message
         function showFeedback(message, isCorrect) {
             elements.feedback.textContent = message;
-            elements.feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
-            elements.feedback.innerHTML = `
-                <i class="fas fa-${isCorrect ? 'check-circle' : 'times-circle'}"></i>
-                ${message}
-            `;
+            elements.feedback.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
             
-            // Trigger animation
+            // Add icon
+            const icon = document.createElement('i');
+            icon.className = isCorrect ? 'fas fa-check-circle' : 'fas fa-times-circle';
+            elements.feedback.insertBefore(icon, elements.feedback.firstChild);
+            
+            // Show with animation
             setTimeout(() => {
                 elements.feedback.classList.add('show');
             }, 10);
@@ -892,67 +1079,31 @@
             elements.feedback.classList.remove('show');
         }
         
-        // Animate success
-        function animateSuccess() {
-            // Wave effect
-            const waveEffect = document.createElement('div');
-            waveEffect.className = 'wave-effect';
-            const wave = document.createElement('div');
-            wave.className = 'wave';
-            waveEffect.appendChild(wave);
-            elements.sentenceBox.appendChild(waveEffect);
+        // Update game stats
+        function updateStats() {
+            elements.currentScoreDisplay.textContent = currentScore;
+            elements.streakCountDisplay.textContent = streakCount;
             
-            // Remove after animation
-            setTimeout(() => {
-                waveEffect.remove();
-            }, 1500);
-            
-            // Pulse animation
-            elements.sentenceBox.classList.add('pulse');
-            setTimeout(() => {
-                elements.sentenceBox.classList.remove('pulse');
-            }, 500);
+            const accuracy = totalAttempts > 0 ? Math.round((correctAttempts / totalAttempts) * 100) : 0;
+            elements.accuracyRateDisplay.textContent = accuracy + '%';
         }
         
-        // Create confetti effect
-        function createConfetti(count = 30) {
-            for (let i = 0; i < count; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                
-                // Random position
-                confetti.style.left = `${Math.random() * 100}%`;
-                
-                // Random color
-                const hue = Math.floor(Math.random() * 360);
-                confetti.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
-                
-                // Random size
-                const size = Math.random() * 10 + 5;
-                confetti.style.width = `${size}px`;
-                confetti.style.height = `${size}px`;
-                
-                // Random shape
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                
-                // Random animation duration
-                confetti.style.animationDuration = `${Math.random() * 2 + 1}s`;
-                
-                elements.sentenceBox.appendChild(confetti);
-                
-                // Remove confetti after animation
-                setTimeout(() => {
-                    confetti.remove();
-                }, 3000);
-            }
+        // Update progress bar
+        function updateProgress() {
+            // Simple progress calculation (could be based on levels in a real game)
+            const progress = Math.min(100, (currentScore / 500) * 100);
+            elements.progressBar.style.width = progress + '%';
         }
         
         // Update leaderboard
         function updateLeaderboard() {
-            // Combine demo data with current user
+            // Clear current leaderboard
+            elements.leaderboard.innerHTML = '';
+            
+            // Combine demo users with current player
             const allUsers = [...demoUsers];
             
-            // Add current user if they have a score
+            // Add current player if they have a score
             if (currentScore > 0) {
                 allUsers.push({
                     name: "You",
@@ -961,52 +1112,45 @@
                 });
             }
             
-            // Sort by score descending
+            // Sort by score (descending)
             allUsers.sort((a, b) => b.score - a.score);
             
-            // Clear and rebuild leaderboard
-            elements.leaderboard.innerHTML = '';
+            // Display top 5
+            const topUsers = allUsers.slice(0, 6);
             
-            allUsers.slice(0, 6).forEach((user, index) => {
+            topUsers.forEach((user, index) => {
                 const li = document.createElement('li');
-                li.className = `leaderboard-item ${user.name === "You" ? 'leaderboard-you' : ''}`;
+                li.className = 'leaderboard-item' + (user.name === "You" ? ' leaderboard-you' : '');
                 
                 li.innerHTML = `
                     <div class="leaderboard-user">
-                        <div class="leaderboard-avatar">
-                            ${user.name === "You" ? '<i class="fas fa-user"></i>' : user.name.charAt(0)}
-                        </div>
+                        <div class="leaderboard-avatar">${user.name.charAt(0)}</div>
                         <div class="leaderboard-info">
                             <div class="leaderboard-name">${user.name}</div>
                             <div class="leaderboard-level">${user.level}</div>
                         </div>
                     </div>
-                    <div class="leaderboard-score">
-                        ${user.score} pts
-                        ${user.name === "You" ? '<span class="leaderboard-badge">YOU</span>' : ''}
-                    </div>
+                    <div class="leaderboard-score">${user.score} pts</div>
                 `;
-                
                 // Add crown for top user
-                if (index === 0 && user.name !== "You") {
-                    const crown = document.createElement('i');
-                    crown.className = 'fas fa-crown';
-                    crown.style.color = '#FFD700';
-                    crown.style.marginLeft = '5px';
-                    li.querySelector('.leaderboard-score').appendChild(crown);
-                }
-                
+if (index === 0 && user.name !== "You") {
+    const crown = document.createElement('i');
+    crown.className = 'fas fa-crown';
+    crown.style.color = '#FFD700';
+    crown.style.marginLeft = '5px';
+    li.querySelector('.leaderboard-score').appendChild(crown);
+}
                 elements.leaderboard.appendChild(li);
             });
             
-            // Add refresh animation
-            elements.refreshLeaderboard.classList.add('fa-spin');
+            // Show refresh animation
+            elements.refreshLeaderboard.classList.add('refreshing');
             setTimeout(() => {
-                elements.refreshLeaderboard.classList.remove('fa-spin');
+                elements.refreshLeaderboard.classList.remove('refreshing');
             }, 1000);
         }
         
-        // Get user level based on score
+        // Get level based on score
         function getLevel(score) {
             if (score >= 400) return "Expert";
             if (score >= 300) return "Advanced";
@@ -1015,8 +1159,9 @@
             return "Newbie";
         }
         
-        // Initialize the game
-        initGame();
+        // Initialize the game when the page loads
+        window.addEventListener('DOMContentLoaded', initGame);
+        
     </script>
 </body>
 </html>
