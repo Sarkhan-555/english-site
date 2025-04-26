@@ -887,3 +887,13 @@ footer {
         display: block;
     }
 }
+.timer {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    background: var(--primary-light);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: inline-block;
+}

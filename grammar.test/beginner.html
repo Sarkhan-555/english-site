@@ -452,6 +452,7 @@
                 min-width: 80px;
             }
         }
+        
     </style>
 </head>
 <body>
@@ -459,6 +460,7 @@
         <div class="test-header">
             <h1 class="animate__animated animate__fadeIn">Beginner Grammar Test</h1>
             <p>Test your basic English grammar knowledge</p>
+            
         </div>
         
         <div class="progress-container">
@@ -575,6 +577,7 @@
                 updateProgressBar();
                 updateNavigation();
             }
+            
             
             // Render current question
             function renderQuestion() {
@@ -698,12 +701,15 @@
             
             // Calculate and show results
             function showResults() {
+                
                 score = 0;
                 questions.forEach((question, index) => {
                     if (userAnswers[index] === question.answer) {
                         score++;
                     }
+                    
                 });
+                
                 
                 const percentage = (score / questions.length) * 100;
                 

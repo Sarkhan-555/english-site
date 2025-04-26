@@ -47,11 +47,13 @@
             transform: translateY(20px);
             opacity: 0;
             animation: fadeInUp 0.6s forwards;
+            position: relative;
         }
         
         .test-header {
             text-align: center;
             margin-bottom: 2rem;
+            position: relative;
         }
         
         .test-header h1 {
@@ -67,6 +69,63 @@
             color: #6c757d;
         }
         
+        /* Modern Timer Styles */
+        .timer-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        
+        .timer-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+            border: 1px solid rgba(67, 97, 238, 0.2);
+            transition: var(--transition);
+        }
+        
+        .timer-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(67, 97, 238, 0.2);
+        }
+        
+        .timer-icon {
+            margin-right: 0.6rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .timer-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        
+        .time-result {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+            background: var(--primary-light);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--border-radius);
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .time-result i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Rest of your existing styles... */
         .reading-passage {
             background: var(--light);
             padding: 1.5rem;
@@ -405,6 +464,17 @@
                 padding: 1.5rem;
             }
             
+            .timer-wrapper {
+                position: static;
+                margin-bottom: 1.5rem;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .timer-container {
+                padding: 0.5rem 1rem;
+            }
+            
             .question {
                 padding: 1rem;
             }
@@ -425,8 +495,16 @@
 </head>
 <body>
     <div class="test-container">
+        <!-- Timer positioned in top-right corner -->
+        <div class="timer-wrapper">
+            <div class="timer-container">
+                <i class="fas fa-clock timer-icon"></i>
+                <span class="timer-display" id="timer">00:00</span>
+            </div>
+        </div>
+        
         <div class="test-header">
-            <h1 class="animate__animated animate__fadeIn">Beginner Reading Test</h1>
+            <h1 class="animate__animated animate__fadeIn">Pre-Intermediate Reading Test</h1>
             <p>Read the passage and answer the questions below</p>
         </div>
         
@@ -492,25 +570,62 @@
         answer: 1
     }
 ];
-
             
             // DOM elements
             const quizContainer = document.getElementById('quiz');
             const submitBtn = document.getElementById('submitBtn');
             const resultContainer = document.getElementById('resultContainer');
+            const timerDisplay = document.getElementById('timer');
             
             // Quiz state
             let userAnswers = new Array(questions.length).fill(null);
             let score = 0;
+            let seconds = 0;
+            let timerInterval;
             
             // Initialize quiz
             function initQuiz() {
+                startTimer();
                 renderAllQuestions();
                 
                 submitBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     showResults();
                 });
+            }
+            
+            // Start the timer
+            function startTimer() {
+                seconds = 0;
+                updateTimerDisplay();
+                timerInterval = setInterval(function() {
+                    seconds++;
+                    updateTimerDisplay();
+                }, 1000);
+            }
+            
+            // Update timer display
+            function updateTimerDisplay() {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                timerDisplay.textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+            
+            // Stop the timer
+            function stopTimer() {
+                clearInterval(timerInterval);
+            }
+            
+            // Format time for display
+            function formatTime(totalSeconds) {
+                if (totalSeconds < 60) {
+                    return `${totalSeconds} seconds`;
+                } else {
+                    const minutes = Math.floor(totalSeconds / 60);
+                    const seconds = totalSeconds % 60;
+                    return `${minutes} minute${minutes !== 1 ? 's' : ''} ${seconds} second${seconds !== 1 ? 's' : ''}`;
+                }
             }
             
             // Render all questions at once
@@ -558,6 +673,9 @@
                 let html = `
                     <div class="answers-container animate__animated animate__fadeIn">
                         <h3 class="answers-title">Detailed Results</h3>
+                        <div class="time-result">
+                            <i class="fas fa-stopwatch"></i> You completed the test in ${formatTime(seconds)}
+                        </div>
                 `;
                 
                 questions.forEach((question, index) => {
@@ -603,6 +721,9 @@
                     alert('Please answer all questions before submitting.');
                     return;
                 }
+                
+                // Stop the timer
+                stopTimer();
                 
                 score = 0;
                 questions.forEach((question, index) => {
@@ -664,6 +785,10 @@
                 
                 document.querySelector('.test-container').style.display = 'block';
                 resultContainer.style.display = 'none';
+                
+                // Reset and restart timer
+                stopTimer();
+                startTimer();
                 
                 renderAllQuestions();
             }
