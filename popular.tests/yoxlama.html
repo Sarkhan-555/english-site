@@ -439,33 +439,10 @@
         }
         
         .step-indicator {
-    display: flex;
-    flex-wrap: wrap; /* Sətirlərin üst-üstə gəlməsinin qarşısını alır */
-    justify-content: center; /* Addımları mərkəzə düzür */
-    gap: 15px; /* Addımlar arasında boşluq */
-    margin: 30px 0;
-}
-
-.step-indicator .step {
-    width: 35px; /* Addımların genişliyini kiçildirik */
-    height: 35px; /* Yüksəkliyi də kiçildiririk */
-    border-radius: 50%; /* Yuvarlaq etmək üçün */
-    background-color: #f0f0f0; /* Addımların fon rəngi */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px; /* Yazı ölçüsünü kiçildirik */
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Yüngül kölgə */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Hover zamanı yumşaq hərəkət */
-}
-
-.step-indicator .step:hover {
-    transform: scale(1.2); /* Hover zamanı addımın ölçüsünü böyüdürük */
-    background-color: #4CAF50; /* Hover zamanı fon rəngini dəyişirik */
-    color: white; /* Yazı rəngini ağ edirik */
-}
-
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
         
         .step {
             width: 35px;
@@ -552,7 +529,7 @@
                 <i class="fas fa-language welcome-icon"></i>
             </div>
             <h1>English Level Assessment</h1>
-            <p class="intro">Discover your English proficiency level from A1 to C2 with our interactive assessment. You'll have 30 minutes to complete 32 questions covering different language skills.</p>
+            <p class="intro">Discover your English proficiency level from A1 to C2 with our interactive assessment. You'll have 30 minutes to complete 6 questions covering different language skills.</p>
             <button class="btn" id="start-test">
                 <i class="fas fa-play"></i> Start Assessment
             </button>
@@ -564,7 +541,6 @@
                 <i class="fas fa-clock"></i> <span>30:00</span>
             </div>
             
-            
             <div class="step-indicator" id="step-indicator">
                 <div class="step active" data-question="1">1</div>
                 <div class="step" data-question="2">2</div>
@@ -572,439 +548,128 @@
                 <div class="step" data-question="4">4</div>
                 <div class="step" data-question="5">5</div>
                 <div class="step" data-question="6">6</div>
-                <div class="step" data-question="7">7</div>
-                <div class="step" data-question="8">8</div>
-                <div class="step" data-question="9">9</div>
-                <div class="step" data-question="10">10</div>
-                <div class="step" data-question="11">11</div>
-                <div class="step" data-question="12">12</div>
-                <div class="step" data-question="13">13</div>
-                <div class="step" data-question="14">14</div>
-                <div class="step" data-question="15">15</div>
-                <div class="step" data-question="16">16</div>
-                <div class="step" data-question="17">17</div>
-                <div class="step" data-question="18">18</div>
-                <div class="step" data-question="19">19</div>
-                <div class="step" data-question="20">20</div>
-                <div class="step" data-question="21">21</div>
-                <div class="step" data-question="22">22</div>
-                <div class="step" data-question="23">23</div>
-                <div class="step" data-question="24">24</div>
-                <div class="step" data-question="25">25</div>
-                <div class="step" data-question="26">26</div>
-                <div class="step" data-question="27">27</div>
-                <div class="step" data-question="28">28</div>
-                <div class="step" data-question="29">29</div>
-                <div class="step" data-question="30">30</div>
-                <div class="step" data-question="31">31</div>
-                <div class="step" data-question="32">32</div>
-
-
             </div>
             
             <div class="progress-container">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
             
-            <!-- Question 3: Reading comprehension -->
+            <!-- Question 1: Multiple choice grammar -->
             <div class="question-container" id="q1">
                 <div class="question">
-                    <span class="question-number">1</span> Read the passage and answer the question:
+                    <span class="question-number">1</span> Choose the correct form to complete the sentence: "If I _____ more time, I would travel more."
                 </div>
-                <div class="reading-passage">
-                    Climate change is one of the most pressing global issues of the 21st century. The rising temperatures, caused by an increase in greenhouse gases such as carbon dioxide, have led to melting ice caps, rising sea levels, and extreme weather patterns. While some individuals and organizations argue that climate change is a natural occurrence, the overwhelming majority of scientists believe human activity, such as burning fossil fuels, is a major contributing factor. The future of our planet depends on the actions we take now to mitigate these effects and transition to more sustainable practices.
-                </div>
-                <div class="question">What is the main point of this passage?</div>
                 <div class="options">
                     <div class="option" onclick="selectOption(this, 1)" data-value="a">
-                        <span class="option-letter">A</span> The causes of climate change
+                        <span class="option-letter">A</span> have
                     </div>
                     <div class="option" onclick="selectOption(this, 1)" data-value="b">
-                        <span class="option-letter">B</span> The history of global warming
+                        <span class="option-letter">B</span> had
                     </div>
                     <div class="option" onclick="selectOption(this, 1)" data-value="c">
-                        <span class="option-letter">C</span> The importance of fossil fuels
+                        <span class="option-letter">C</span> would have
                     </div>
                     <div class="option" onclick="selectOption(this, 1)" data-value="d">
-                        <span class="option-letter">D</span> The potential impact of climate change and the need for action
+                        <span class="option-letter">D</span> am having
                     </div>
                 </div>
             </div>
             
-            <!-- Question 1: Second Conditional -->
-
-            <!-- Question 4: Open-ended writing -->
+            <!-- Question 2: Vocabulary -->
             <div class="question-container" id="q2">
                 <div class="question">
-                    <span class="question-number">2</span> Write 3-5 sentences describing your ideal vacation destination and explain why you would like to visit it.
+                    <span class="question-number">2</span> Which word is closest in meaning to "ubiquitous"?
                 </div>
-                <textarea id="q2-answer" placeholder="Write your answer here..."></textarea>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 2)" data-value="a">
+                        <span class="option-letter">A</span> Rare
+                    </div>
+                    <div class="option" onclick="selectOption(this, 2)" data-value="b">
+                        <span class="option-letter">B</span> Widespread
+                    </div>
+                    <div class="option" onclick="selectOption(this, 2)" data-value="c">
+                        <span class="option-letter">C</span> Unique
+                    </div>
+                    <div class="option" onclick="selectOption(this, 2)" data-value="d">
+                        <span class="option-letter">D</span> Colorful
+                    </div>
+                </div>
             </div>
-
-
-
-<!-- Grammar Questions -->
-<div class="question-container" id="q3">
-    <div class="question">
-        <span class="question-number">3</span> She _____ to the gym every morning.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 3)" data-value="a">A go</div>
-        <div class="option" onclick="selectOption(this, 3)" data-value="b">B goes</div>
-        <div class="option" onclick="selectOption(this, 3)" data-value="c">C going</div>
-        <div class="option" onclick="selectOption(this, 3)" data-value="d">D gone</div>
-    </div>
-</div>
-
-<div class="question-container" id="q4">
-    <div class="question">
-        <span class="question-number">4</span> If it _____ tomorrow, we will cancel the trip.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 4)" data-value="a">A rained</div>
-        <div class="option" onclick="selectOption(this, 4)" data-value="b">B rains</div>
-        <div class="option" onclick="selectOption(this, 4)" data-value="c">C raining</div>
-        <div class="option" onclick="selectOption(this, 4)" data-value="d">D rain</div>
-    </div>
-</div>
-
-<div class="question-container" id="q5">
-    <div class="question">
-        <span class="question-number">5</span> This is _____ movie I've ever seen.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 5)" data-value="a">A the more interesting</div>
-        <div class="option" onclick="selectOption(this, 5)" data-value="b">B the most interesting</div>
-        <div class="option" onclick="selectOption(this, 5)" data-value="c">C the interestingest</div>
-        <div class="option" onclick="selectOption(this, 5)" data-value="d">D most interesting</div>
-    </div>
-</div>
-
-<div class="question-container" id="q6">
-    <div class="question">
-        <span class="question-number">6</span> He _____ here since 2015.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 6)" data-value="a">A has lived</div>
-        <div class="option" onclick="selectOption(this, 6)" data-value="b">B lived</div>
-        <div class="option" onclick="selectOption(this, 6)" data-value="c">C live</div>
-        <div class="option" onclick="selectOption(this, 6)" data-value="d">D living</div>
-    </div>
-</div>
-
-<div class="question-container" id="q7">
-    <div class="question">
-        <span class="question-number">7</span> I wish I _____ taller.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 7)" data-value="a">A am</div>
-        <div class="option" onclick="selectOption(this, 7)" data-value="b">B were</div>
-        <div class="option" onclick="selectOption(this, 7)" data-value="c">C be</div>
-        <div class="option" onclick="selectOption(this, 7)" data-value="d">D was</div>
-    </div>
-</div>
-
-<div class="question-container" id="q8">
-    <div class="question">
-        <span class="question-number">8</span> He doesn't mind _____ late.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 8)" data-value="a">A to work</div>
-        <div class="option" onclick="selectOption(this, 8)" data-value="b">B working</div>
-        <div class="option" onclick="selectOption(this, 8)" data-value="c">C works</div>
-        <div class="option" onclick="selectOption(this, 8)" data-value="d">D work</div>
-    </div>
-</div>
-
-<div class="question-container" id="q9">
-    <div class="question">
-        <span class="question-number">9</span> While I _____ TV, he was studying.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 9)" data-value="a">A was watching</div>
-        <div class="option" onclick="selectOption(this, 9)" data-value="b">B watch</div>
-        <div class="option" onclick="selectOption(this, 9)" data-value="c">C am watching</div>
-        <div class="option" onclick="selectOption(this, 9)" data-value="d">D have watched</div>
-    </div>
-</div>
-
-<div class="question-container" id="q10">
-    <div class="question">
-        <span class="question-number">10</span> I _____ finish my homework by 8 p.m.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 10)" data-value="a">A must</div>
-        <div class="option" onclick="selectOption(this, 10)" data-value="b">B could</div>
-        <div class="option" onclick="selectOption(this, 10)" data-value="c">C might</div>
-        <div class="option" onclick="selectOption(this, 10)" data-value="d">D should</div>
-    </div>
-</div>
-
-<div class="question-container" id="q11">
-    <div class="question">
-        <span class="question-number">11</span> They _____ to Italy last summer.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 11)" data-value="a">A gone</div>
-        <div class="option" onclick="selectOption(this, 11)" data-value="b">B went</div>
-        <div class="option" onclick="selectOption(this, 11)" data-value="c">C go</div>
-        <div class="option" onclick="selectOption(this, 11)" data-value="d">D going</div>
-    </div>
-</div>
-
-<div class="question-container" id="q12">
-    <div class="question">
-        <span class="question-number">12</span> A new shop _____ in the city center.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 12)" data-value="a">A is opened</div>
-        <div class="option" onclick="selectOption(this, 12)" data-value="b">B opens</div>
-        <div class="option" onclick="selectOption(this, 12)" data-value="c">C opened</div>
-        <div class="option" onclick="selectOption(this, 12)" data-value="d">D is opening</div>
-    </div>
-</div>
-
-<!-- Vocabulary Questions -->
-<div class="question-container" id="q13">
-    <div class="question">
-        <span class="question-number">13</span> Which word means "happy and full of energy"?
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 13)" data-value="a">A exhausted</div>
-        <div class="option" onclick="selectOption(this, 13)" data-value="b">B energetic</div>
-        <div class="option" onclick="selectOption(this, 13)" data-value="c">C bored</div>
-        <div class="option" onclick="selectOption(this, 13)" data-value="d">D worried</div>
-    </div>
-</div>
-
-<div class="question-container" id="q14">
-    <div class="question">
-        <span class="question-number">14</span> Which word is a synonym for "angry"?
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 14)" data-value="a">A furious</div>
-        <div class="option" onclick="selectOption(this, 14)" data-value="b">B happy</div>
-        <div class="option" onclick="selectOption(this, 14)" data-value="c">C bored</div>
-        <div class="option" onclick="selectOption(this, 14)" data-value="d">D excited</div>
-    </div>
-</div>
-
-<div class="question-container" id="q15">
-    <div class="question">
-        <span class="question-number">15</span> Which one is a fruit?
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 15)" data-value="a">A carrot</div>
-        <div class="option" onclick="selectOption(this, 15)" data-value="b">B apple</div>
-        <div class="option" onclick="selectOption(this, 15)" data-value="c">C potato</div>
-        <div class="option" onclick="selectOption(this, 15)" data-value="d">D onion</div>
-    </div>
-</div>
-
-<div class="question-container" id="q16">
-    <div class="question">
-        <span class="question-number">16</span> Opposite of "cheap" is _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 16)" data-value="a">A expensive</div>
-        <div class="option" onclick="selectOption(this, 16)" data-value="b">B big</div>
-        <div class="option" onclick="selectOption(this, 16)" data-value="c">C huge</div>
-        <div class="option" onclick="selectOption(this, 16)" data-value="d">D bright</div>
-    </div>
-</div>
-
-<div class="question-container" id="q17">
-    <div class="question">
-        <span class="question-number">17</span> "Bark" is associated with _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 17)" data-value="a">A cat</div>
-        <div class="option" onclick="selectOption(this, 17)" data-value="b">B dog</div>
-        <div class="option" onclick="selectOption(this, 17)" data-value="c">C bird</div>
-        <div class="option" onclick="selectOption(this, 17)" data-value="d">D fish</div>
-    </div>
-</div>
-
-<div class="question-container" id="q18">
-    <div class="question">
-        <span class="question-number">18</span> "Rapid" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 18)" data-value="a">A slow</div>
-        <div class="option" onclick="selectOption(this, 18)" data-value="b">B quick</div>
-        <div class="option" onclick="selectOption(this, 18)" data-value="c">C large</div>
-        <div class="option" onclick="selectOption(this, 18)" data-value="d">D short</div>
-    </div>
-</div>
-
-<div class="question-container" id="q19">
-    <div class="question">
-        <span class="question-number">19</span> "To delay" means to _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 19)" data-value="a">A hurry</div>
-        <div class="option" onclick="selectOption(this, 19)" data-value="b">B postpone</div>
-        <div class="option" onclick="selectOption(this, 19)" data-value="c">C cancel</div>
-        <div class="option" onclick="selectOption(this, 19)" data-value="d">D finish</div>
-    </div>
-</div>
-
-<div class="question-container" id="q20">
-    <div class="question">
-        <span class="question-number">20</span> "Huge" is closest in meaning to _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 20)" data-value="a">A tiny</div>
-        <div class="option" onclick="selectOption(this, 20)" data-value="b">B big</div>
-        <div class="option" onclick="selectOption(this, 20)" data-value="c">C cheap</div>
-        <div class="option" onclick="selectOption(this, 20)" data-value="d">D fast</div>
-    </div>
-</div>
-
-<div class="question-container" id="q21">
-    <div class="question">
-        <span class="question-number">21</span> "Kind" is similar to _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 21)" data-value="a">A mean</div>
-        <div class="option" onclick="selectOption(this, 21)" data-value="b">B rude</div>
-        <div class="option" onclick="selectOption(this, 21)" data-value="c">C gentle</div>
-        <div class="option" onclick="selectOption(this, 21)" data-value="d">D strict</div>
-    </div>
-</div>
-
-<div class="question-container" id="q22">
-    <div class="question">
-        <span class="question-number">22</span> "Courage" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 22)" data-value="a">A fear</div>
-        <div class="option" onclick="selectOption(this, 22)" data-value="b">B strength</div>
-        <div class="option" onclick="selectOption(this, 22)" data-value="c">C bravery</div>
-        <div class="option" onclick="selectOption(this, 22)" data-value="d">D weakness</div>
-    </div>
-</div>
-
-<!-- Idiom/Expression Questions -->
-<div class="question-container" id="q23">
-    <div class="question">
-        <span class="question-number">23</span> "Break the ice" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 23)" data-value="a">A Make people feel comfortable</div>
-        <div class="option" onclick="selectOption(this, 23)" data-value="b">B Destroy something</div>
-        <div class="option" onclick="selectOption(this, 23)" data-value="c">C Get angry</div>
-        <div class="option" onclick="selectOption(this, 23)" data-value="d">D Start a fight</div>
-    </div>
-</div>
-<div class="question-container" id="q24">
-    <div class="question">
-        <span class="question-number">24</span> What does "under the weather" mean?
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 24)" data-value="a">A Feeling sick</div>
-        <div class="option" onclick="selectOption(this, 24)" data-value="b">B Feeling excited</div>
-        <div class="option" onclick="selectOption(this, 24)" data-value="c">C Feeling hot</div>
-        <div class="option" onclick="selectOption(this, 24)" data-value="d">D Feeling cold</div>
-    </div>
-</div>
-
-<div class="question-container" id="q25">
-    <div class="question">
-        <span class="question-number">25</span> "Piece of cake" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 25)" data-value="a">A something very easy</div>
-        <div class="option" onclick="selectOption(this, 25)" data-value="b">B something very difficult</div>
-        <div class="option" onclick="selectOption(this, 25)" data-value="c">C something boring</div>
-        <div class="option" onclick="selectOption(this, 25)" data-value="d">D something exciting</div>
-    </div>
-</div>
-
-<div class="question-container" id="q26">
-    <div class="question">
-        <span class="question-number">26</span> If someone "costs an arm and a leg", it means it is _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 26)" data-value="a">A very cheap</div>
-        <div class="option" onclick="selectOption(this, 26)" data-value="b">B very expensive</div>
-        <div class="option" onclick="selectOption(this, 26)" data-value="c">C very boring</div>
-        <div class="option" onclick="selectOption(this, 26)" data-value="d">D very slow</div>
-    </div>
-</div>
-
-<div class="question-container" id="q27">
-    <div class="question">
-        <span class="question-number">27</span> "Once in a blue moon" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 27)" data-value="a">A very often</div>
-        <div class="option" onclick="selectOption(this, 27)" data-value="b">B rarely</div>
-        <div class="option" onclick="selectOption(this, 27)" data-value="c">C every day</div>
-        <div class="option" onclick="selectOption(this, 27)" data-value="d">D sometimes</div>
-    </div>
-</div>
-
-<div class="question-container" id="q28">
-    <div class="question">
-        <span class="question-number">28</span> If someone "lets the cat out of the bag," they _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 28)" data-value="a">A hide a secret</div>
-        <div class="option" onclick="selectOption(this, 28)" data-value="b">B reveal a secret</div>
-        <div class="option" onclick="selectOption(this, 28)" data-value="c">C find something</div>
-        <div class="option" onclick="selectOption(this, 28)" data-value="d">D lose something</div>
-    </div>
-</div>
-
-<div class="question-container" id="q29">
-    <div class="question">
-        <span class="question-number">29</span> "Hit the sack" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 29)" data-value="a">A go to sleep</div>
-        <div class="option" onclick="selectOption(this, 29)" data-value="b">B start eating</div>
-        <div class="option" onclick="selectOption(this, 29)" data-value="c">C start running</div>
-        <div class="option" onclick="selectOption(this, 29)" data-value="d">D clean the house</div>
-    </div>
-</div>
-
-<div class="question-container" id="q30">
-    <div class="question">
-        <span class="question-number">30</span> "Spill the beans" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 30)" data-value="a">A to keep a secret</div>
-        <div class="option" onclick="selectOption(this, 30)" data-value="b">B to tell a secret</div>
-        <div class="option" onclick="selectOption(this, 30)" data-value="c">C to find out something</div>
-        <div class="option" onclick="selectOption(this, 30)" data-value="d">D to clean up something</div>
-    </div>
-</div>
-
-<div class="question-container" id="q31">
-    <div class="question">
-        <span class="question-number">31</span> "Hit the books" means _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 31)" data-value="a">A to read for fun</div>
-        <div class="option" onclick="selectOption(this, 31)" data-value="b">B to study hard</div>
-        <div class="option" onclick="selectOption(this, 31)" data-value="c">C to clean books</div>
-        <div class="option" onclick="selectOption(this, 31)" data-value="d">D to buy new books</div>
-    </div>
-</div>
-
-<div class="question-container" id="q32">
-    <div class="question">
-        <span class="question-number">32</span> "Break a leg" is said to wish someone _____.
-    </div>
-    <div class="options">
-        <div class="option" onclick="selectOption(this, 32)" data-value="a">A bad luck</div>
-        <div class="option" onclick="selectOption(this, 32)" data-value="b">B good luck</div>
-        <div class="option" onclick="selectOption(this, 32)" data-value="c">C slow speed</div>
-        <div class="option" onclick="selectOption(this, 32)" data-value="d">D fast recovery</div>
-    </div>
-</div>
-
+            
+            <!-- Question 3: Reading comprehension -->
+            <div class="question-container" id="q3">
+                <div class="question">
+                    <span class="question-number">3</span> Read the passage and answer the question:
+                </div>
+                <div class="reading-passage">
+                    The impact of artificial intelligence on modern society cannot be overstated. While advocates highlight the potential for AI to solve complex problems and enhance efficiency across various sectors, critics raise concerns about privacy, surveillance, and job displacement. The debate extends beyond practical implications to philosophical questions about human uniqueness and the nature of consciousness.
+                </div>
+                <div class="question">What is the main theme of this passage?</div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 3)" data-value="a">
+                        <span class="option-letter">A</span> The technical aspects of AI development
+                    </div>
+                    <div class="option" onclick="selectOption(this, 3)" data-value="b">
+                        <span class="option-letter">B</span> The benefits of AI in the workplace
+                    </div>
+                    <div class="option" onclick="selectOption(this, 3)" data-value="c">
+                        <span class="option-letter">C</span> The contrasting perspectives on AI's societal impact
+                    </div>
+                    <div class="option" onclick="selectOption(this, 3)" data-value="d">
+                        <span class="option-letter">D</span> The history of artificial intelligence
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 4: Open-ended writing -->
+            <div class="question-container" id="q4">
+                <div class="question">
+                    <span class="question-number">4</span> Write 3-5 sentences describing your ideal vacation destination and explain why you would like to visit it.
+                </div>
+                <textarea id="q4-answer" placeholder="Write your answer here..."></textarea>
+            </div>
+            
+            <!-- Question 5: Idioms/Expressions -->
+            <div class="question-container" id="q5">
+                <div class="question">
+                    <span class="question-number">5</span> What does the expression "to beat around the bush" mean?
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 5)" data-value="a">
+                        <span class="option-letter">A</span> To win a difficult competition
+                    </div>
+                    <div class="option" onclick="selectOption(this, 5)" data-value="b">
+                        <span class="option-letter">B</span> To avoid addressing a subject directly
+                    </div>
+                    <div class="option" onclick="selectOption(this, 5)" data-value="c">
+                        <span class="option-letter">C</span> To search thoroughly for something
+                    </div>
+                    <div class="option" onclick="selectOption(this, 5)" data-value="d">
+                        <span class="option-letter">D</span> To destroy natural habitats
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Question 6: Advanced grammar -->
+            <div class="question-container" id="q6">
+                <div class="question">
+                    <span class="question-number">6</span> Complete the sentence with the correct form: "By the time we arrive, they _____ for three hours."
+                </div>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this, 6)" data-value="a">
+                        <span class="option-letter">A</span> will wait
+                    </div>
+                    <div class="option" onclick="selectOption(this, 6)" data-value="b">
+                        <span class="option-letter">B</span> will be waiting
+                    </div>
+                    <div class="option" onclick="selectOption(this, 6)" data-value="c">
+                        <span class="option-letter">C</span> will have waited
+                    </div>
+                    <div class="option" onclick="selectOption(this, 6)" data-value="d">
+                        <span class="option-letter">D</span> will have been waiting
+                    </div>
+                </div>
+            </div>
             
             <div class="btn-container">
                 <button class="btn" id="prev-btn" style="display: none;">
@@ -1043,76 +708,23 @@
         let currentQuestion = 1;
         let answers = {
             1: null,
-            2: '',
+            2: null,
             3: null,
-            4: null,
+            4: '',
             5: null,
-            6: null,
-            7: null,
-            8: null,
-            9: null,
-            10: null,
-            11: null,
-            12: null,
-            13: null,
-            14: null,
-            15: null,
-            16: null,
-            17: null,
-            18: null,
-            19: null,
-            20: null,
-            21: null,
-            22: null,
-            23: null,
-            24: null,
-            25: null,
-            26: null,
-            27: null,
-            28: null,
-            29: null,
-            30: null,
-            31: null,
-            32: null
+            6: null
         };
         let timer;
         let timeLeft = 30 * 60; // 30 minutes in seconds
         
         // Correct answers
         const correctAnswers = {
-    1:'d',
-    3: 'b', // She goes to the gym every morning.
-    4: 'b', // If it rains tomorrow, we will cancel the trip.
-    5: 'b', // This is the most interesting movie I've ever seen.
-    6: 'a', // He has lived here since 2015.
-    7: 'b', // I wish I were taller.
-    8: 'b', // He doesn't mind working late.
-    9: 'a', // While I was watching TV, he was studying.
-    10: 'a', // I must finish my homework by 8 p.m.
-    11: 'b', // They went to Italy last summer.
-    12: 'd', // A new shop is opening in the city center.
-    13: 'b', // Which word means "happy and full of energy"? -> energetic
-    14: 'a', // Which word is a synonym for "angry"? -> furious
-    15: 'b', // Which one is a fruit? -> apple
-    16: 'a', // Opposite of "cheap" is _____ -> expensive
-    17: 'b', // "Bark" is associated with _____ -> dog
-    18: 'b', // "Rapid" means _____ -> quick
-    19: 'b', // "To delay" means to _____ -> postpone
-    20: 'b', // "Huge" is closest in meaning to _____ -> big
-    21: 'c', // "Kind" is similar to _____ -> gentle
-    22: 'c',  // "Courage" means _____ -> bravery
-    23: 'a',
-    24: 'a',
-    25: 'a',
-    26: 'b',
-    27: 'b',
-    28: 'b',
-    29: 'a',
-    30: 'b',
-    31: 'b',
-    32: 'b'
-};
-
+            1: 'b',
+            2: 'b',
+            3: 'c',
+            5: 'b',
+            6: 'd'
+        };
         
         // Level descriptions
         const levelDescriptions = {
@@ -1183,8 +795,8 @@
             
             // Update button visibility
             prevBtn.style.display = questionNumber === 1 ? 'none' : 'block';
-            nextBtn.style.display = questionNumber === 32 ? 'none' : 'block';
-            submitBtn.style.display = questionNumber === 32 ? 'block' : 'none';
+            nextBtn.style.display = questionNumber === 6 ? 'none' : 'block';
+            submitBtn.style.display = questionNumber === 6 ? 'block' : 'none';
             
             // Update current question
             currentQuestion = questionNumber;
@@ -1222,15 +834,15 @@
 
         // Update progress bar
         function updateProgressBar() {
-            const progress = (currentQuestion / 32) * 100;
+            const progress = (currentQuestion / 6) * 100;
             progressBar.style.width = `${progress}%`;
         }
 
         // Next button click handler
         nextBtn.addEventListener('click', function() {
             // Save text answer if it's question 4
-            if (currentQuestion === 2) {
-                answers[2] = document.getElementById('q2-answer').value;
+            if (currentQuestion === 4) {
+                answers[4] = document.getElementById('q4-answer').value;
             }
             
             showQuestion(currentQuestion + 1);
@@ -1244,7 +856,7 @@
         // Submit test
         submitBtn.addEventListener('click', function() {
             // Save text answer for question 4 before submitting
-            answers[2] = document.getElementById('q2-answer').value;
+            answers[4] = document.getElementById('q4-answer').value;
             submitTest();
         });
 
@@ -1258,7 +870,7 @@
             let totalQuestions = 0;
             
             for (const question in answers) {
-                if (question !== '2') { // Skip the writing question for scoring
+                if (question !== '4') { // Skip the writing question for scoring
                     totalQuestions++;
                     if (answers[question] === correctAnswers[question]) {
                         score++;
@@ -1290,8 +902,8 @@
             
             // Generate answer review
             answerReview.innerHTML = '';
-            for (let i = 1; i <= 32; i++) {
-                if (i === 2) continue; // Skip writing question in review
+            for (let i = 1; i <= 6; i++) {
+                if (i === 4) continue; // Skip writing question in review
                 
                 const answerItem = document.createElement('div');
                 answerItem.className = 'answer-item';
@@ -1325,10 +937,10 @@
             
             const writingQuestion = document.createElement('div');
             writingQuestion.className = 'question';
-            writingQuestion.innerHTML = `<span class="question-number">4</span> ${document.querySelector('#q2 .question').textContent.trim()}`;
+            writingQuestion.innerHTML = `<span class="question-number">4</span> ${document.querySelector('#q4 .question').textContent.trim()}`;
             
             const writingAnswer = document.createElement('p');
-            writingAnswer.innerHTML = `<strong>Your answer:</strong><br>${answers[2] || 'No answer'}`;
+            writingAnswer.innerHTML = `<strong>Your answer:</strong><br>${answers[4] || 'No answer'}`;
             
             writingItem.appendChild(writingQuestion);
             writingItem.appendChild(writingAnswer);
@@ -1340,38 +952,11 @@
             // Reset all answers
             answers = {
                 1: null,
-                2: '',
+                2: null,
                 3: null,
-                4: null,
+                4: '',
                 5: null,
-                6: null,
-                7: null,
-                8: null,
-                9: null,
-                10: null,
-                11: null,
-                12: null,
-                13: null,
-                14: null,
-                15: null,
-                16: null,
-                17: null,
-                18: null,
-                19: null,
-                20: null,
-                21: null,
-                22: null,
-                23: null,
-                24: null,
-                25: null,
-                26: null,
-                27: null,
-                28: null,
-                29: null,
-                30: null,
-                31: null,
-                32: null
-
+                6: null
             };
             
             // Clear selections
@@ -1380,7 +965,7 @@
             });
             
             // Clear textarea
-            document.getElementById('q2-answer').value = '';
+            document.getElementById('q4-answer').value = '';
             
             // Reset timer
             clearInterval(timer);
