@@ -7,8 +7,314 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animation Styles -->
+    <style>
+        
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from { 
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from { 
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to { 
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes logoAnimation {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes navItemFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Animation Classes */
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .animate-slide-in-left {
+            opacity: 0;
+            animation: slideInLeft 1s ease 0.2s forwards;
+        }
+
+        .animate-slide-in-right {
+            opacity: 0;
+            animation: slideInRight 1s ease 0.2s forwards;
+        }
+
+        .animate-fade-up {
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.8s ease forwards;
+        }
+
+        .animate-logo {
+            animation: logoAnimation 1.2s ease forwards;
+        }
+
+        /* Reveal on scroll animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.8s ease;
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu animation */
+        .toggle .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .bar2 {
+            opacity: 0;
+        }
+
+        .toggle .bar3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Additional hamburger menu styling */
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .menu-toggle i {
+            transition: transform 0.4s ease;
+        }
+
+        .toggle i {
+            transform: rotate(90deg);
+        }
+
+        /* Hero section animations */
+        .hero {
+            overflow: hidden; /* Ensures animations don't cause horizontal scrollbars */
+        }
+
+        /* Features card hover animation */
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Test card hover animation */
+        .test-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .test-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Button hover effects */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.2);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover:after {
+            width: 100%;
+        }
+
+        /* Coming Soon Modal Styles */
+        .coming-soon-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .coming-soon-content {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-modal.active .coming-soon-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .coming-soon-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .coming-soon-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .coming-soon-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .coming-soon-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .coming-soon-progress {
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .coming-soon-progress-bar {
+            height: 100%;
+            width: 0;
+            background: white;
+            border-radius: 5px;
+            animation: progress 3s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+    </style>
 </head>
 <body>
+    <!-- Coming Soon Modal -->
+    <div class="coming-soon-modal" id="comingSoonModal">
+        <div class="coming-soon-content">
+            <span class="coming-soon-close" id="closeModal">&times;</span>
+            <div class="coming-soon-icon">
+                <i class="fas fa-hourglass-half"></i>
+            </div>
+            <h2>Coming Soon!</h2>
+            <p>Our IELTS Preparation tests are currently under development. We're working hard to bring you the best quality materials.</p>
+            <div class="coming-soon-progress">
+                <div class="coming-soon-progress-bar"></div>
+            </div>
+            <p>Stay tuned for updates!</p>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="logo">
@@ -102,7 +408,7 @@
                 <h2>Why Choose Us</h2>
                 <p>Our platform offers comprehensive tools for English language learners</p>
             </div>
-            <div class="features-grid">
+            <div class="features-grid reveal-on-scroll">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-certificate"></i>
@@ -129,7 +435,7 @@
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3>All Language Skills</h3>
-                    <p>Tests for reading, writing, listening and grammar</p>
+                    <p>Tests for reading, writing, speaking, listening and grammar</p>
                 </div>
             </div>
         </div>
@@ -141,7 +447,7 @@
                 <h2>Popular Tests</h2>
                 <p>Start with our most popular English assessments</p>
             </div>
-            <div class="test-cards">
+            <div class="test-cards reveal-on-scroll">
                 <div class="test-card">
                     <div class="card-image">
                         <img src="../english-site/images/levelassessment.png" alt="Level Test">
@@ -184,7 +490,7 @@
                             <span><i class="fas fa-clock"></i> 45 min</span>
                             <span><i class="fas fa-question-circle"></i> 80 questions</span>
                         </div>
-                        <a href="#" class="btn btn-block">Start Test</a>
+                        <a href="#" class="btn btn-block" id="ieltsTestBtn">Start Test</a>
                     </div>
                 </div>
             </div>
@@ -193,7 +499,7 @@
 
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content reveal-on-scroll">
                 <h2>Ready to improve your English?</h2>
                 <p>Sign up now and get access to all our premium tests for free!</p>
                 <a href="../english-site/sing.up.html" class="btn btn-light">Join Now</a>
@@ -203,7 +509,7 @@
 
     <section id="about" class="about-section">
         <div class="container">
-            <div class="about-content">
+            <div class="about-content reveal-on-scroll">
                 <div class="about-image">
                     <img src="../english-site/images/flags.jpg" alt="About Us">
                 </div>
@@ -239,7 +545,7 @@
                 <h2>What Our Users Say</h2>
                 <p>Success stories from around the world</p>
             </div>
-            <div class="testimonial-slider">
+            <div class="testimonial-slider reveal-on-scroll">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <p>The tests on this platform helped me prepare for my IELTS exam. I scored a 7.5 overall, which was higher than I expected!</p>
@@ -334,6 +640,119 @@
         </div>
     </footer>
 
-    <script src="../english-site/script.js"></script>
+    <!-- Animation Script -->
+    <script>
+
+        // Wait for the DOM to be fully loaded before running animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements to animate on page load
+            const heroContent = document.querySelector('.hero-content');
+            const heroText = document.querySelector('.hero-text');
+            const heroImage = document.querySelector('.hero-image');
+            const featureCards = document.querySelectorAll('.feature-card');
+            const testCards = document.querySelectorAll('.test-card');
+            
+            // Add initial animation classes
+            if (heroContent) heroContent.classList.add('animate-fade-in');
+            if (heroText) heroText.classList.add('animate-slide-in-left');
+            if (heroImage) heroImage.classList.add('animate-slide-in-right');
+            
+            // Animate feature cards with delay
+            featureCards.forEach((card, index) => {
+                card.classList.add('animate-fade-up');
+                card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+            });
+            
+            // Animate test cards with delay
+            testCards.forEach((card, index) => {
+                card.classList.add('animate-scale-in');
+                card.style.animationDelay = `${0.2 + (index * 0.15)}s`;
+            });
+            
+            // Logo animation
+            const logo = document.querySelector('.logo h1');
+            if (logo) {
+                logo.classList.add('animate-logo');
+            }
+            
+            // Animate navigation menu items
+            const navItems = document.querySelectorAll('.nav-menu > li');
+            navItems.forEach((item, index) => {
+                item.classList.add('animate-fade-in');
+                item.style.animationDelay = `${0.3 + (index * 0.1)}s`;
+            });
+            
+            // Add scroll animations
+            window.addEventListener('scroll', revealOnScroll);
+            
+            // Call once to initialize elements that are already in view
+            revealOnScroll();
+        });
+
+        // Function to handle revealing elements on scroll
+        function revealOnScroll() {
+            const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+            const windowHeight = window.innerHeight;
+            
+            elementsToReveal.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150; // How many pixels from the viewport before element appears
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+        }
+
+        // Add animation for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const navMenu = document.querySelector('.nav-menu');
+                navMenu.classList.toggle('nav-active');
+                
+                // Animate menu items when menu opens
+                const navItems = document.querySelectorAll('.nav-menu > li');
+                if (navMenu.classList.contains('nav-active')) {
+                    navItems.forEach((item, index) => {
+                        item.style.animation = `navItemFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    });
+                } else {
+                    navItems.forEach(item => {
+                        item.style.animation = '';
+                    });
+                }
+                
+                // Animate hamburger icon
+                mobileMenuButton.classList.toggle('toggle');
+            });
+        }
+
+        // Coming Soon Modal functionality
+        const ieltsTestBtn = document.getElementById('ieltsTestBtn');
+        const comingSoonModal = document.getElementById('comingSoonModal');
+        const closeModal = document.getElementById('closeModal');
+
+        if (ieltsTestBtn && comingSoonModal && closeModal) {
+            ieltsTestBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                comingSoonModal.classList.add('active');
+            });
+
+            closeModal.addEventListener('click', function() {
+                comingSoonModal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside the content
+            comingSoonModal.addEventListener('click', function(e) {
+                if (e.target === comingSoonModal) {
+                    comingSoonModal.classList.remove('active');
+                }
+            });
+        }
+        
+    </script>
 </body>
 </html>
