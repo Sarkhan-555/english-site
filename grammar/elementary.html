@@ -138,7 +138,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(45, 62, 80, 0.8), rgba(45, 62, 80, 0.8)), url('images/grammar-bg.jpg');
+            background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(45, 62, 80, 0.8)), url('images/grammar-bg.jpg');
             background-position: center;
             background-size: cover;
             padding: 4rem 2rem;
@@ -177,15 +177,33 @@
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        .animate-text {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: slideUp 0.9s ease forwards;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
     </style>
 
      <br>
     <br>
     <br>
     <main>
-        <section class="hero-section animate__animated animate__fadeIn">
-            <h1>Elementary Grammar Tests</h1>
-            <p>Enhance your English grammar skills with our interactive elementary-level tests. Choose from the options below to start practicing.</p>
+        <section class="hero-section">
+            <h1 class="animate-text">Elementary Grammar Tests</h1>
+            <p class="animate-text">
+                Enhance your English grammar skills with our interactive elementary-level tests. Choose from the options below to start practicing.
+            </p>
         </section>
 
         <div class="container">
