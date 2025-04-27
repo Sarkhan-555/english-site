@@ -897,3 +897,62 @@ footer {
     border-radius: 50px;
     display: inline-block;
 }
+/* AI Agent Button Styles */
+.ai-agent-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-left: 15px; /* Digər nav elementlərindən ayırmaq üçün */
+}
+
+.ai-agent-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.ai-agent-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #5d7de8, #9666d6);
+}
+
+.ai-agent-btn:active {
+    transform: translateY(1px);
+}
+
+/* AI Agent Button Pulse Effect */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(167, 119, 227, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(167, 119, 227, 0); }
+}
+
+.ai-agent-btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Navbar içində istifadə üçün */
+.nav-menu .ai-agent-btn {
+    margin-left: 15px;
+    padding: 10px 20px;
+}
+
+/* Hero bölməsində istifadə üçün */
+.hero-btns .ai-agent-btn {
+    margin-left: 15px;
+    padding: 14px 28px;
+    font-size: 17px;
+}
