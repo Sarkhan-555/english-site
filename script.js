@@ -23,12 +23,6 @@ function initSite() {
 
 // Mobile menu toggle function
 
-document.getElementById("menu-toggle").addEventListener("click", function() {
-  var menu = document.getElementById("nav-menu");
-  menu.classList.toggle("show");
-});
-
-
 // Mobile menu toggle function - COMPLETELY REPLACED
 function initMobileMenu() {
     console.log("Mobile menu initialized"); // Debug log
