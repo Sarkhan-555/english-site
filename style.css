@@ -966,45 +966,55 @@ footer {
         border-radius: 5px;
     }
 }
-/* Mobil menyu üçün ümumi stil */
-#mobile-menu {
-    display: none; /* Desktopda gizlədik */
+/* Mobil menyu üçün əsas tənzimləmələr */
+.menu-toggle {
+    display: none;
     cursor: pointer;
+    font-size: 24px;
+    padding: 15px;
 }
 
 /* Mobil üçün responsive tənzimləmələr */
-@media (max-width: 768px) {
-    #mobile-menu {
-        display: block; /* Mobil menyu düyməsini göstər */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
     }
     
     .nav-menu {
-        display: none; /* Əsas menyunu gizlə */
+        display: none;
         position: absolute;
-        top: 100%;
+        top: 70px;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: #f8f9fa;
         flex-direction: column;
         z-index: 1000;
+        padding: 20px 0;
     }
     
     .nav-menu.active {
-        display: flex; /* Aktiv olduqda menyunu göstər */
+        display: flex;
     }
     
-    .nav-item.dropdown {
-        position: relative;
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
     
     .dropdown-menu {
-        display: none; /* Dropdown menyuları əvvəlcə gizlə */
+        display: none;
         position: static;
         width: 100%;
+        background: #e9ecef;
         box-shadow: none;
     }
     
     .dropdown-menu.show {
-        display: block; /* Aktiv dropdownu göstər */
+        display: block;
+    }
+    
+    .dropdown-menu li {
+        padding: 8px 0;
     }
 }
