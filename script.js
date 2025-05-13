@@ -625,25 +625,3 @@ function createTestInterface(testType) {
     renderQuestion(currentQuestionIndex);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Mobil menyu düyməsinə klik üçün
-    mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
-    
-    // Dropdown menyular üçün (yalnız mobil üçün)
-    const dropdownLinks = document.querySelectorAll('.nav-item.dropdown > .nav-link');
-    
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                const dropdown = this.nextElementSibling;
-                dropdown.classList.toggle('show');
-            }
-        });
-    });
-});
