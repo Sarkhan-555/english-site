@@ -301,55 +301,7 @@
             100% { width: 0; }
         }
     </style>
-    <style>
-/* Menü Toggle düyməsi yalnız mobil üçün görünsün */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-  }
-
-  nav.active {
-    display: block;
-    background-color: #1e90ff;
-    padding: 10px 0;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-  }
-
-  .nav-menu li {
-    margin: 10px 0;
-  }
-
-  .dropdown-menu {
-    display: none;
-    padding-left: 15px;
-  }
-
-  .dropdown.open .dropdown-menu {
-    display: block;
-  }
-
-  .nav-link {
-    display: block;
-    width: 100%;
-  }
-}
-</style>
-
+    
 </head>
 <body>
     <!-- Coming Soon Modal -->
@@ -426,7 +378,8 @@
                               <li><a href="reading/proficiency.html">Proficiency (C2)</a></li>
                             </ul>
                           </li>
-                    <li><a href="../english-site/sing.up.html" class="nav-btn">Sign Up</a></li>
+                          <li><a href="../english-site/sing.up.html" class="nav-btn mobile-btn">Sign Up</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -807,25 +760,5 @@
         }
         
     </script>
-    <script>
-  // Mobil menyunu açıb-bağlamaq
-  document.getElementById("mobile-menu").addEventListener("click", function () {
-    document.querySelector("nav").classList.toggle("active");
-  });
-
-  // Mobil dropdown-ları açıb-bağlamaq üçün
-  const dropdowns = document.querySelectorAll(".nav-item.dropdown");
-
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener("click", function (e) {
-      // Mobil versiyada işləsin deyə
-      if (window.innerWidth <= 768) {
-        e.preventDefault(); // Linkin işləməsini dayandır
-        this.classList.toggle("open");
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
