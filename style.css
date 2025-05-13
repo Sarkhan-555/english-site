@@ -956,3 +956,23 @@ footer {
     padding: 14px 28px;
     font-size: 17px;
 }
+/* Başlanğıcda menyunu gizlət */
+.hidden {
+  display: none;
+}
+
+/* Mobil görünüş üçün media query */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  nav.show {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
