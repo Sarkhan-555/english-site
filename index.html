@@ -301,6 +301,161 @@
             50% { width: 100%; }
             100% { width: 0; }
         }
+         /* Contact Us Modal Styles - Matching Coming Soon Style */
+    .contact-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .contact-modal.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+
+    .contact-content {
+        background: linear-gradient(135deg, #4a6cf7, #2541b2);
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 500px;
+        width: 90%;
+        transform: scale(0.7);
+        opacity: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-modal.active .contact-content {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .contact-content h2 {
+        color: white;
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        position: relative;
+    }
+
+    .contact-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-close:hover {
+        transform: rotate(90deg);
+    }
+
+    .contact-icon {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+    }
+
+    .contact-info {
+        text-align: left;
+        margin-bottom: 25px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .item-icon {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .item-text h4 {
+        color: white;
+        margin: 0 0 5px 0;
+        font-size: 1.1rem;
+    }
+
+    .item-text p, .item-text a {
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .item-text a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .contact-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        background-color: white;
+        color: #2541b2;
+        transform: translateY(-5px);
+    }
+
+    /* Reuse the same animations from Coming Soon */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+ 
     </style>
     
 </head>
@@ -510,6 +665,49 @@
                 <h2>Ready to improve your English?</h2>
                 <p>Sign up now and get access to all our premium tests for free!</p>
                 <a href="../english-site/sing.up.html" class="btn btn-light">Join Now</a>
+                <!-- Update your existing button to this -->
+<a href="#contact" class="btn btn-light" style="margin-left: 40px;" id="contactModalBtn">Contact Us</a>
+
+<!-- Add this modal HTML just before the closing </body> tag -->
+<div class="contact-modal" id="contactModal">
+    <div class="contact-content">
+        <span class="contact-close" id="closeContactModal">&times;</span>
+        <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+        <h2>Get In Touch</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="item-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="item-text">
+                    <h4>Our Location</h4>
+                    <p>123 IELTS Street, Language City, 10001</p>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="item-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="item-text">
+                    <h4>Email Us</h4>
+                    <a href="mailto:info@ieltsmentorhub.com">info@ieltsmentorhub.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="item-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="item-text">
+                    <h4>Call Us</h4>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
@@ -760,5 +958,31 @@
             });
         }
     </script>
+    <!-- Add this JavaScript just before the closing </body> tag -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactBtn = document.getElementById('contactModalBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeBtn = document.getElementById('closeContactModal');
+        
+        if (contactModalBtn && contactModal && closeContactModal) {
+            contactModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                contactModal.classList.add('active');
+            });
+
+            closeContactModal.addEventListener('click', function() {
+                contactModal.classList.remove('active');
+            });
+
+            // Close modal when clicking outside the content
+            contactModal.addEventListener('click', function(e) {
+                if (e.target === contactModal) {
+                    contactModal.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
