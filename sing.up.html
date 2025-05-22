@@ -260,21 +260,21 @@
     <div class="container">
         <div class="form-container">
             <h2>Create Account</h2>
-            <form>
+            <form id="signupForm">
                 <div class="input-group">
-                    <input type="text" required>
+                    <input type="text" id="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" required>
+                    <input type="email" id="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
                 <div class="input-group">
-                    <input type="password" required>
+                    <input type="password" id="confirmPassword" required>
                     <label>Confirm Password</label>
                 </div>
                 <button type="submit">Sign Up</button>
@@ -285,38 +285,86 @@
         </div>
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyB6FjcA5vGr119-snXp5drRjM5Hxw0jmV4",
+  authDomain: "englishmastery-3f531.firebaseapp.com",
+  projectId: "englishmastery-3f531",
+  storageBucket: "englishmastery-3f531.firebasestorage.app",
+  messagingSenderId: "367057380534",
+  appId: "1:367057380534:web:04d01e82a0ac0e82c2f217",
+  measurementId: "G-HE3PSZS19P"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            // Form handling
+            const signupForm = document.getElementById('signupForm');
+            
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                const username = document.getElementById('username').value;
+                
+                // Validate passwords match
+                if (password !== confirmPassword) {
+                    alert("Passwords don't match!");
+                    return;
+                }
+                
+                // Create user with email and password
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        // Signed up successfully
+                        const user = userCredential.user;
+                        alert("Registration successful!");
+                        window.location.href = "https://sarkhan-555.github.io/english-site/index.html";
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        alert("Error: " + errorMessage);
+                    });
+            });
+            
+            // Input field animations
             const inputs = document.querySelectorAll('.input-group input');
             
             inputs.forEach(input => {
-                input.addEventListener('focus', function() {
+                input.addEventListener('focus', function () {
                     this.parentNode.querySelector('label').style.color = '#a777e3';
                 });
                 
-                input.addEventListener('blur', function() {
+                input.addEventListener('blur', function () {
                     if (!this.value) {
                         this.parentNode.querySelector('label').style.color = '#999';
                     }
                 });
                 
-                // Check if input has value on page load
+                // Apply animation if input has value on page load
                 if (input.value) {
-                    input.parentNode.querySelector('label').style.top = '-10px';
-                    input.parentNode.querySelector('label').style.fontSize = '12px';
-                    input.parentNode.querySelector('label').style.background = '#fff';
-                    input.parentNode.querySelector('label').style.padding = '0 5px';
-                    input.parentNode.querySelector('label').style.color = '#a777e3';
+                    const label = input.parentNode.querySelector('label');
+                    label.style.top = '-10px';
+                    label.style.fontSize = '12px';
+                    label.style.background = '#fff';
+                    label.style.padding = '0 5px';
+                    label.style.color = '#a777e3';
                 }
             });
-        
-        // YALNIZ Sign Up buttonunu ana səhifəyə yönləndir
-        const signUpButton = document.querySelector('button[type="submit"]');
-        signUpButton.addEventListener('click', function(e) {
-            e.preventDefault(); // Formun göndərilməsinin qarşısını alır
-            window.location.href = "https://sarkhan-555.github.io/english-site/index.html"; // Ana səhifəyə keçid
         });
-    });
+        //singup
     </script>
 </body>
 </html>
