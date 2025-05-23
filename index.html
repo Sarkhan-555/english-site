@@ -1059,28 +1059,17 @@
       logoutBtn.style.display = "inline-block";
       joinnow.style.display = "none"
       
+      contactModalBtn.style.display = "inline-block";
+      contactModalBtn.style.margin = "0 auto";
     } else {
       // User is signed out
       signUpLink.style.display = "inline-block";
       logoutBtn.style.display = "none";
       joinnow.style.display = "inline-block"
-      
+
     }
   });
-    if (user) {
-      // Daxil olunduqda - mərkəzdə
-      contactBtn.style.cssText = `
-        margin-left: 0;
-        display: block;
-        margin: 0 auto;
-      `;
-    } else {
-      // Çıxış edildikdə - 40px sağda
-      contactBtn.style.cssText = `
-        margin-left: 40px;
-        display: inline-block;
-      `;
-    }
+    
   // Logout handler
   logoutBtn.addEventListener("click", () => {
     signOut(auth).then(() => {
