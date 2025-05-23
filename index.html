@@ -485,7 +485,14 @@
         100% { transform: scale(1); }
     }
 
- 
+ /* Auth buttons */
+.hidden {
+  display: none !important;
+}
+/* Auth buttons */
+.hidden {
+  display: none !important;
+}
     </style>
     
 </head>
@@ -1035,38 +1042,24 @@
   const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
   const { getAuth, signOut, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
 
-  // Firebase-i işə sal
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+  const signUpLink = document.getElementById("signUpLink");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-  // Auth vəziyyətini yoxla
   onAuthStateChanged(auth, (user) => {
-    const signUpLink = document.getElementById('signUpLink');
-    const logoutBtn = document.getElementById('logoutBtn');
-    
     if (user) {
-      // İstifadəçi daxil olub
-      if (signUpLink) signUpLink.style.display = 'block';
-      if (logoutBtn) logoutBtn.style.display = 'none';
+      signUpLink.style.display = "none";
+      logoutBtn.style.display = "inline-block";
     } else {
-      // İstifadəçi daxil olmayıb
-      if (signUpLink) signUpLink.style.display = 'none';
-      if (logoutBtn) logoutBtn.style.display = 'block';
+      signUpLink.style.display = "inline-block";
+      logoutBtn.style.display = "none";
     }
   });
 
-  // Çıxış funksiyası
-  const logoutBtn = document.getElementById('logoutBtn');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      signOut(auth).then(() => {
-        window.location.reload();
-      }).catch((error) => {
-        console.error("Çıxış xətası:", error);
-      });
+  logoutBtn.addEventListener("click", () => {
+    signOut(auth).then(() => {
+      location.reload();
     });
-  }
+  });
 </script>
 </body>
 </html>
