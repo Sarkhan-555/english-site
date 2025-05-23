@@ -703,10 +703,8 @@
             <div class="cta-content reveal-on-scroll">
                 <h2>Ready to improve your English?</h2>
                 <p>Sign up now and get access to all our premium tests for free!</p>
-<ul class="navbar">
-  <li><a href="sing.up.html" class="nav-btn" id="signUpLink">Join Now</a></li>
-  <li><a href="#" class="nav-btn" id="logoutBtn" style="display: none;">Log Out</a></li>
-</ul>                <!-- Update your existing button to this -->
+                <a href="../english-site/sing.up.html" class="btn btn-light" id = "joinnow">Join Now</a>
+                <!-- Update your existing button to this -->
 <a href="#contact" class="btn btn-light" style="margin-left: 40px;" id="contactModalBtn">Contact Us</a>
 
 <!-- Add this modal HTML just before the closing </body> tag -->
@@ -1051,6 +1049,7 @@
   // Get DOM elements
   const signUpLink = document.getElementById("signUpLink");
   const logoutBtn = document.getElementById("logoutBtn");
+  const joinnow = document.getElementById("joinnow");
 
   // Auth state handler
   onAuthStateChanged(auth, (user) => {
@@ -1058,10 +1057,12 @@
       // User is signed in
       signUpLink.style.display = "none";
       logoutBtn.style.display = "inline-block";
+      joinnow.style.display = "none"
     } else {
       // User is signed out
       signUpLink.style.display = "inline-block";
       logoutBtn.style.display = "none";
+      joinnow.style.display = "inline-block"
     }
   });
 
@@ -1074,5 +1075,6 @@
     });
   });
 </script>
+
 </body>
 </html>
