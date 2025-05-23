@@ -288,28 +288,25 @@
     <!-- Firebase SDK -->
     <script type="module">
         // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        
         // Your web app's Firebase configuration
         const firebaseConfig = {
-  apiKey: "AIzaSyB6FjcA5vGr119-snXp5drRjM5Hxw0jmV4",
-  authDomain: "englishmastery-3f531.firebaseapp.com",
-  projectId: "englishmastery-3f531",
-  storageBucket: "englishmastery-3f531.firebasestorage.app",
-  messagingSenderId: "367057380534",
-  appId: "1:367057380534:web:04d01e82a0ac0e82c2f217",
-  measurementId: "G-HE3PSZS19P"
-};
+            apiKey: "AIzaSyB6FjcA5vGr119-snXp5drRjM5Hxw0jmV4",
+            authDomain: "englishmastery-3f531.firebaseapp.com",
+            projectId: "englishmastery-3f531",
+            storageBucket: "englishmastery-3f531.firebasestorage.app",
+            messagingSenderId: "367057380534",
+            appId: "1:367057380534:web:04d01e82a0ac0e82c2f217",
+            measurementId: "G-HE3PSZS19P"
+        };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
         
         document.addEventListener('DOMContentLoaded', function () {
             // Form handling
@@ -369,7 +366,6 @@ const analytics = getAnalytics(app);
                 }
             });
         });
-        //singup
     </script>
 </body>
 </html>

@@ -10,8 +10,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="6VEDOk7GUi2KOCLHVVBhn";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-        </script>
+(function(){
+  if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    var q = [];
+    function chatbaseFunc() {
+      q.push(arguments);
+    }
+    chatbaseFunc.q = q;
+    window.chatbase = new Proxy(chatbaseFunc, {
+      get: function(target, prop) {
+        if (prop === "q") return target.q;
+        return function() {
+          return target(prop, ...arguments);
+        };
+      }
+    });
+  }
+
+  const onLoad = function() {
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = "6VEDOk7GUi2KOCLHVVBhn";
+    script.domain = "www.chatbase.co";
+    document.body.appendChild(script);
+  };
+
+  if (document.readyState === "complete") {
+    onLoad();
+  } else {
+    window.addEventListener("load", onLoad);
+  }
+})();
+</script>
         
     <!-- Animation Styles -->
     <style>
@@ -534,8 +564,11 @@
                               <li><a href="reading/proficiency.html">Proficiency (C2)</a></li>
                             </ul>
                           </li>
-                          <li><a href="../english-site/sing.up.html" class="nav-btn mobile-btn">Sign Up</a></li>
-                    
+</li><a href="https://forms.gle/Ku1YKuzSJoNbPXwy5" class="nav-btn mobile-btn">Registration</a></li>
+<ul class="navbar">
+  <li><a href="sing.up.html" class="nav-btn" id="signUpLink">Sign Up</a></li>
+  <li><a href="#" class="nav-btn" id="logoutBtn" style="display: none;">Log Out</a></li>
+</ul>                  
                 </ul>
             </nav>
         </div>
@@ -983,6 +1016,56 @@
             });
         }
     });
+</script>
+<!-- Firebase Auth Script (body-nin sonunda) -->
+<script type="module">
+  // Firebase konfiqurasiyası
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6FjcA5vGr119-snXp5drRjM5Hxw0jmV4",
+    authDomain: "englishmastery-3f531.firebaseapp.com",
+    projectId: "englishmastery-3f531",
+    storageBucket: "englishmastery-3f531.firebasestorage.app",
+    messagingSenderId: "367057380534",
+    appId: "1:367057380534:web:04d01e82a0ac0e82c2f217",
+    measurementId: "G-HE3PSZS19P"
+  };
+
+  // Firebase modullarını dinamik yüklə
+  const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+  const { getAuth, signOut, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+
+  // Firebase-i işə sal
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Auth vəziyyətini yoxla
+  onAuthStateChanged(auth, (user) => {
+    const signUpLink = document.getElementById('signUpLink');
+    const logoutBtn = document.getElementById('logoutBtn');
+    
+    if (user) {
+      // İstifadəçi daxil olub
+      if (signUpLink) signUpLink.style.display = 'block';
+      if (logoutBtn) logoutBtn.style.display = 'none';
+    } else {
+      // İstifadəçi daxil olmayıb
+      if (signUpLink) signUpLink.style.display = 'none';
+      if (logoutBtn) logoutBtn.style.display = 'block';
+    }
+  });
+
+  // Çıxış funksiyası
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      signOut(auth).then(() => {
+        window.location.reload();
+      }).catch((error) => {
+        console.error("Çıxış xətası:", error);
+      });
+    });
+  }
 </script>
 </body>
 </html>
