@@ -1018,6 +1018,7 @@
     });
 </script>
 <!-- Firebase Auth Script (body-nin sonunda) -->
+<!-- Firebase Auth Script (body-nin sonunda) -->
 <script type="module">
   // Firebase konfiqurasiyası
   const firebaseConfig = {
@@ -1035,24 +1036,37 @@
   const { getAuth, signOut, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
 
   // Firebase-i işə sal
-  const signUpLink = document.getElementById("signUpLink");
-  const logoutBtn = document.getElementById("logoutBtn");
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
+  // Auth vəziyyətini yoxla
   onAuthStateChanged(auth, (user) => {
+    const signUpLink = document.getElementById('signUpLink');
+    const logoutBtn = document.getElementById('logoutBtn');
+    
     if (user) {
-      signUpLink.style.display = "none";
-      logoutBtn.style.display = "inline-block";
+      // İstifadəçi daxil olub
+      if (signUpLink) signUpLink.style.display = 'block';
+      if (logoutBtn) logoutBtn.style.display = 'none';
     } else {
-      signUpLink.style.display = "inline-block";
-      logoutBtn.style.display = "none";
+      // İstifadəçi daxil olmayıb
+      if (signUpLink) signUpLink.style.display = 'none';
+      if (logoutBtn) logoutBtn.style.display = 'block';
     }
   });
 
-  logoutBtn.addEventListener("click", () => {
-    signOut(auth).then(() => {
-      location.reload();
+  // Çıxış funksiyası
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      signOut(auth).then(() => {
+        window.location.reload();
+      }).catch((error) => {
+        console.error("Çıxış xətası:", error);
+      });
     });
-  });
+  }
 </script>
 </body>
 </html>
