@@ -651,6 +651,19 @@
             color: #4a6cf7;
         }
     }
+    .mobile-menu-toggle {
+    position: fixed;
+    top: 20px;      /* yuxarıdan məsafə */
+    right: 20px;    /* sağdan məsafə */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
 </style>
 </head>
 <body>
@@ -735,7 +748,7 @@
                 </ul>
             </nav>
         </div>
-        <!-- Mobile Menu HTML (header hissesinden sonra əlavə edin) -->
+        <!-- Mobile Menu HTML  -->
 <div class="mobile-menu-container">
     <div class="mobile-menu-toggle" id="mobileMenuToggle">
         <i class="fas fa-bars"></i>
