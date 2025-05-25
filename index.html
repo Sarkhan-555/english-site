@@ -887,7 +887,7 @@
         </div>
         
         <div class="mobile-auth-buttons">
-            <a href="sing.up.html" class="mobile-auth-btn primary" id="signUpLink" id="mobileSignUp">Sign Up</a>
+            <a href="sing.up.html" class="mobile-auth-btn primary"  id="mobileSignUp">Sign Up</a>
             <a href="#" class="mobile-auth-btn secondary" id="mobileLogout" style="display: none;">Log Out</a>
         </div>
     </div>
@@ -1364,21 +1364,28 @@
   const signUpLink = document.getElementById("signUpLink");
   const logoutBtn = document.getElementById("logoutBtn");
   const joinnow = document.getElementById("joinnow");
+  const mobileSignUp = document.getElementById("mobileSignUp");
+  const mobileLogout = document.getElementById("mobileLogout");
 
   // Auth state handler
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in
       signUpLink.style.display = "none";
+      mobileSingUp.style.display = "none";
       logoutBtn.style.display = "inline-block";
-      joinnow.style.display = "none"
+      mobileLogOut.style.display = "inline-block";
+      joinnow.style.display = "none";
+      
       
       contactModalBtn.style.display = "inline-block";
       contactModalBtn.style.margin = "0 auto";
     } else {
       // User is signed out
       signUpLink.style.display = "inline-block";
+      mobileSingUp.style.display = "inline-block";
       logoutBtn.style.display = "none";
+      mobileLogOut.style.display = "none";
       joinnow.style.display = "inline-block"
 
     }
