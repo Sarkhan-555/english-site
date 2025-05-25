@@ -1389,8 +1389,15 @@
       joinnow.style.display = "inline-block"
 
     }
+  }); 
+     // mobileLogout handler
+    mobileLogout.addEventListener("click", () => {
+    signOut(auth).then(() => {
+      location.reload();
+    }).catch((error) => {
+      console.error("Logout error:", error);
+    });
   });
-    
   // Logout handler
   logoutBtn.addEventListener("click", () => {
     signOut(auth).then(() => {
@@ -1399,14 +1406,7 @@
       console.error("Logout error:", error);
     });
   });
-    // mobileLogout handler
-  mobileLogout.addEventListener("click", () => {
-    signOut(auth).then(() => {
-      location.reload();
-    }).catch((error) => {
-      console.error("Logout error:", error);
-    });
-  });
+  
 </script>
 <!-- Mobile Menu JavaScript -->
 <script>
